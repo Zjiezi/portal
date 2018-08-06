@@ -23,3 +23,29 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+# Package Files #
+#*.jar
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+*.war
+*.yml
+
+# Log file
+*.log
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Compiled class file
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
