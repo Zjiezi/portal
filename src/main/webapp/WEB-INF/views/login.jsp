@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <h1>蓝白ERP系统</h1>
+    <h1>蓝白后台系统</h1>
     <div class="container w3">
         <h2>欢迎使用</h2>
 		<form id="form" action="##"  onsubmit="return false"  method="post">
@@ -44,7 +44,7 @@
 		</form>
 	</div>
 	<div class="footer-w3l">
-		<p> 蓝白erp系统</p>
+		<p> 蓝白后台系统</p>
 	</div>
 	 <script src="static/js/vendor/jquery-3.3.1.min.js"></script>
 	 <script src="static/js/layer/layer.js"></script>
@@ -65,13 +65,13 @@
 							  shade: [0.1,'#fff'] //0.1透明度的白色背景
 							  });
 						 $.ajax({
-						      url:"${ctx}/login",
+						      url:"${ctx}/userLogin",
 						      type:"post", 
 						   	  data: $('#form').serialize(), 
 						     
 				      		  success: function (result) {
 				      			  if(result.code==0){
-					      				location.href = "${ctx}/index";
+					      				 location.href = result.data.url+'.jsp';
 				      			  }else{
 				      				layer.close(index);
 				      				layer.msg(result.message, {icon: 2}); 
