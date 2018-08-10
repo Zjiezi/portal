@@ -12,21 +12,15 @@ import lombok.Data;
 public class CurrentUser {
 
 	/**
-	 * 登录用户ID
-	 */
-	private Long id;
-	/**
 	 * 登录用户名
 	 */
 	private String userName;
 	/**
-	 * 登录用户真实名
+	 * 地址
 	 */
-	private String realname;
-	/**
-	 * 性别
-	 */
-	private Integer sex;
+	private String url;
+	
+	
 
 
 	
