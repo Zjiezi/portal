@@ -71,7 +71,7 @@
 						     
 				      		  success: function (result) {
 				      			  if(result.code==0){
-					      				 location.href = result.data.url+'.jsp';
+					      				 location.href = result.data.url;
 				      			  }else{
 				      				layer.close(index);
 				      				layer.msg(result.message, {icon: 2}); 
