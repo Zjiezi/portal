@@ -40,10 +40,26 @@ public class ProductAction {
 	 * @param prodcut
 	 * @return
 	 */
-	@GetMapping(value = "/product/getProduct")
-	public CommonResponse getProduct(HttpServletRequest request, Product prodcut, PageParameter page) {
+	@GetMapping(value = "/product/productPage")
+	public CommonResponse productPage(HttpServletRequest request, Product prodcut, PageParameter page) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSON.format(service.findPages(prodcut, page)).toJSON());
+		cr.setMessage("查找成功");
+		return cr;
+	}
+	
+	/**
+	 * 
+	 * 产品详情
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/product/getProduct")
+	public CommonResponse getProduct(HttpServletRequest request, Long id) {
+		CommonResponse cr = new CommonResponse();
+		cr.setData(clearCascadeJSON.format(service.findOne(id).get()).toJSON());
 		cr.setMessage("查找成功");
 		return cr;
 	}
