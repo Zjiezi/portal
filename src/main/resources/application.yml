@@ -7,7 +7,7 @@ spring:
         separator: ; # Statement separator in SQL initialization scripts.
         sql-script-encoding: utf-8 # SQL scripts encoding.
         type: com.alibaba.druid.pool.DruidDataSource # Fully qualified name of the connection pool implementation to use. By default, it is auto-detected from the classpath.
-        url: jdbc:mysql://localhost:3306/portal?useUnicode=true&characterEncoding=UTF-8&useSSL=true # JDBC url of the database.
+        url: jdbc:mysql://192.168.1.230:3306/portal?useUnicode=true&characterEncoding=UTF-8&useSSL=true # JDBC url of the database.
         username: root
         password: 1234
         
