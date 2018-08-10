@@ -37,6 +37,17 @@ public class IndexAction {
 		return "login";
 	}
 	
+	/**
+	 * 后台首页跳转
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/backIndex")
+	public String index() {
+		return "backIndex";
+	}
+	
 	
 	/**
 	 * 后台登陆
