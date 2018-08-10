@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -40,7 +40,7 @@
 							<li><a href="gushi.html">品牌故事</a></li>
 							<li><a href="wenhua.html">品牌文化</a></li>
 							<li><a href="rongyu.html">资质荣誉</a></li>
-							<li><a href="news.html">最新资讯</a></li>
+							<li><a href="news.html">最新活动</a></li>
 						</ul>
 					</div>
 				</li>
@@ -54,23 +54,15 @@
 					</div>
 				</li>
 				<li>
-					<a href="ketang.html">肌肤管理</a>
+					<a href="ketang.html">最新活动</a>
 					<div class="sub">
 						<ul>
-							<li><a href="ketang.html">美丽课堂</a></li>
+							<li><a href="ketang.html">活动详情</a></li>
 							<li><a href="jieda.html">问题解答</a></li>
 						</ul>
 					</div>
 				</li>
-				<li>
-					<a href="anli.html">蜕变心声</a>
-					<div class="sub">
-						<ul>
-							<li><a href="anli.html">肌肤案例</a></li>
-							<li><a href="xinsheng.html">蜕变心声</a></li>
-						</ul>
-					</div>
-				</li>
+				
 					<li>
 						<a href="shipin.html">精彩瞬间</a>
 						<div class="sub">
@@ -97,11 +89,11 @@
 		<div class="banner">
 			<div class="swiper-container">
 				<div class="swiperList">
-					<div class="list"><a href="https://detail.tmall.com/item.htm?spm=a1z10.5-b-s.w5001-15802536121.10.66392cfdQ8EUUr&id=26353088677&rn=c44ed0db9682ad3ba7955f0784c61942&abbucket=1&scene=taobao_shop" target="_blank"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180721.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180722.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180723.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180723.jpg"></a></div>
+					<div class="list"><a href="#" target="_blank"><img src="static/picture/20180720.jpg"></a></div>
+					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
+					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
+					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
+					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
@@ -154,32 +146,32 @@
 							</div>
 														<div class="list">
 								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">>森林鳄鱼抱枕</div>
+								<div class="name">森林鳄鱼抱枕</div>
 								<div class="btn"><a href="#">了解详情</a></div>
 							</div>
 														<div class="list">
 								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">>森林鳄鱼抱枕</div>
+								<div class="name">森林鳄鱼抱枕</div>
 								<div class="btn"><a href="#">了解详情</a></div>
 							</div>
 														<div class="list">
 								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">>森林鳄鱼抱枕</div>
+								<div class="name">森林鳄鱼抱枕</div>
 								<div class="btn"><a href="#">了解详情</a></div>
 							</div>
 														<div class="list">
 								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">>森林鳄鱼抱枕</div>
+								<div class="name">森林鳄鱼抱枕</div>
 								<div class="btn"><a href="#">了解详情</a></div>
 							</div>
 														<div class="list">
 								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">清纯素颜霜</div>
+								<div class="name">森林鳄鱼抱枕</div>
 								<div class="btn"><a href="#">了解详情</a></div>
 							</div>
 														<div class="list">
 								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">>森林鳄鱼抱枕</div>
+								<div class="name">森林鳄鱼抱枕</div>
 								<div class="btn"><a href="#">了解详情</a></div>
 							</div>
 														<div class="list">
@@ -222,33 +214,33 @@
 			<div class="wrap">
 				<div class="columnTitle white">
 					<h3 class="tit">宣传视频</h3>
-					<div class="txt"><span></span>生肌肤之泽，蕴天地之润<span></span></div>
+					<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
 				</div>
 				<div class="promotional">
 					<div class="title">
 						<div class="entit">COMPANY PROFILE</div>
-						<div class="tit">爱萌伊人简介</div>
+						<div class="tit">蓝白简介</div>
 					</div>
 															<div class="video">
 						<div class="pic"><div class="icon"></div>
 						<img src="static/picture/20180627022629473.jpg"></div>
 						<video controls>
-							<source src="http://www.aimengyiren.com/uploadfile/2018/0629/20180629101935592.mp4" type="video/mp4">
+							<source src="static/lan.mp4" type="video/mp4">
 						</video>
 					</div>
 										<div class="instructions">
-						<div class="title"><div class="entit">SKIN CARE SPECIALIST, FIRST CHOICE FOR AMOROUS SEX</div><div class="tit">护肤专家，首选爱萌伊人</div><div class="line"></div></div><div class="text">健康管理有限公司总部位于深圳市中心区华嵘大厦，是一家专门从事面部肌肤健康管理,一站式解决面部各种色斑.痘印.黄气.色沉等相关肌肤问题，在多年肌肤健康管理的经验基础上，研发了系列养肤类产品。公司创始人朱茂长先生十年磨一剑，以扎实的专业知识和丰富的肌肤健康管理经验</div>					</div>
+						<div class="title"><div class="entit">走进来，享受一下快乐童年</div><div class="tit">快了童年，首选蓝白</div><div class="line"></div></div><div class="text">扬州蓝白工艺品有限公司是一家以自主研发各类中高档毛绒玩具.泰迪熊.家居产品为主的生产,贸易型企业. 公司目前自主品牌:蓝白玩偶. CAPTAIN MORGAN. 自公司成立以来.所开发生产的产品得到全国销售商一致好评.我们的目标是设计开发出新颖且优质的产品,用我们的真诚和热心服务好我们的顾客.做好“服务员”.</div>					</div>
 				</div>
 			</div>
 		</div>
 		<div class="section section4">
 			<div class="columnTitle">
-				<h3 class="tit">最新资讯</h3>
-				<div class="txt"><span></span>生肌肤之泽，蕴天地之润<span></span></div>
+				<h3 class="tit">最新活动</h3>
+				<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
 			</div>
 			<div class="newsList">
 				<ul>
-																									<li><img src="static/picture/20180620035655300.jpg"></li>
+					<li><img src="static/picture/20180620035655300.jpg"></li>
 					<li>
 						<a href="#">
 							<div class="tit">爱萌伊人荣获“本草护肤行业优选品牌”称号</div>
@@ -298,16 +290,15 @@
 	<div class="footer">
 		<div class="linkList">
 			<ul>
-				<li><a href="#">走进爱萌伊人</a></li>
+				<li><a href="#">走进蓝白</a></li>
 				<li><a href="#">明星产品</a></li>
-				<li><a href="#">肌肤管理</a></li>
-				<li><a href="#">蜕变心声</a></li>
+				<li><a href="#">活动管理</a></li>
 				<li><a href="#">精彩瞬间</a></li>
 				<li><a href="#">联系我们</a></li>
 			</ul>
 		</div>
 		<div class="copyright">
-			&nbsp; &nbsp;Copyright<span style="color: rgb(190, 203, 180); font-family: &quot;Microsoft YaHei&quot;, ???è??é?…é?‘, arial; font-size: 12px; text-align: center; background-color: rgb(93, 132, 57);">?</span> 2018 健康管理有限公司&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备xxxxxx号-1</a>
+			&nbsp; &nbsp;Copyright<span style="color: rgb(190, 203, 180); font-family: &quot;Microsoft YaHei&quot;, ???è??é?…é?‘, arial; font-size: 12px; text-align: center; background-color: rgb(93, 132, 57);">?</span> 扬州蓝白工艺品有限公司&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备xxxxxx号-1</a>
 		</div>
 	</div>
 	
