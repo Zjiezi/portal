@@ -68,7 +68,7 @@
                     </a>
                     <ul class="dropdown-menu animated fadeInRight" role="menu">
                         <li>
-                            <a href="#" id="login">
+                            <a href="${ctx}/quitLogin" id="login">
                                 <span class="icon"><i class="fa fa-sign-out"></i>
                                 </span>退出</a>
                         </li>
