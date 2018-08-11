@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.bluewhite.portal.common.Constants;
 import com.bluewhite.portal.common.entity.CommonResponse;
 import com.bluewhite.portal.common.entity.CurrentUser;
-import com.bluewhite.portal.file.service.FilesService;
 import com.bluewhite.portal.system.user.entity.User;
 import com.bluewhite.portal.system.user.service.UserService;
 
@@ -24,7 +24,16 @@ public class IndexAction {
 	@Autowired
 	private UserService userService;
 	
-	
+	/**
+	 * 前台首页
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/")
+	public String index() {
+		return Constants.INDEX_URL;
+	}
 	
 	/**
 	 * 后台登陆跳转
@@ -34,7 +43,7 @@ public class IndexAction {
 	 */
 	@GetMapping(value = "/backLogin")
 	public String login() {
-		return "login";
+		return Constants.LOGIN_URL;
 	}
 	
 	/**
@@ -44,8 +53,8 @@ public class IndexAction {
 	 * @return
 	 */
 	@GetMapping(value = "/backIndex")
-	public String index() {
-		return "backIndex";
+	public String backIndex() {
+		return Constants.INDEX_BACK_URL;
 	}
 	
 	
@@ -60,8 +69,8 @@ public class IndexAction {
 	public CommonResponse userLogin(HttpServletRequest request,String username , String password) {
 		CommonResponse cr = new CommonResponse();
 		HttpSession session = request.getSession();
-		if(session.getAttribute("user")!=null){
-			cr.setData(session.getAttribute("user"));
+		if(session.getAttribute(Constants.CURRENT_USER)!=null){
+			cr.setData(session.getAttribute(Constants.CURRENT_USER));
 			cr.setMessage("用户已登录");
 			return cr;
 		}
@@ -69,8 +78,8 @@ public class IndexAction {
 		if(user.isPresent()){
 			CurrentUser currentUser = new CurrentUser();
 			currentUser.setUserName(user.get().getUsername());
-			currentUser.setUrl("/backIndex");
-			session.setAttribute("user", currentUser);
+			currentUser.setUrl(Constants.INDEX_BACK_URL);
+			session.setAttribute(Constants.CURRENT_USER, currentUser);
 			cr.setData(currentUser);
 			cr.setMessage("登陆成功");
 		}else{
@@ -80,7 +89,18 @@ public class IndexAction {
 	}
 	
 
-	
+	/**
+	 * 退出登陆
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/quitLogin")
+	public String quitLogin(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute(Constants.CURRENT_USER);
+		return Constants.LOGIN_URL;
+	}
 	
 
 }
