@@ -34,10 +34,10 @@
 				<ul>
 				<li class="on"><a href="index.html">首页</a></li>
 				<li>
-					<a href="gushi.html">走进蓝白</a>
+					<a href="gushi.jsp">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="gushi.html">品牌故事</a></li>
+							<li><a href="gushi.jsp">品牌故事</a></li>
 							<li><a href="wenhua.html">品牌文化</a></li>
 							<li><a href="rongyu.html">资质荣誉</a></li>
 							<li><a href="news.html">最新活动</a></li>
