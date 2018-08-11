@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <c:set var="ctx" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +36,7 @@
 				<ul>
 				<li class="on"><a href="index.html">首页</a></li>
 				<li>
-					<a href="gushi.jsp">走进蓝白</a>
+					<a href="${ctx }/menusToUrl?url='gushi'">走进蓝白</a>
 					<div class="sub">
 						<ul>
 							<li><a href="gushi.jsp">品牌故事</a></li>
