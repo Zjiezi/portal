@@ -42,7 +42,11 @@ spring:
         view:
           prefix: /WEB-INF/views/
           suffix: .jsp 
-    
+#        static-path-pattern: /static/**
+#    resources:
+#      static-locations: classpath:/META-INF/views/,classpath:/webapp/,classpath:/resources/
+            
+          
     mybatis:
         mapperLocations: classpath:mapper/**/*.xml
         

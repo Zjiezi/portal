@@ -1,7 +1,5 @@
 package com.bluewhite.portal.common.filter;
 
-import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -23,33 +21,25 @@ public class InterceptorConfig  implements HandlerInterceptor{
      */  
     @Override  
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {  
-  
-    	if(httpServletRequest.getRequestURI().equals("/backLogin")){
-    		return true;  
-    	}
     	
         HttpSession session = httpServletRequest.getSession();  
         if(!StringUtils.isEmpty(session.getAttribute("user"))){  
             return true;  
-        }  
-        else{  
-            PrintWriter printWriter = httpServletResponse.getWriter();  
-            printWriter.write("{code:1004,message:\"请先登录\",date:\"/\"}");  
-//        	httpServletResponse.sendRedirect("/index");
+        }else{  
+        	httpServletResponse.sendRedirect("/");
             return false;  
         }  
-  
     }  
   
-//    @Override  
-//    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {  
-////        log.info("--------------处理请求完成后视图渲染之前的处理操作---------------");  
-//    }  
-//  
-//    @Override  
-//    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {  
-////        log.info("---------------视图渲染之后的操作-------------------------0");  
-//    }  
+// 处理请求完成后视图渲染之前的处理操作;  
+    @Override  
+    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {  
+    }  
+  
+//  视图渲染之后的操作;  
+    @Override  
+    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {  
+    }  
     
     
     

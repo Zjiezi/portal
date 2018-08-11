@@ -17,11 +17,13 @@ public class Constants {
     public static String ERROR = "error";
 
     /**
-     * 上个页面地址
+     * 地址
      */
-    public static String BACK_URL = "BackURL";
+    public static String LOGIN_URL = "login";
+    
+    public static String INDEX_URL = "index";
 
-    public static String IGNORE_BACK_URL = "ignoreBackURL";
+    public static String INDEX_BACK_URL = "backIndex";
 
     /**
      * 当前请求的地址 带参数
