@@ -44,6 +44,7 @@ public class FilesAction {
 				filesList.add(fi);
 			}
 		}
+		cr.setData(filesList);
 		cr.setMessage("上传"+filesList.size()+"张图片成功");
 		return cr;
 	}
