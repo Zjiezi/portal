@@ -82,5 +82,6 @@ public class Product  extends BaseEntity<Long>{
 	@Transient
 	private Date orderTimeEnd;
 	
-
+	@Transient
+	private String filesIds[];
 }

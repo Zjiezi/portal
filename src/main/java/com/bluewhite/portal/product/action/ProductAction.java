@@ -15,6 +15,7 @@ import com.bluewhite.portal.common.ClearCascadeJSON;
 import com.bluewhite.portal.common.entity.CommonResponse;
 import com.bluewhite.portal.common.entity.PageParameter;
 import com.bluewhite.portal.file.entity.Files;
+import com.bluewhite.portal.file.service.FilesService;
 import com.bluewhite.portal.product.entity.Product;
 import com.bluewhite.portal.product.service.ProductService;
 
@@ -23,6 +24,9 @@ public class ProductAction {
 
 	@Autowired
 	private ProductService service;
+	
+	@Autowired
+	private FilesService filesService;
 
 	private ClearCascadeJSON clearCascadeJSON;
 
@@ -81,9 +85,20 @@ public class ProductAction {
 				BeanCopyUtils.copyNullProperties(oldProdcut, prodcut);
 				prodcut.setCreatedAt(oldProdcut.get().getCreatedAt());
 			}
-
 		}
 		service.save(prodcut);
+		
+		if (prodcut.getFilesIds().length > 0) {
+			for (int i = 0; i < prodcut.getFilesIds().length; i++) {
+				Long id = Long.parseLong(prodcut.getFilesIds()[i]);
+				Optional<Files> files = filesService.findOne(id);
+				if(files.isPresent()){
+					files.get().setProductId(prodcut.getId());
+					filesService.save(files.get());
+				}
+			}
+		}
+
 		cr.setMessage("添加成功");
 		return cr;
 	}

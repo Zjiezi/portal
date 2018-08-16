@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,6 +20,9 @@ public class FilesServiceImpl extends BaseServiceImpl<Files, Long> implements Fi
 	
 	@Autowired
 	private FilesDao dao;
+	
+    @Value("${web.upload-path}")
+    private String path;
 
 	@Override
 	public Files upFile(MultipartFile file, HttpServletRequest request) {
@@ -26,7 +30,7 @@ public class FilesServiceImpl extends BaseServiceImpl<Files, Long> implements Fi
 		String fileName = file.getOriginalFilename();
 		String type = file.getContentType();
 		long size = file.getSize() ;
-		String filePath = request.getSession().getServletContext().getRealPath("/")+"upload/";  
+		String filePath = path;  
 		 File targetFile = new File(filePath);  
 		 if(!targetFile.exists()){  
 	            targetFile.mkdirs();  
@@ -39,7 +43,7 @@ public class FilesServiceImpl extends BaseServiceImpl<Files, Long> implements Fi
 	        }  
 	        files.setName(fileName);
 	        files.setType(type);
-	        files.setUrl("upload/"+fileName);
+	        files.setUrl("upload/img/"+fileName);
 	        files.setSize(size);
 	        dao.save(files);
 		return files;

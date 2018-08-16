@@ -1,8 +1,5 @@
 package com.bluewhite.portal.file.action;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +29,6 @@ public class FilesAction {
 	 */
 	@PostMapping(value = "/files/uploadFiles")
 	public CommonResponse uploadFiles(@RequestParam(value = "file", required = false) MultipartFile[] files,HttpServletRequest request) {
-		List<Files> filesList = new ArrayList<Files>();
 		CommonResponse cr = new CommonResponse();
 		// 判断file数组不能为空并且长度大于0
 		if (files != null && files.length > 0) {
@@ -41,13 +37,34 @@ public class FilesAction {
 				MultipartFile file = files[i];
 				// 保存文件
 				Files fi = filesService.upFile(file, request);
-//				filesList.add(fi);
 				cr.setData(fi);
 			}
 		}
-		cr.setMessage("上传"+filesList.size()+"张图片成功");
+		cr.setMessage("图片上传成功");
 		return cr;
 	}
+	
+	/**
+	 * 
+	 * 删除文件
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/files/deletefiles")
+	public CommonResponse deleteProduct(HttpServletRequest request, Long id) {
+		CommonResponse cr = new CommonResponse();
+		if(id!=null){
+			filesService.delete(id);
+			cr.setMessage("删除成功");
+		}else{
+			cr.setMessage("文件不能为空");
+		}
+		return cr;
+	}
+	
+	
 	
 	/**
 	 * 获取首页海报图片
