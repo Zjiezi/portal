@@ -23,18 +23,17 @@ public class FilesServiceImpl extends BaseServiceImpl<Files, Long> implements Fi
 	@Override
 	public Files upFile(MultipartFile file, HttpServletRequest request) {
 		Files files = new Files();
-		String filePath = request.getSession().getServletContext().getRealPath("/") + "upload/"  
-                   + file.getOriginalFilename();  
 		String fileName = file.getOriginalFilename();
 		String type = file.getContentType();
 		long size = file.getSize() ;
+		String filePath = request.getSession().getServletContext().getRealPath("/")+"upload/";  
 		 File targetFile = new File(filePath);  
 		 if(!targetFile.exists()){  
 	            targetFile.mkdirs();  
 	        }  
 	        //保存  
 	        try {  
-	        	file.transferTo(targetFile);  
+	        	file.transferTo(new File(filePath+fileName));  
 	        } catch (Exception e) {  
 	            e.printStackTrace();  
 	        }  
