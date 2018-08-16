@@ -89,17 +89,17 @@
 			<div class="wrap">
 				<div class="nav four">
 					<ul>
-						<li class="on"><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
+						<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
+						<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
 						<li ><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+						<li class="on"><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="${ctx }/menusToUrl?url=index">首页</a></li>
 						<li><a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a></li>
-						<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
+						<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
 					</ul>
 				</div>
 			</div>
@@ -107,20 +107,76 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">品牌故事</h2>
-					<div class="entit">Brand story</div>
-					<div class="line"></div>
+										<h2 class="tit">最新资讯</h2>
+					<div class="entit">Latest News</div>
+										<div class="line"></div>
 				</div>
-								<div class="about">
-					<div class="bigPic">
-						<div class="bg"></div>
-						<div class="pic"><img src="static/picture/20180710094745770.png"></div>
-					</div>
-					<div class="leftArticle">
-						<div class="tltle"><div class="entit">Shenzhen Aimei Iraqi Human Skin Health Management Co., Ltd.</div><h1 class="tit">深圳市爱萌伊人肌肤健康管理有限公司</h1><div class="line"></div></div><div class="article"><p>健康之美，源于天然。肌肤之美，源于爱萌伊人。</p><p>&nbsp;</p><p>春生、夏长、秋收、冬藏……顺应自然四时规律，爱萌伊人传承千年中医中药文化，以“平衡之道”荟萃古今智慧，养内调外，平衡肌肤与身心。以本草汉方为特色，为广大女性量身打造“健康、美丽、快乐”的肌肤管理理念。</p><p>&nbsp;</p><p>根据《黄帝内经》记载：“女七男八”。即女性的生命周期数是7，每7年体现一次大变化。专家组研发团队，运用肌肤的代谢功能和代偿原理，结合创新的第六代生物科技，采用纯天然的人参、甘草、黄芪等本草萃取精华原液，研制出高效的水活瓷肌养肤产品，能够抗氧化，代谢老化角质，有效祛除黄气、暗沉、细纹，修护敏感，预防长斑，令肌肤沁享年轻态。</p><p>&nbsp;</p><p>我们孜孜不倦探寻本草养肤之道，致力于将“爱萌伊人”打造成世界钦佩的民族品牌，缔造肌肤根源之美，开启东方美肤新风尚，让世界领略东方之美！</p></div>					</div>
+				<div class="newsList">
+					<ul>
+						
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/20180620035655300.jpg"></div>
+								<div class="tit">爱萌伊人荣获“本草护肤行业优选品牌”称号</div>
+								<div class="date">2018-06-08</div>
+							</a>
+						</li>
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/20180622100226281.jpg"></div>
+								<div class="tit">体验平台建设完成</div>
+								<div class="date">2018-06-08</div>
+							</a>
+						</li>
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/20180622111634341.jpg"></div>
+								<div class="tit">2018年股东大会</div>
+								<div class="date">2018-06-08</div>
+							</a>
+						</li>
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/20180620101726805.jpg"></div>
+								<div class="tit">爱萌伊人肌肤健康管理有限公司2017年年会</div>
+								<div class="date">2018-06-08</div>
+							</a>
+						</li>
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/20180627031205314.jpg"></div>
+								<div class="tit">肌肤健康管理知识讲解与分享</div>
+								<div class="date">2018-06-08</div>
+							</a>
+						</li>
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/1529656664546245.jpg"></div>
+								<div class="tit">深圳市爱萌伊人肌肤健康管理有限公司响应式品牌官网成功上线</div>
+								<div class="date">2018-06-22</div>
+							</a>
+						</li>
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/20180608063030351.jpg"></div>
+								<div class="tit">爱萌伊人肌肤健康管理知识讲解与分享爱萌伊人肌肤健康管理知识讲解与分享</div>
+								<div class="date">2018-06-08</div>
+							</a>
+						</li>
+												<li>
+							<a href="news-con.html">
+								<div class="pic"><img src="static/picture/20180608063030351.jpg"></div>
+								<div class="tit">爱萌伊人肌肤健康管理知识讲解与分享爱萌伊人肌肤健康管理知识讲解与分享</div>
+								<div class="date">2018-06-08</div>
+							</a>
+						</li>
+											</ul>
 				</div>
-								
-							</div>
+				<div class="paging">
+					<ul>
+											</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="footer">

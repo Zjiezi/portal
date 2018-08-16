@@ -89,17 +89,17 @@
 			<div class="wrap">
 				<div class="nav four">
 					<ul>
-						<li class="on"><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+						<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
+						<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
+						<li class="on"><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
+						<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="${ctx }/menusToUrl?url=index">首页</a></li>
 						<li><a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a></li>
-						<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
+						<li><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
 					</ul>
 				</div>
 			</div>
@@ -107,20 +107,65 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">品牌故事</h2>
-					<div class="entit">Brand story</div>
+					<h2 class="tit">资质荣誉</h2>
+					<div class="entit">Honours qualification</div>
 					<div class="line"></div>
 				</div>
-								<div class="about">
-					<div class="bigPic">
-						<div class="bg"></div>
-						<div class="pic"><img src="static/picture/20180710094745770.png"></div>
+				<div class="honor">
+					<div class="swiper-container">
+						<div class="leftFilter"></div>
+						<div class="rightFilter"></div>
+						<div class="swiperList">
+								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180612014454924.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180612014432424.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180611025149462.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180611025125382.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180608062608956.jpg"></a></div>
+														
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div>
-					<div class="leftArticle">
-						<div class="tltle"><div class="entit">Shenzhen Aimei Iraqi Human Skin Health Management Co., Ltd.</div><h1 class="tit">深圳市爱萌伊人肌肤健康管理有限公司</h1><div class="line"></div></div><div class="article"><p>健康之美，源于天然。肌肤之美，源于爱萌伊人。</p><p>&nbsp;</p><p>春生、夏长、秋收、冬藏……顺应自然四时规律，爱萌伊人传承千年中医中药文化，以“平衡之道”荟萃古今智慧，养内调外，平衡肌肤与身心。以本草汉方为特色，为广大女性量身打造“健康、美丽、快乐”的肌肤管理理念。</p><p>&nbsp;</p><p>根据《黄帝内经》记载：“女七男八”。即女性的生命周期数是7，每7年体现一次大变化。专家组研发团队，运用肌肤的代谢功能和代偿原理，结合创新的第六代生物科技，采用纯天然的人参、甘草、黄芪等本草萃取精华原液，研制出高效的水活瓷肌养肤产品，能够抗氧化，代谢老化角质，有效祛除黄气、暗沉、细纹，修护敏感，预防长斑，令肌肤沁享年轻态。</p><p>&nbsp;</p><p>我们孜孜不倦探寻本草养肤之道，致力于将“爱萌伊人”打造成世界钦佩的民族品牌，缔造肌肤根源之美，开启东方美肤新风尚，让世界领略东方之美！</p></div>					</div>
+					<script>
+						var stretch=290;
+						if( $(window).width()<500 ){
+							stretch=150;
+						}
+						var bannerSwiper = new Swiper ('.honor .swiper-container', {
+							wrapperClass : 'swiperList',
+							slideClass : 'list',
+							effect : 'coverflow',				//滑动效果
+							coverflowEffect: {
+								rotate: 0,					//Y轴的旋转角度。默认50
+								stretch: stretch,				//每个slide之间的拉伸值，越大slide靠得越紧。 默认0。
+								depth: 200,					//slide的位置深度。值越大z轴距离越远，看起来越小。 默认100。
+								modifier: 1,
+								slideShadows : false,		//阴影
+							},
+							autoplay: true,					//自动滑动
+							speed:400,						//滑动速度
+							autoplay: {
+								delay: 3000,				//间隔时间
+								disableOnInteraction: false,//用户操作之后是否停止
+							},
+							watchOverflow: true,			//仅有1个slide，swiper无效
+							loop: false,					//循环滚动
+							simulateTouch : true,			//鼠标模拟触摸
+							allowTouchMove: true,			//触摸滑动
+							slidesPerView : "auto",			//可视个数
+							grabCursor : true,				//手掌鼠标
+							initialSlide :0,				//初始索引
+							centeredSlides : true,			//slide居中
+							// loop : true,					//环路
+							// 前后按钮
+							navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+							},
+						})
+					</script>
 				</div>
-								
-							</div>
+			</div>
 		</div>
 	</div>
 	<div class="footer">

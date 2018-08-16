@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no;">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no;"> -->
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!--[if lt IE 9]>
 		<script src="js/html5shiv.min-3.7.3.js"></script>
@@ -34,23 +34,23 @@
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li class="on"><a href="index.html">首页</a></li>
+				<li class="on"><a href="${ctx }/menusToUrl?url=index">首页</a></li>
 				<li>
-					<a href="${ctx }/menusToUrl?url='gushi'">走进蓝白</a>
+					<a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="gushi.jsp">品牌故事</a></li>
-							<li><a href="wenhua.html">品牌文化</a></li>
-							<li><a href="rongyu.html">资质荣誉</a></li>
-							<li><a href="news.html">最新活动</a></li>
+							<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
+							<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
+							<li><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
+							<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="product.html">明星产品</a>
+					<a href="${ctx }/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
-							<li><a href="product.html">单品介绍</a></li>
+							<li><a href="${ctx }/menusToUrl?url=product">单品介绍</a></li>
 							<li><a href="product.html">套装介绍</a></li>
 						</ul>
 					</div>
@@ -292,8 +292,8 @@
 	<div class="footer">
 		<div class="linkList">
 			<ul>
-				<li><a href="#">走进蓝白</a></li>
-				<li><a href="#">明星产品</a></li>
+				<li><a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a></li>
+				<li><a href="${ctx }/menusToUrl?url=product">明星产品</a></li>
 				<li><a href="#">活动管理</a></li>
 				<li><a href="#">精彩瞬间</a></li>
 				<li><a href="#">联系我们</a></li>
