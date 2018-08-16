@@ -1,3 +1,7 @@
+#service
+#server:
+#    port: 7788
+
 #datasource
 spring:
     datasource:
@@ -42,9 +46,9 @@ spring:
         view:
           prefix: /WEB-INF/views/
           suffix: .jsp 
-#        static-path-pattern: /static/**
-#    resources:
-#      static-locations: classpath:/META-INF/views/,classpath:/webapp/,classpath:/resources/
+#          static-path-pattern: /**
+#        resources:
+#           static-locations: file:${web.upload-path}
             
           
     mybatis:
@@ -55,7 +59,8 @@ spring:
         restart:
             enabled: true
 
-        
+web:
+  upload-path: D:/upload/img/
     
 
 
