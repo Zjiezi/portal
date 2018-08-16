@@ -14,20 +14,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebAppConfig implements WebMvcConfigurer  {  
 	
-    @Value("${web.upload-path}")
-    private String path; 
 	
     @Override  
     public void addInterceptors(InterceptorRegistry registry) {  
         //注册自定义拦截器，添加拦截路径和排除拦截路径  
         registry.addInterceptor(new InterceptorConfig())
         .addPathPatterns("/**")
-        .excludePathPatterns("/backLogin","/userLogin","/","/static/**","/menusToUrl",path);
+        .excludePathPatterns("/backLogin","/userLogin","/","/static/**","/menusToUrl","/upload/**");
     }
     
-//    @Override  
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {  
-//    	registry.addResourceHandler("/upload/img/**").addResourceLocations("file:path");
-//    }
+    @Override  
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {  
+    	registry.addResourceHandler("/upload/img/**").addResourceLocations("file:D:/upload/img/");
+    }
 
 }

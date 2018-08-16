@@ -46,6 +46,11 @@ spring:
         view:
           prefix: /WEB-INF/views/
           suffix: .jsp 
+    http:
+        multipart:
+          maxFileSize: 100Mb
+          maxRequestSize: 100Mb
+          
 #          static-path-pattern: /**
 #        resources:
 #           static-locations: file:${web.upload-path}
