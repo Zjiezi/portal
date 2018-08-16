@@ -109,21 +109,39 @@
                         </div>
 				<form class="form-horizontal addDictDivTypeForm">
 				<div class="row col-xs-12  col-sm-12  col-md-12 ">
-				<div style="height: 30px"></div>
-					<div class="form-group">
-                                        <label class="col-sm-3 control-label">产品编号:</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" id="productNumber" class="form-control">
-                                        </div>
-                 </div>
+				<div class="form-group">
+                           <label class="col-sm-3 col-md-2 control-label">产品名:</label>
+                              <div class="col-sm-3 col-md-3">
+                                  <input type="text" id="productName" class="form-control ">
+                              </div>
+                               <div >
+                            <label class="col-sm-2 col-md-2 control-label" >产品编号:</label>
+                                <div class="col-sm-3 col-md-3">
+                                  <input type="text"   id="productNumber"  class="form-control ">
+                                </div>
+                                </div>
+                    	</div>
+                    	<div class="form-group">
+                           <label class="col-sm-3 col-md-2 control-label">产品单价:</label>
+                              <div class="col-sm-3 col-md-3">
+                                  <input type="text" id="productPrice"  class="form-control ">
+                              </div>
+                               <div >
+                            <label class="col-sm-2 col-md-2 control-label" >产品备注:</label>
+                                <div class="col-sm-3 col-md-3">
+                                  <input type="text"   placeholder="可不填" id="productRemark"  class="form-control ">
+                                </div>
+                                </div>
+                    	</div>
                  <div class="form-group">
-                                        <label class="col-sm-3 control-label">产品名:</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" id="productName" class="form-control">
-                                        </div>
-                 </div>
-                 <div class="form-group">
+                 <label class="col-sm-2 col-md-2 control-label" >详情介绍:</label>
+                      <div class="col-sm-8 " > 
+                      <textarea rows="7" cols="50" class="form-control" id="details"></textarea>
                       
+                      </div>
+                 </div>
+                 <div class="form-group hidden">
+                      <div class="col-sm-6" id="productId"> </div>
                  </div>
 </div>
 </form>
@@ -443,10 +461,13 @@
 							  postData={
 									  number:$("#productNumber").val(),
 									  name:$("#productName").val(),
-									  
+									  price:$("#productPrice").val(),
+									  remark:$("#productRemark").val(),
+									  details:$("#details").val(),
 							  }
+							  console.log(postData.details)
 							  $.ajax({
-									url:"${ctx}/addProduct",
+									url:"${ctx}/product/addProduct",
 									data:postData,
 						            traditional: true,
 									type:"post",
