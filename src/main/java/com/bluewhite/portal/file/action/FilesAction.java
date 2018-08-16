@@ -41,10 +41,10 @@ public class FilesAction {
 				MultipartFile file = files[i];
 				// 保存文件
 				Files fi = filesService.upFile(file, request);
-				filesList.add(fi);
+//				filesList.add(fi);
+				cr.setData(fi);
 			}
 		}
-		cr.setData(filesList);
 		cr.setMessage("上传"+filesList.size()+"张图片成功");
 		return cr;
 	}
