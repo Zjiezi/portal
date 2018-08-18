@@ -284,9 +284,9 @@
 			      				$("#productRemark").val(o.remark);
 			      				$("#details").val(o.details);
 			      				$(o.files).each(function(j,k){
-			      				th='<img src='+k.url+'>'
-			      					
-			      				$("#my-awesome-dropzone").html(th);
+			      				th='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+k.name+' src='+k.url+'></div></div>'
+			      				
+			      				 $("#my-awesome-dropzone").html(th); 
 			      				})
 			      			}); 
 						   	layer.close(index);
@@ -380,7 +380,7 @@
 				
 				//新增产品
 				$('#addproduct').on('click',function(){
-					
+					$("#my-awesome-dropzone").text("");
 					var _index
 					var index
 					var postData
