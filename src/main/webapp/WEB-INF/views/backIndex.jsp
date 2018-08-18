@@ -96,7 +96,7 @@
                
            
         <!--隐藏框 产品新增开始  -->
-        <div id="addDictDivType" style="display: none;">
+<div id="addDictDivType" style="display: none;">
 			<div class=" col-xs-12  col-sm-12  col-md-12 ">
 				<!-- PAGE CONTENT BEGINS -->
 				 <div class="panel panel-default">
@@ -140,7 +140,7 @@
                       
                       </div>
                  </div>
-                 <div class="form-group hidden">
+                 <div class="form-group">
                       <div class="col-sm-6" id="productId"> </div>
                  </div>
 </div>
@@ -256,48 +256,79 @@
 			}
 			
 			this.loadEvents = function(){
-				//触发批次弹框
-				$('.addbatch').on('click',function(){
+				//修改方法
+				$('.update').on('click',function(){
+					
+					var that=$(this);
+					var id=that.data('id');
+					var datate={
+							id:id,
+					}
+					var th="";
+					$.ajax({
+					      url:"${ctx}/product/productPage",
+					      data:datate,
+					      type:"GET",
+					      beforeSend:function(){
+						 	  index = layer.load(1, {
+							  shade: [0.1,'#fff'] //0.1透明度的白色背景
+							  });
+						  }, 
+			      		  success: function (result) {
+			      			
+			      			 $(result.data.rows).each(function(i,o){
+			      				
+			      				$("#productNumber").val(o.number);
+			      				$("#productName").val(o.name);
+			      				$("#productPrice").val(o.price);
+			      				$("#productRemark").val(o.remark);
+			      				$("#details").val(o.details);
+			      				$(o.files).each(function(j,k){
+			      				th='<img src='+k.url+'>'
+			      					
+			      				$("#my-awesome-dropzone").html(th);
+			      				})
+			      			}); 
+						   	layer.close(index);
+					      },error:function(){
+								layer.msg("加载失败！", {icon: 2});
+								layer.close(index);
+						  }
+					  });
+					
+					
+					
 					var _index
 					var index
 					var postData
-					var dicDiv=$('#addbatch');
-					var name=$(this).data('name');
-					var bacthDepartmentPrice=$(this).parent().parent().find('.departmentPrice').text();
-					var bacthHairPrice=$(this).parent().parent().find('.hairPrice').text();
-					$('#proName').val(name);
-					var id=$(this).data('id');
+					var dicDiv=$('#addDictDivType');
 					_index = layer.open({
 						  type: 1,
 						  skin: 'layui-layer-rim', //加上边框
-						  area: ['30%', '50%'], 
+						  area: ['60%', '80%'], 
 						  btnAlign: 'c',//宽高
 						  maxmin: true,
-						  title:"填写批次",
+						  title:"新增产品",
 						  content: dicDiv,
 						  btn: ['确定', '取消'],
 						  yes:function(index, layero){
-							  if($('#bacthNumber').val()==""){
-								  return layer.msg("批次号不能为空", {icon: 2});
-							  }
-							  if($('#prosum').val()==""){
-								  return layer.msg("数量不能为空", {icon: 2});
-							  }
+							  var a=$("#productId").text();
+							  a=a.substring(0,a.length-1);
+							  var arr=new Array();
+							  arr=a
 							  postData={
-									  productId:id,
-									  bacthNumber:$('#bacthNumber').val(),
-									  number:$('#prosum').val(),
-									  remarks:$('#remarks').val(),
-									  bacthDepartmentPrice:bacthDepartmentPrice,
-									  bacthHairPrice:bacthHairPrice,
-									  type:1,
-									  allotTime:$('#Time').val(),
-									  flag:0,
+									  number:$("#productNumber").val(),
+									  name:$("#productName").val(),
+									  price:$("#productPrice").val(),
+									  remark:$("#productRemark").val(),
+									  details:$("#details").val(),
+									  filesIds:arr,
 							  }
-							   $.ajax({
-									url:"${ctx}/bacth/addBacth",
+							  $.ajax({
+									url:"${ctx}/product/addProduct",
 									data:postData,
-									type:"POST",
+						            traditional: true,
+									type:"post",
 									beforeSend:function(){
 										index = layer.load(1, {
 											  shade: [0.1,'#fff'] //0.1透明度的白色背景
@@ -307,124 +338,31 @@
 									success:function(result){
 										if(0==result.code){
 											layer.msg("添加成功！", {icon: 1});
-											 
-											$('.addbatchForm')[0].reset(); 
-											$('#addbatch').hide();
-											
+											$('#addDictDivType').hide();
+											$(".addDictDivTypeForm")[0].reset();
+											self.loadPagination(data);
+											$(".dz-started").text("");
+											$("#productId").text("");
 										}else{
-											layer.msg(result.message, {icon: 2});
+											layer.msg("添加失败", {icon: 2});
 										}
 										
 										layer.close(index);
 									},error:function(){
-										layer.msg("操作失败！", {icon: 2});
+										layer.msg(result.message, {icon: 2});
 										layer.close(index);
 									}
-								}); 
+								});
 							},
 						  end:function(){
-							  $('.addbatchForm')[0].reset(); 
-							  $('#addbatch').hide();
-						  }
-					});
-				})
-				
-				
-				
-				//触发工序弹框 加载内容方法
-				$('.addprocedure').on('click',function(){
-					var _index
-					var productId=$(this).data('id')
-					var name=$(this).data('name')
-					var dicDiv=$('#addworking');
-					  //打开隐藏框
-					_index = layer.open({
-						  type: 1,
-						  skin: 'layui-layer-rim', //加上边框
-						  area: ['60%', '60%'], 
-						  btnAlign: 'c',//宽高
-						  maxmin: true,
-						  title:name,
-						  content: dicDiv,
-						  
-						  yes:function(index, layero){
-							 
-							},
-						  end:function(){
-							  $('#addworking').hide();
-							  data={
-									page:self.getIndex(),
-								  	size:13,	
-								  	type:1,
-								  	name:$('#name').val(),
-						  			number:$('#number').val(),
-							  }
-							self.loadPagination(data);
-						  }
-					});
-					self.setCache(productId);
-					self.loadworking();
-					
-					
-				})
-				//修改方法
-				$('.update').on('click',function(){
-					if($(this).text() == "编辑"){
-						$(this).text("保存")
+							  
+							  $('.addDictDivTypeForm')[0].reset(); 
+							  $('#addDictDivType').hide();
 						
-						$(this).parent().siblings(".edit").each(function() {  // 获取当前行的其他单元格
-
-				            $(this).html("<input class='input-mini' type='text' value='"+$(this).text()+"'>");
-				        });
-					}else{
-							$(this).text("编辑")
-						$(this).parent().siblings(".edit").each(function() {  // 获取当前行的其他单元格
-
-					            obj_text = $(this).find("input:text");    // 判断单元格下是否有文本框
-
-					       
-					                $(this).html(obj_text.val()); 
-									
-							});
 							
-							var postData = {
-									type:1,
-									id:$(this).data('id'),
-									number:$(this).parent().parent('tr').find(".number").text(),
-									name:$(this).parent().parent('tr').find(".name").text(),
-							}
-							
-							var index;
-							$.ajax({
-								url:"${ctx}/updateProduct",
-								data:postData,
-								type:"POST",
-								beforeSend:function(){
-									index = layer.load(1, {
-										  shade: [0.1,'#fff'] //0.1透明度的白色背景
-										});
-								},
-								
-								success:function(result){
-									if(0==result.code){
-									layer.msg("修改成功！", {icon: 1});
-									layer.close(index);
-									}else{
-										layer.msg("修改失败！", {icon: 1});
-										layer.close(index);
-									}
-								},error:function(){
-									layer.msg("操作失败！", {icon: 2});
-									layer.close(index);
-								}
-							});
-							
-							
-							
-							
-					}
-				})
-				
+						  }
+					});
+				});
 			}
 			this.events = function(){
 				//查询
@@ -457,15 +395,18 @@
 						  content: dicDiv,
 						  btn: ['确定', '取消'],
 						  yes:function(index, layero){
-							 
+							  var a=$("#productId").text();
+							  a=a.substring(0,a.length-1);
+							  var arr=new Array();
+							  arr=a
 							  postData={
 									  number:$("#productNumber").val(),
 									  name:$("#productName").val(),
 									  price:$("#productPrice").val(),
 									  remark:$("#productRemark").val(),
 									  details:$("#details").val(),
+									  filesIds:arr,
 							  }
-							  console.log(postData.details)
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
 									data:postData,
@@ -480,22 +421,24 @@
 									success:function(result){
 										if(0==result.code){
 											layer.msg("添加成功！", {icon: 1});
+											$('#addDictDivType').hide();
 											$(".addDictDivTypeForm")[0].reset();
 											self.loadPagination(data);
-											$('#addDictDivType').hide();
-											
+											$(".dz-started").text("");
+											$("#productId").text("");
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
 										
 										layer.close(index);
 									},error:function(){
-										layer.msg("操作失败！", {icon: 2});
+										layer.msg(result.message, {icon: 2});
 										layer.close(index);
 									}
 								});
 							},
 						  end:function(){
+							  
 							  $('.addDictDivTypeForm')[0].reset(); 
 							  $('#addDictDivType').hide();
 						
