@@ -41,15 +41,14 @@ spring:
     servlet:
         load-on-startup: -1
         static-path-pattern: /**
+        multipart:
+          maxFileSize: 100Mb
+          maxRequestSize: 100Mb
         
     mvc:
         view:
           prefix: /WEB-INF/views/
           suffix: .jsp 
-    http:
-        multipart:
-          maxFileSize: 100Mb
-          maxRequestSize: 100Mb
           
 #          static-path-pattern: /**
 #        resources:
