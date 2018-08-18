@@ -34,7 +34,6 @@
 *.tar
 *.zip
 *.war
-*.yml
 
 # Log file
 *.log
