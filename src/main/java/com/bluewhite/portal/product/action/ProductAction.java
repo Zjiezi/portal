@@ -82,19 +82,22 @@ public class ProductAction {
 		if (prodcut.getId() != null) {
 			Optional<Product> oldProdcut = service.findOne(prodcut.getId());
 			if (oldProdcut.isPresent()) {
-				BeanCopyUtils.copyNullProperties(oldProdcut, prodcut);
-				prodcut.setCreatedAt(oldProdcut.get().getCreatedAt());
+				BeanCopyUtils.copyNotEmpty(prodcut,oldProdcut.get(),"");
+				service.save(oldProdcut.get());
 			}
+		}else{
+			service.save(prodcut);
 		}
-		service.save(prodcut);
 		
-		if (prodcut.getFilesIds().length > 0) {
-			for (int i = 0; i < prodcut.getFilesIds().length; i++) {
-				Long id = Long.parseLong(prodcut.getFilesIds()[i]);
-				Optional<Files> files = filesService.findOne(id);
-				if(files.isPresent()){
-					files.get().setProductId(prodcut.getId());
-					filesService.save(files.get());
+		if(prodcut.getFilesIds()!=null){
+			if (prodcut.getFilesIds().length > 0) {
+				for (int i = 0; i < prodcut.getFilesIds().length; i++) {
+					Long id = Long.parseLong(prodcut.getFilesIds()[i]);
+					Optional<Files> files = filesService.findOne(id);
+					if(files.isPresent()){
+						files.get().setProductId(prodcut.getId());
+						filesService.save(files.get());
+					}
 				}
 			}
 		}
