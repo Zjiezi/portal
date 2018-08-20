@@ -6,10 +6,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.fileupload.FileItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.bluewhite.portal.base.BaseServiceImpl;
 import com.bluewhite.portal.file.dao.FilesDao;
@@ -26,6 +28,7 @@ public class FilesServiceImpl extends BaseServiceImpl<Files, Long> implements Fi
 
 	@Override
 	public Files upFile(MultipartFile file, HttpServletRequest request) {
+
 		Files files = new Files();
 		String fileName = file.getOriginalFilename();
 		String type = file.getContentType();
@@ -45,6 +48,7 @@ public class FilesServiceImpl extends BaseServiceImpl<Files, Long> implements Fi
 	        files.setType(type);
 	        files.setUrl("upload/img/"+fileName);
 	        files.setSize(size);
+	        files.setLocationType(request.getParameter("locationType"));
 	        dao.save(files);
 		return files;
 	}

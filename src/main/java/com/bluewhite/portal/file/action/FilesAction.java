@@ -38,9 +38,11 @@ public class FilesAction {
 				// 保存文件
 				Files fi = filesService.upFile(file, request);
 				cr.setData(fi);
+				cr.setMessage("图片上传成功");
 			}
+		}else{
+			cr.setMessage("图片不能为空");
 		}
-		cr.setMessage("图片上传成功");
 		return cr;
 	}
 	
