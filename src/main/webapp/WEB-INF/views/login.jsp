@@ -68,7 +68,6 @@
 						      url:"${ctx}/userLogin",
 						      type:"post", 
 						   	  data: $('#form').serialize(), 
-						     
 				      		  success: function (result) {
 				      			  if(result.code==0){
 					      				 location.href = result.data.url;

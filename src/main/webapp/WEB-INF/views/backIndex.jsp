@@ -218,7 +218,7 @@
 		      				+'<td class="text-center edit number">'+o.number+'</td>'
 		      				+'<td class="text-center edit name">'+o.name+'</td>'
 		      				+'<td class="text-center edit price">'+o.price+'</td>'
-							+'<td class="text-center"><button class="btn btn-xs btn-info  btn-trans update" data-id='+o.id+'>编辑</button>  <button class="btn btn-xs btn-primary btn-trans addprocedure" data-id='+o.id+' data-name='+o.name+'>添加工序</button> <button class="btn btn-xs btn-success btn-trans addbatch" data-id='+o.id+' data-name='+o.name+'>填写批次</button></td></tr>'
+							+'<td class="text-center"><button class="btn btn-xs btn-info  btn-trans update" data-id='+o.id+' data-name='+o.name+'>编辑</button>  <button class="btn btn-xs btn-danger btn-trans delete" data-id='+o.id+'>删除</button></td></tr>'
 							
 		      			}); 
 		      			self.setIndex(result.data.pageNum);
@@ -254,11 +254,45 @@
 			}
 			
 			this.loadEvents = function(){
+				$('.delete').on('click',function(){
+					var that=$(this);
+					var postData = {
+							ids:$(this).data('id'),
+					}
+					var index;
+					 index = layer.confirm('确定删除吗', {btn: ['确定', '取消']},function(){
+					$.ajax({
+						url:"${ctx}/product/deleteProduct",
+						data:postData,
+						type:"GET",
+						beforeSend:function(){
+							index = layer.load(1, {
+								  shade: [0.1,'#fff'] //0.1透明度的白色背景
+								});
+						},
+						
+						success:function(result){
+							if(0==result.code){
+							layer.msg("删除成功！", {icon: 1});
+							that.parent().parent().hide();
+							layer.close(index);
+							}else{
+								layer.msg("删除失败！", {icon: 1});
+								layer.close(index);
+							}
+						},error:function(){
+							layer.msg("操作失败！", {icon: 2});
+							layer.close(index);
+						}
+					});
+					 })
+				})
 				//修改方法
 				$('.update').on('click',function(){
 					
 					var that=$(this);
 					var id=that.data('id');
+					var name=that.data('name');
 					var datate={
 							id:id,
 					}
@@ -306,7 +340,6 @@
 										success:function(result){
 											if(0==result.code){
 											layer.msg("删除成功！", {icon: 1});
-											console.log(thate.parent())
 											thate.parent().hide();
 											layer.close(index);
 											}else{
@@ -337,7 +370,7 @@
 						  area: ['60%', '80%'], 
 						  btnAlign: 'c',//宽高
 						  maxmin: true,
-						  title:"产品信息",
+						  title:name,
 						  content: dicDiv,
 						  btn: ['确定', '取消'],
 						  yes:function(index, layero){
@@ -373,6 +406,7 @@
 											  		size:13,	
 											  		
 											} 
+											$("#productId").text("");
 											self.loadPagination(data);
 										}else{
 											layer.msg("添加失败", {icon: 2});
@@ -386,7 +420,51 @@
 								});
 							},
 						  end:function(){
-							  
+							  var a=$("#productId").text();
+							  a=a.substring(0,a.length-1);
+							  var arr=new Array();
+							  arr=a
+							  var id=that.data('id');
+							  postData={
+               						  id:id,
+									  number:$("#productNumber").val(),
+									  name:$("#productName").val(),
+									  price:$("#productPrice").val(),
+									  remark:$("#productRemark").val(),
+									  details:$("#details").val(),
+									  filesIds:arr,
+							  }
+							  $.ajax({
+									url:"${ctx}/product/addProduct",
+									data:postData,
+						            traditional: true,
+									type:"post",
+									beforeSend:function(){
+										index = layer.load(1, {
+											  shade: [0.1,'#fff'] //0.1透明度的白色背景
+											});
+									},
+									
+									success:function(result){
+										if(0==result.code){
+											layer.msg("修改成功", {icon: 1});
+											$("#productId").text("");
+											var data={
+													page:self.getIndex(),
+											  		size:13,	
+											  		
+											} 
+											self.loadPagination(data);
+										}else{
+											layer.msg("添加失败", {icon: 2});
+										}
+										
+										layer.close(index);
+									},error:function(){
+										layer.msg(result.message, {icon: 2});
+										layer.close(index);
+									}
+								});
 							  $('.addDictDivTypeForm')[0].reset(); 
 							  $('#addDictDivType').hide();
 						
@@ -469,6 +547,8 @@
 								});
 							},
 						  end:function(){
+							  
+							  
 							  
 							  $('.addDictDivTypeForm')[0].reset(); 
 							  $('#addDictDivType').hide();
