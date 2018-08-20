@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import com.bluewhite.portal.common.BeanCopyUtils;
+
 /**
  * <p>抽象service层基类 提供一些简便方法
  * <p/>
@@ -49,8 +51,9 @@ public abstract class BaseServiceImpl<T extends AbstractEntity<ID>, ID extends S
      * @param t 实体
      * @return 返回更新的实体
      */
-    public T update(T t) {
-        return baseRepository.save(t);
+    public T update(T t,T ot) {
+    	BeanCopyUtils.copyNotEmpty(t,ot,"");
+        return baseRepository.save(ot);
     }
 
     /**

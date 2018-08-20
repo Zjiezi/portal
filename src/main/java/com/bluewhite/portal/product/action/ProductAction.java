@@ -82,8 +82,7 @@ public class ProductAction {
 		if (prodcut.getId() != null) {
 			Optional<Product> oldProdcut = service.findOne(prodcut.getId());
 			if (oldProdcut.isPresent()) {
-				BeanCopyUtils.copyNotEmpty(prodcut,oldProdcut.get(),"");
-				service.save(oldProdcut.get());
+				service.update(prodcut,oldProdcut.get());
 			}
 		}else{
 			service.save(prodcut);

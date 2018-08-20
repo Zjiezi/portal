@@ -66,6 +66,14 @@ public class IndexAction {
 		return url;
 	}
 	
+	/**
+	 *	根据不同菜单跳转不同的jsp
+	 */
+	@GetMapping(value = "/apiMenusToUrl")
+	public String apiMenusToJsp(HttpServletRequest request,String url) {
+		return url;
+	}
+	
 	
 	/**
 	 * 后台登陆
