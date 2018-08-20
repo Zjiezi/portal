@@ -75,12 +75,12 @@ public class FilesAction {
 	 * @return
 	 */
 	@GetMapping(value = "/files/getPicture")
-	public CommonResponse getPicture(HttpServletRequest request,String type) {
+	public CommonResponse getPicture(HttpServletRequest request,String locationType) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(ClearCascadeJSON
 				.get()
 				.addRetainTerm(Files.class,"name","url","type")
-				.format(filesService.findByType(type)).toJSON());
+				.format(filesService.findByType(locationType)).toJSON());
 		cr.setMessage("成功");
 		return cr;
 	}
