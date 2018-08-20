@@ -140,7 +140,7 @@
                       
                       </div>
                  </div>
-                 <div class="form-group">
+                 <div class="form-group hidden">
                       <div class="col-sm-6" id="productId"> </div>
                  </div>
 </div>
@@ -166,9 +166,7 @@
      <script src="${ctx }/static/tc/js/vendor/dropzone.min.js"></script>
     <script>
  
-  /*  $(document).ready(function() {
-        $('#example').dataTable();
-    });  */
+  
    jQuery(function($){
    	var Login = function(){
 			var self = this;
@@ -284,9 +282,43 @@
 			      				$("#productRemark").val(o.remark);
 			      				$("#details").val(o.details);
 			      				$(o.files).each(function(j,k){
-			      				th='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+k.name+' src='+k.url+'></div></div>'
+			      				th+='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+k.name+' src='+k.url+'></div><div class="dz-success-mark" data-id="'+k.id+'"></div></div>'
 			      				
+			      				})
 			      				 $("#my-awesome-dropzone").html(th); 
+			      				$('.dz-success-mark').on('click',function(){
+			      					var thate=$(this);
+			      					var postData={
+			      							id:$(this).data('id'),
+			      					}
+			      					var index;
+									 index = layer.confirm('确定删除吗', {btn: ['确定', '取消']},function(){
+									$.ajax({
+										url:"${ctx}/files/deletefiles",
+										data:postData,
+										type:"GET",
+										beforeSend:function(){
+											index = layer.load(1, {
+												  shade: [0.1,'#fff'] //0.1透明度的白色背景
+												});
+										},
+										
+										success:function(result){
+											if(0==result.code){
+											layer.msg("删除成功！", {icon: 1});
+											console.log(thate.parent())
+											thate.parent().hide();
+											layer.close(index);
+											}else{
+												layer.msg("删除失败！", {icon: 2});
+												layer.close(index);
+											}
+										},error:function(){
+											layer.msg("操作失败！", {icon: 2});
+											layer.close(index);
+										}
+									});
+									 })
 			      				})
 			      			}); 
 						   	layer.close(index);
@@ -295,9 +327,6 @@
 								layer.close(index);
 						  }
 					  });
-					
-					
-					
 					var _index
 					var index
 					var postData
@@ -308,7 +337,7 @@
 						  area: ['60%', '80%'], 
 						  btnAlign: 'c',//宽高
 						  maxmin: true,
-						  title:"新增产品",
+						  title:"产品信息",
 						  content: dicDiv,
 						  btn: ['确定', '取消'],
 						  yes:function(index, layero){
@@ -317,6 +346,7 @@
 							  var arr=new Array();
 							  arr=a
 							  postData={
+               						  id:id,
 									  number:$("#productNumber").val(),
 									  name:$("#productName").val(),
 									  price:$("#productPrice").val(),
@@ -337,12 +367,13 @@
 									
 									success:function(result){
 										if(0==result.code){
-											layer.msg("添加成功！", {icon: 1});
-											$('#addDictDivType').hide();
-											$(".addDictDivTypeForm")[0].reset();
+											layer.msg("修改成功", {icon: 1});
+											var data={
+													page:self.getIndex(),
+											  		size:13,	
+											  		
+											} 
 											self.loadPagination(data);
-											$(".dz-started").text("");
-											$("#productId").text("");
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
