@@ -17,6 +17,7 @@
    <link rel="stylesheet" type="text/css" href="${ctx }/static/tc/lun/style.css">
    <link rel="stylesheet" type="text/css" href="${ctx }/static/tc/css/dropzone.css"> 
   <link rel="stylesheet" type="text/css" href="${ctx }/static/tc/css/basic.css">
+  
 </head>
   
 <body>
@@ -41,18 +42,12 @@
 					<div class="row">
 						<div class="col-xs-8 col-sm-8 col-md-8">
 							<div class="input-group"> 
-								<table><tr><td>模块选择:</td><td><select class="form-control" id="selectstate"><option value="home">首页</option></select></td>
+								<table><tr><td>模块选择:</td><td><select class="form-control" id="selectstate"><option value="home">首页</option><option value="home2">中</option></select></td>
 								</tr></table> 
 								<span class="input-group-btn">
-									<button type="button" class="btn btn-info btn-square btn-sm btn-3d searchtask">
+									<button type="button" class="btn btn-info btn-square btn-sm btn-3d searchtask" id="searchtask">
 										查&nbsp找
 									</button>
-								</span>
-								<td>&nbsp&nbsp&nbsp&nbsp</td>
-								<span class="input-group-btn">
-									 <button type="button" id="addproduct" class="btn btn-success  btn-sm btn-3d pull-right">
-									 新增产品
-									 </button>
 								</span>
 								  
 							</div>
@@ -66,8 +61,8 @@
                                     <thead>
                                        <div class="panel panel-default">
                             
-                            <div class="panel-body">
-                                <form action="#" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
+                            <div class="panel-body" id="wang">
+                                <form action="#" class="dropzone" id="my-awesome-dropzone"  enctype="multipart/form-data">
                                 </form>
 
                             </div>
@@ -111,7 +106,7 @@
     <script src="${ctx }/static/tc/plugins/dataTables/js/jquery.dataTables.js"></script>
     <script src="${ctx }/static/tc/plugins/dataTables/js/dataTables.bootstrap.js"></script>
     <script src="${ctx }/static/tc/js/laydate-icon/laydate.js"></script>
-     <script src="${ctx }/static/tc/js/vendor/dropzone.min.js"></script>
+     <script id="load" role='reload' src="${ctx }/static/tc/js/vendor/dropzone.min.js"></script>
     <script>
  
   
@@ -149,6 +144,7 @@
 			  this.loadPagination = function(data){
 			    var index;
 			    var html = '';
+			    var th="";
 			    $.ajax({
 				      url:"${ctx}/files/getPicture",
 				      data:data,
@@ -159,17 +155,10 @@
 						  });
 					  }, 
 		      		  success: function (result) {
-		      			
-		      			 $(result.data.rows).each(function(i,o){
-		      				
-		      				html +='<tr>'
-		      				+'<td class="text-center id">'+o.id+'</td>'
-		      				+'<td class="text-center edit number">'+o.number+'</td>'
-		      				+'<td class="text-center edit name">'+o.name+'</td>'
-		      				+'<td class="text-center edit price">'+o.price+'</td>'
-							+'<td class="text-center"><button class="btn btn-xs btn-info  btn-trans update" data-id='+o.id+' data-name='+o.name+'>编辑</button>  <button class="btn btn-xs btn-danger btn-trans delete" data-id='+o.id+'>删除</button></td></tr>'
-							
+		      			 $(result.data).each(function(i,o){
+			      				th+='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+o.name+' src='+o.url+'></div><div class="dz-success-mark" data-id="'+o.id+'"></div></div>'
 		      			}); 
+			      				 $("#my-awesome-dropzone").html(th);
 		      			self.setIndex(result.data.pageNum);
 				        //显示分页
 					   	 laypage({
@@ -180,11 +169,7 @@
 					    	  if(!first){ 
 					    		 
 						        	var _data = {
-						        			page:obj.curr,
-									  		size:13,
-									  		type:1,
-									  		name:$('#name').val(),
-								  			number:$('#number').val(),
+						        			locationType:$('#selectstate').val(),
 								  	}
 						        
 						            self.loadPagination(_data);
@@ -203,15 +188,16 @@
 			}
 			
 			this.loadEvents = function(){
-				$('.delete').on('click',function(){
-					var that=$(this);
-					var postData = {
-							ids:$(this).data('id'),
-					}
-					var index;
+				//删除图片
+				$('.dz-success-mark').on('click',function(){
+  					var thate=$(this);
+  					var postData={
+  							id:$(this).data('id'),
+  					}
+  					var index;
 					 index = layer.confirm('确定删除吗', {btn: ['确定', '取消']},function(){
 					$.ajax({
-						url:"${ctx}/product/deleteProduct",
+						url:"${ctx}/files/deletefiles",
 						data:postData,
 						type:"GET",
 						beforeSend:function(){
@@ -223,10 +209,10 @@
 						success:function(result){
 							if(0==result.code){
 							layer.msg("删除成功！", {icon: 1});
-							that.parent().parent().hide();
+							thate.parent().hide();
 							layer.close(index);
 							}else{
-								layer.msg("删除失败！", {icon: 1});
+								layer.msg("删除失败！", {icon: 2});
 								layer.close(index);
 							}
 						},error:function(){
@@ -235,277 +221,26 @@
 						}
 					});
 					 })
-				})
-				//修改方法
-				$('.update').on('click',function(){
-					
-					var that=$(this);
-					var id=that.data('id');
-					var name=that.data('name');
-					var datate={
-							id:id,
-					}
-					var th="";
-					$.ajax({
-					      url:"${ctx}/product/productPage",
-					      data:datate,
-					      type:"GET",
-					      beforeSend:function(){
-						 	  index = layer.load(1, {
-							  shade: [0.1,'#fff'] //0.1透明度的白色背景
-							  });
-						  }, 
-			      		  success: function (result) {
-			      			
-			      			 $(result.data.rows).each(function(i,o){
-			      				
-			      				$("#productNumber").val(o.number);
-			      				$("#productName").val(o.name);
-			      				$("#productPrice").val(o.price);
-			      				$("#productRemark").val(o.remark);
-			      				$("#details").val(o.details);
-			      				$(o.files).each(function(j,k){
-			      				th+='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+k.name+' src='+k.url+'></div><div class="dz-success-mark" data-id="'+k.id+'"></div></div>'
-			      				
-			      				})
-			      				 $("#my-awesome-dropzone").html(th); 
-			      				$('.dz-success-mark').on('click',function(){
-			      					var thate=$(this);
-			      					var postData={
-			      							id:$(this).data('id'),
-			      					}
-			      					var index;
-									 index = layer.confirm('确定删除吗', {btn: ['确定', '取消']},function(){
-									$.ajax({
-										url:"${ctx}/files/deletefiles",
-										data:postData,
-										type:"GET",
-										beforeSend:function(){
-											index = layer.load(1, {
-												  shade: [0.1,'#fff'] //0.1透明度的白色背景
-												});
-										},
-										
-										success:function(result){
-											if(0==result.code){
-											layer.msg("删除成功！", {icon: 1});
-											thate.parent().hide();
-											layer.close(index);
-											}else{
-												layer.msg("删除失败！", {icon: 2});
-												layer.close(index);
-											}
-										},error:function(){
-											layer.msg("操作失败！", {icon: 2});
-											layer.close(index);
-										}
-									});
-									 })
-			      				})
-			      			}); 
-						   	layer.close(index);
-					      },error:function(){
-								layer.msg("加载失败！", {icon: 2});
-								layer.close(index);
-						  }
-					  });
-					var _index
-					var index
-					var postData
-					var dicDiv=$('#addDictDivType');
-					_index = layer.open({
-						  type: 1,
-						  skin: 'layui-layer-rim', //加上边框
-						  area: ['60%', '80%'], 
-						  btnAlign: 'c',//宽高
-						  maxmin: true,
-						  title:name,
-						  content: dicDiv,
-						  btn: ['确定', '取消'],
-						  yes:function(index, layero){
-							  var a=$("#productId").text();
-							  a=a.substring(0,a.length-1);
-							  var arr=new Array();
-							  arr=a
-							  postData={
-               						  id:id,
-									  number:$("#productNumber").val(),
-									  name:$("#productName").val(),
-									  price:$("#productPrice").val(),
-									  remark:$("#productRemark").val(),
-									  details:$("#details").val(),
-									  filesIds:arr,
-							  }
-							  $.ajax({
-									url:"${ctx}/product/addProduct",
-									data:postData,
-						            traditional: true,
-									type:"post",
-									beforeSend:function(){
-										index = layer.load(1, {
-											  shade: [0.1,'#fff'] //0.1透明度的白色背景
-											});
-									},
-									
-									success:function(result){
-										if(0==result.code){
-											layer.msg("修改成功", {icon: 1});
-											var data={
-													page:self.getIndex(),
-											  		size:13,	
-											  		
-											} 
-											$("#productId").text("");
-											self.loadPagination(data);
-										}else{
-											layer.msg("添加失败", {icon: 2});
-										}
-										
-										layer.close(index);
-									},error:function(){
-										layer.msg(result.message, {icon: 2});
-										layer.close(index);
-									}
-								});
-							},
-						  end:function(){
-							  var a=$("#productId").text();
-							  a=a.substring(0,a.length-1);
-							  var arr=new Array();
-							  arr=a
-							  var id=that.data('id');
-							  postData={
-               						  id:id,
-									  number:$("#productNumber").val(),
-									  name:$("#productName").val(),
-									  price:$("#productPrice").val(),
-									  remark:$("#productRemark").val(),
-									  details:$("#details").val(),
-									  filesIds:arr,
-							  }
-							  $.ajax({
-									url:"${ctx}/product/addProduct",
-									data:postData,
-						            traditional: true,
-									type:"post",
-									beforeSend:function(){
-										index = layer.load(1, {
-											  shade: [0.1,'#fff'] //0.1透明度的白色背景
-											});
-									},
-									
-									success:function(result){
-										if(0==result.code){
-											layer.msg("修改成功", {icon: 1});
-											$("#productId").text("");
-											var data={
-													page:self.getIndex(),
-											  		size:13,	
-											  		
-											} 
-											self.loadPagination(data);
-										}else{
-											layer.msg("添加失败", {icon: 2});
-										}
-										
-										layer.close(index);
-									},error:function(){
-										layer.msg(result.message, {icon: 2});
-										layer.close(index);
-									}
-								});
-							  $('.addDictDivTypeForm')[0].reset(); 
-							  $('#addDictDivType').hide();
-						
-							
-						  }
-					});
-				});
+  				})
+			
 			}
+			
 			this.events = function(){
 				//查询
 				$('.searchtask').on('click',function(){
+					'<div class="panel-body" id="wang"><form action="#" class="dropzone" id="my-awesome-dropzone"  enctype="multipart/form-data">'
+                    +'</form></div>'
+				
+					 $.getScript("${ctx }/static/tc/js/vendor/dropzone.min.js",function(){
+						});
+				
 					var data = {
-				  			page:1,
-				  			size:13,
-				  			type:1,
-				  			name:$('#name').val(),
-				  			number:$('#number').val(),
+							page:1,
+					  		size:13,
+							locationType:$('#selectstate').val(),
 				  	}
 		            self.loadPagination(data);
 				});
-				
-				
-				//新增产品
-				$('#addproduct').on('click',function(){
-					$("#my-awesome-dropzone").text("");
-					var _index
-					var index
-					var postData
-					var dicDiv=$('#addDictDivType');
-					_index = layer.open({
-						  type: 1,
-						  skin: 'layui-layer-rim', //加上边框
-						  area: ['60%', '80%'], 
-						  btnAlign: 'c',//宽高
-						  maxmin: true,
-						  title:"新增产品",
-						  content: dicDiv,
-						  btn: ['确定', '取消'],
-						  yes:function(index, layero){
-							  var a=$("#productId").text();
-							  a=a.substring(0,a.length-1);
-							  var arr=new Array();
-							  arr=a
-							  postData={
-									  number:$("#productNumber").val(),
-									  name:$("#productName").val(),
-									  price:$("#productPrice").val(),
-									  remark:$("#productRemark").val(),
-									  details:$("#details").val(),
-									  filesIds:arr,
-							  }
-							  $.ajax({
-									url:"${ctx}/product/addProduct",
-									data:postData,
-						            traditional: true,
-									type:"post",
-									beforeSend:function(){
-										index = layer.load(1, {
-											  shade: [0.1,'#fff'] //0.1透明度的白色背景
-											});
-									},
-									
-									success:function(result){
-										if(0==result.code){
-											layer.msg("添加成功！", {icon: 1});
-											$('#addDictDivType').hide();
-											$(".addDictDivTypeForm")[0].reset();
-											self.loadPagination(data);
-											$(".dz-started").text("");
-											$("#productId").text("");
-										}else{
-											layer.msg("添加失败", {icon: 2});
-										}
-										
-										layer.close(index);
-									},error:function(){
-										layer.msg(result.message, {icon: 2});
-										layer.close(index);
-									}
-								});
-							},
-						  end:function(){
-							  
-							  
-							  
-							  $('.addDictDivTypeForm')[0].reset(); 
-							  $('#addDictDivType').hide();
-						
-							
-						  }
-					});
-				})
 			}
    	}
    			var login = new Login();
