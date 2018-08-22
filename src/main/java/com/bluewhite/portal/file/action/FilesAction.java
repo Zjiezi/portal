@@ -1,5 +1,7 @@
 package com.bluewhite.portal.file.action;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +48,30 @@ public class FilesAction {
 		return cr;
 	}
 	
+	
+	/**
+	 * 
+	 * 修改文件
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/files/updatefiles")
+	public CommonResponse updatefiles(HttpServletRequest request, Files files) {
+		CommonResponse cr = new CommonResponse();
+		if(files.getId()!=null){
+			Optional<Files> oldFiles = filesService.findOne(files.getId());
+			if(oldFiles.isPresent()){
+				filesService.update(files, oldFiles.get());
+			}
+			cr.setMessage("删除成功");
+		}else{
+			cr.setMessage("文件不能为空");
+		}
+		return cr;
+	}
+	
 	/**
 	 * 
 	 * 删除文件
@@ -55,7 +81,7 @@ public class FilesAction {
 	 * @return
 	 */
 	@GetMapping(value = "/files/deletefiles")
-	public CommonResponse deleteProduct(HttpServletRequest request, Long id) {
+	public CommonResponse deletefiles(HttpServletRequest request, Long id) {
 		CommonResponse cr = new CommonResponse();
 		if(id!=null){
 			filesService.delete(id);
