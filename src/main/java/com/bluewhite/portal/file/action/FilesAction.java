@@ -1,5 +1,7 @@
 package com.bluewhite.portal.file.action;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +84,28 @@ public class FilesAction {
 				.addRetainTerm(Files.class,"name","url","type","id","title","content")
 				.format(filesService.findByType(locationType)).toJSON());
 		cr.setMessage("成功");
+		return cr;
+	}
+	
+	/**
+	 * 获取单个图片
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/files/getPictureOne")
+	public CommonResponse getPictureOne(HttpServletRequest request,Long id) {
+		CommonResponse cr = new CommonResponse();
+		Optional<Files> files = filesService.findOne(id);
+		if(files.isPresent()){
+			cr.setMessage("没有该文件");
+		}else{
+			cr.setData(ClearCascadeJSON
+					.get()
+					.addRetainTerm(Files.class,"name","url","type","id","title","content")
+					.format(files.get()).toJSON());
+			cr.setMessage("成功");
+		}
 		return cr;
 	}
 	
