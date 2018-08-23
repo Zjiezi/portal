@@ -114,7 +114,7 @@
                             </div>
                         </div>
 				<form class="form-horizontal addDictDivTypeForm">
-				<div class="row col-xs-12  col-sm-12  col-md-12 ">
+				<div class="row col-xs-12  col-sm-12  col-md-12 " id="hiddento">
                     	<div class="form-group">
                            <label class="col-sm-3 col-md-2 control-label">图片标题:</label>
                               <div class="col-sm-3 col-md-3">
@@ -239,8 +239,8 @@
 			}
 			
 			this.loadEvents = function(){
-				/* //删除图片
-				$('.dz-success-mark').on('click',function(){
+				 //删除图片
+				$('.delete').on('click',function(){
   					var thate=$(this);
   					var postData={
   							id:$(this).data('id'),
@@ -260,7 +260,7 @@
 						success:function(result){
 							if(0==result.code){
 							layer.msg("删除成功！", {icon: 1});
-							thate.parent().hide();
+							thate.parent().parent().hide();
 							layer.close(index);
 							}else{
 								layer.msg("删除失败！", {icon: 2});
@@ -272,14 +272,14 @@
 						}
 					});
 					 })
-  				}) */
+  				}) 
 			
   				
   				
   				
   			//修改方法
 				$('.update').on('click',function(){
-					
+					$("#hiddento").show();
 					var that=$(this);
 					var id=that.data('id');
 					var name=that.data('id');
@@ -369,7 +369,7 @@
                						content:$("#content").val(),
 							  }
 							  $.ajax({
-									url:"${ctx}/files/updatefiles",
+									url:"${ctx}/files/getPictureOne",
 									data:postData,
 						            traditional: true,
 									type:"post",
@@ -403,16 +403,13 @@
 							  
 							  var id=that.data('id');
 							  postData={
-               						  id:id,
-									  number:$("#productNumber").val(),
-									  name:$("#productName").val(),
-									  price:$("#productPrice").val(),
-									  remark:$("#productRemark").val(),
-									  details:$("#details").val(),
-									  filesIds:arr,
+									  	id:id,
+	               						name:$("#imgName").val(),
+	               						title:$("#title").val(),
+	               						content:$("#content").val(),
 							  }
 							  $.ajax({
-									url:"${ctx}/product/addProduct",
+									url:"${ctx}/files/updatefiles",
 									data:postData,
 						            traditional: true,
 									type:"post",
@@ -425,11 +422,10 @@
 									success:function(result){
 										if(0==result.code){
 											layer.msg("修改成功", {icon: 1});
-											$("#productId").text("");
 											var data={
 													page:self.getIndex(),
 											  		size:13,	
-											  		
+											  		locationType:$('#selectstate').val(),
 											} 
 											self.loadPagination(data);
 										}else{
@@ -463,6 +459,47 @@
 		            self.loadPagination(data);
 				});
 
+				
+				//新增产品
+				$('#addproduct').on('click',function(){
+					$("#my-awesome-dropzone").text("");
+					$("#hiddento").hide();
+					
+					var _index
+					var index
+					var postData
+					var dicDiv=$('#addDictDivType');
+					_index = layer.open({
+						  type: 1,
+						  skin: 'layui-layer-rim', //加上边框
+						  area: ['60%', '80%'], 
+						  btnAlign: 'c',//宽高
+						  maxmin: true,
+						  title:"新增产品",
+						  content: dicDiv,
+						  btn: ['确定', '取消'],
+						  yes:function(index, layero){
+							  var data={
+										page:self.getIndex(),
+								  		size:13,	
+								  		locationType:$('#selectstate').val(),
+								} 
+								self.loadPagination(data);
+						  },
+						  end:function(){
+							  var data={
+										page:self.getIndex(),
+								  		size:13,	
+								  		locationType:$('#selectstate').val(),
+								} 
+								self.loadPagination(data);
+							  $('.addDictDivTypeForm')[0].reset(); 
+							  $('#addDictDivType').hide();
+						
+						  }
+					});
+				})
+				
 			}
    	}
    			var login = new Login();
