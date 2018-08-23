@@ -239,7 +239,7 @@
 			}
 			
 			this.loadEvents = function(){
-				//删除图片
+				/* //删除图片
 				$('.dz-success-mark').on('click',function(){
   					var thate=$(this);
   					var postData={
@@ -272,7 +272,7 @@
 						}
 					});
 					 })
-  				})
+  				}) */
 			
   				
   				
@@ -299,14 +299,14 @@
 			      		  success: function (result) {
 			      			
 			      			 $(result.data).each(function(i,o){
-			      				
+			      				$("#imgName").val(o.name);
 			      				$("#title").val(o.title);
 			      				$("#productRemark").val(o.remark);
 			      				$("#details").val(o.details);
-			      				$(o.files).each(function(j,k){
-			      				th+='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+k.name+' src='+k.url+'></div><div class="dz-success-mark" data-id="'+k.id+'"></div></div>'
 			      				
-			      				})
+			      				th+='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+o.name+' src='+o.url+'></div><div class="dz-success-mark" data-id="'+o.id+'"></div></div>'
+			      				
+			      			
 			      				 $("#my-awesome-dropzone").html(th); 
 			      				$('.dz-success-mark').on('click',function(){
 			      					var thate=$(this);
@@ -362,21 +362,14 @@
 						  content: dicDiv,
 						  btn: ['确定', '取消'],
 						  yes:function(index, layero){
-							  var a=$("#productId").text();
-							  a=a.substring(0,a.length-1);
-							  var arr=new Array();
-							  arr=a
 							  postData={
-               						  id:id,
-									  number:$("#productNumber").val(),
-									  name:$("#productName").val(),
-									  price:$("#productPrice").val(),
-									  remark:$("#productRemark").val(),
-									  details:$("#details").val(),
-									  filesIds:arr,
+               						id:id,
+               						name:$("#imgName").val(),
+               						title:$("#title").val(),
+               						content:$("#content").val(),
 							  }
 							  $.ajax({
-									url:"${ctx}/product/addProduct",
+									url:"${ctx}/files/updatefiles",
 									data:postData,
 						            traditional: true,
 									type:"post",
@@ -392,9 +385,8 @@
 											var data={
 													page:self.getIndex(),
 											  		size:13,	
-											  		
+											  		locationType:$('#selectstate').val(),
 											} 
-											$("#productId").text("");
 											self.loadPagination(data);
 										}else{
 											layer.msg("添加失败", {icon: 2});
@@ -408,10 +400,7 @@
 								});
 							},
 						  end:function(){
-							  var a=$("#productId").text();
-							  a=a.substring(0,a.length-1);
-							  var arr=new Array();
-							  arr=a
+							  
 							  var id=that.data('id');
 							  postData={
                						  id:id,
