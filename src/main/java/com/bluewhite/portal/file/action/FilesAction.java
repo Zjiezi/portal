@@ -98,13 +98,13 @@ public class FilesAction {
 		CommonResponse cr = new CommonResponse();
 		Optional<Files> files = filesService.findOne(id);
 		if(files.isPresent()){
-			cr.setMessage("没有该文件");
-		}else{
 			cr.setData(ClearCascadeJSON
 					.get()
 					.addRetainTerm(Files.class,"name","url","type","id","title","content")
 					.format(files.get()).toJSON());
 			cr.setMessage("成功");
+		}else{
+			cr.setMessage("没有该文件");
 		}
 		return cr;
 	}
