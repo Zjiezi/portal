@@ -76,7 +76,7 @@ public class FilesAction {
 	 * @param prodcut
 	 * @return
 	 */
-	@GetMapping(value = "/files/updatefiles")
+	@PostMapping(value = "/files/updatefiles")
 	public CommonResponse updatefiles(HttpServletRequest request, Files files) {
 		CommonResponse cr = new CommonResponse();
 		if(files.getId()!=null){
