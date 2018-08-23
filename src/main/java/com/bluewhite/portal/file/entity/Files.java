@@ -60,6 +60,18 @@ public class Files  extends BaseEntity<Long>{
 	@Column(name = "product_id")
 	private Long productId;
 	
+	/**
+	 * 标题
+	 */
+	@Column(name = "title")
+	private String title;
+	
+	/**
+	 * 内容
+	 */
+	@Column(name = "content")
+	private String content;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id", referencedColumnName = "id", insertable = false, updatable = false)
 	private Product product;

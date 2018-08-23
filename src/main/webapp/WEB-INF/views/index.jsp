@@ -15,9 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="static/css/style.css">
 	<link rel="stylesheet" type="text/css" href="static/css/mobile.css">
-	<script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="static/js/swiper.min.js"></script>
-	<script type="text/javascript" src="static/js/javascript.js"></script>
+	<link rel="stylesheet" href="static/tc/js/layer/mobile/need/layer.css">
+	<script type="text/javascript" src="${ctx }/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="${ctx }/static/js/swiper.min.js"></script>
+	<script type="text/javascript" src="${ctx }/static/js/javascript.js"></script>
+	 
 	<title>蓝白玩偶 </title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -90,42 +92,16 @@
 	<div class="main">
 		<div class="banner">
 			<div class="swiper-container">
-				<div class="swiperList">
-					<div class="list"><a href="#" target="_blank"><img src="static/picture/20180720.jpg"></a></div>
+				<div class="swiperList" id="home">
+					<!-- <div class="list"><a href="#" target="_blank"><img src="static/picture/20180720.jpg"></a></div>
 					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
 					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
 					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
+					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div> -->
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
-			<script>
-				var bannerSwiper = new Swiper ('.banner .swiper-container', {
-					wrapperClass : 'swiperList',
-					slideClass : 'list',
-					effect : 'slide',				//滑动效果
-					autoplay: true,					//自动滑动
-					speed:400,						//滑动速度
-					autoplay: {
-						delay: 3000,				//间隔时间
-						disableOnInteraction: false,//用户操作之后是否停止
-					},
-					watchOverflow: true,			//仅有1个slide，swiper无效
-					loop: false,					//循环滚动
-					simulateTouch : true,			//鼠标模拟触摸
-					allowTouchMove: true,			//触摸滑动
-					grabCursor : true,				//手掌鼠标
-					slidesPerView : 1,				//可视个数
-					resistanceRatio : 0,			//边缘抵抗力
-
-					//分页器
-					pagination: {
-						el:'.swiper-pagination',
-						clickable :true,		//点击切换
-					},
-
-				})
-			</script>
+			
 		</div>
 		<div class="section section2" style="background-image: url(static/images/section2.jpg);">
 			<div class="wrap">
@@ -134,80 +110,15 @@
 					<div class="txt"><span></span>不做最好，只做更好<span></span></div>
 				</div>
 				<div class="newProduct">
-					<div class="swiper-container">
-						<div class="swiperList">
-								<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.1.656f2c77mJXn1B&id=564708959015&areaId=321000&is_b=1&cat_id=2&rn=0a9806721babd4e2d2ad127f9ed3fe22" target="_blank">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">>森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
-														<div class="list">
-								<div class="pic"><img src="static/picture/20180724.png"></div>
-								<div class="name">森林鳄鱼抱枕</div>
-								<div class="btn"><a href="#">了解详情</a></div>
-							</div>
+					<div class="swiper-container" >
+						<div class="swiperList" id="home2">
+								
 													</div>
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
 					</div>
 					<script>
-						var bannerSwiper = new Swiper ('.newProduct .swiper-container', {
-							wrapperClass : 'swiperList',
-							slideClass : 'list',
-							effect : 'slide',				//滑动效果
-							autoplay: true,					//自动滑动
-							speed:400,						//滑动速度
-							autoplay: {
-								delay: 3000,				//间隔时间
-								disableOnInteraction: false,//用户操作之后是否停止
-							},
-							watchOverflow: true,			//仅有1个slide，swiper无效
-							loop: false,					//循环滚动
-							simulateTouch : true,			//鼠标模拟触摸
-							allowTouchMove: true,			//触摸滑动
-							slidesPerView : 3,				//可视个数
-							grabCursor : true,				//手掌鼠标
-							// 前后按钮
-							navigation: {
-							nextEl: '.swiper-button-next',
-							prevEl: '.swiper-button-prev',
-							},
-						})
+						
 					</script>
 				</div>
 			</div>
@@ -305,5 +216,156 @@
 	</div>
 	
 </div>
+<script type="text/javascript" src="${ctx }/static/tc/js/layer/layer.js"></script>
+<script type="text/javascript" src="${ctx }/static/tc/js/vendor/jquery-3.3.1.min.js"></script>
+<script>
+jQuery(function($){
+   	var Login = function(){
+			var self = this;
+			//表单jsonArray
+			//初始化js
+			var _cache;
+			this.setCache = function(cache){
+		  		_cache=cache;
+		  	}
+		  	this.getCache = function(){
+		  		return _cache;
+		  	}
+		  	this.setIndex = function(index){
+		  		_index=index;
+		  	}
+		  	
+		  	this.getIndex = function(){
+		  		return _index;
+		  	}
+			 
+			this.init = function(){
+				
+				//注册绑定事件
+				self.loadPaginationhome();
+				self.loadPaginationhome2();
+			}
+			//加载分页
+			  this.loadPaginationhome = function(){
+				  var data={
+					  		locationType:"home",
+					}
+			    var index;
+			    var html = '';
+			    $.ajax({
+				      url:"${ctx}/files/getPicture",
+				      data:data,
+				      type:"GET",
+				      beforeSend:function(){
+					 	  index = layer.load(1, {
+						  shade: [0.1,'#fff'] //0.1透明度的白色背景
+						  });
+					  }, 
+		      		  success: function (result) {
+		      			
+		      			 $(result.data).each(function(i,o){
+		      				html+='<div class="list"><a href="#" target="_blank"><img src='+o.url+'></a></div>'
+							
+		      			}); 
+					   	layer.close(index);
+					    $("#home").html(html);
+					   	self.loadEvents();
+				      },error:function(){
+							layer.msg("加载失败！", {icon: 2});
+							layer.close(index);
+					  }
+				  });
+			}
+			  this.loadPaginationhome2 = function(){
+				  var data={
+					  	locationType:"home2", 
+				  }
+				    var index;
+				    var html = '';
+				    $.ajax({
+					      url:"${ctx}/files/getPicture",
+					      data:data,
+					      type:"GET",
+					      beforeSend:function(){
+						 	  index = layer.load(1, {
+							  shade: [0.1,'#fff'] //0.1透明度的白色背景
+							  });
+						  }, 
+			      		  success: function (result) {
+			      			
+			      			 $(result.data).each(function(i,o){
+			      				html+='<div class="list">'
+									+'<div class="pic"><img src='+o.url+'></div><div class="name">森林抱枕</div>'
+									+'<div class="btn"><a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.1.656f2c77mJXn1B&id=564708959015&areaId=321000&is_b=1&cat_id=2&rn=0a9806721babd4e2d2ad127f9ed3fe22" target="_blank">了解详情</a></div>'
+									+'</div>'
+								
+			      			}); 
+						   	layer.close(index);
+						    $("#home2").html(html);
+						   	self.loadEventshome2();
+					      },error:function(){
+								layer.msg("加载失败！", {icon: 2});
+								layer.close(index);
+						  }
+					  });
+				}
+			this.loadEvents = function(){
+				//图片轮播
+				var bannerSwiper = new Swiper ('.banner .swiper-container', {
+					wrapperClass : 'swiperList',
+					slideClass : 'list',
+					effect : 'slide',				//滑动效果
+					autoplay: true,					//自动滑动
+					speed:400,						//滑动速度
+					autoplay: {
+						delay: 3000,				//间隔时间
+						disableOnInteraction: false,//用户操作之后是否停止
+					},
+					watchOverflow: true,			//仅有1个slide，swiper无效
+					loop: false,					//循环滚动
+					simulateTouch : true,			//鼠标模拟触摸
+					allowTouchMove: true,			//触摸滑动
+					grabCursor : true,				//手掌鼠标
+					slidesPerView : 1,				//可视个数
+					resistanceRatio : 0,			//边缘抵抗力
+
+					//分页器
+					pagination: {
+						el:'.swiper-pagination',
+						clickable :true,		//点击切换
+					},
+
+				})
+			}
+			this.loadEventshome2 = function(){
+				var bannerSwiper = new Swiper ('.newProduct .swiper-container', {
+					wrapperClass : 'swiperList',
+					slideClass : 'list',
+					effect : 'slide',				//滑动效果
+					autoplay: true,					//自动滑动
+					speed:400,						//滑动速度
+					autoplay: {
+						delay: 3000,				//间隔时间
+						disableOnInteraction: false,//用户操作之后是否停止
+					},
+					watchOverflow: true,			//仅有1个slide，swiper无效
+					loop: false,					//循环滚动
+					simulateTouch : true,			//鼠标模拟触摸
+					allowTouchMove: true,			//触摸滑动
+					slidesPerView : 3,				//可视个数
+					grabCursor : true,				//手掌鼠标
+					// 前后按钮
+					navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+					},
+				})
+			}
+   	}
+   			var login = new Login();
+				login.init();
+			})
+    
+    </script>
 </body>
 </html>
