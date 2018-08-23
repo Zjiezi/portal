@@ -288,7 +288,7 @@
 					}
 					var th="";
 					$.ajax({
-					      url:"${ctx}/files/getPicture",
+					      url:"${ctx}/files/getPictureOne",
 					      data:datate,
 					      type:"GET",
 					      beforeSend:function(){
