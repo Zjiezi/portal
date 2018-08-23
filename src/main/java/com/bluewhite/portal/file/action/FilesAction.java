@@ -68,7 +68,28 @@ public class FilesAction {
 		return cr;
 	}
 	
-	
+	/**
+	 * 
+	 * 修改文件
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/files/updatefiles")
+	public CommonResponse updatefiles(HttpServletRequest request, Files files) {
+		CommonResponse cr = new CommonResponse();
+		if(files.getId()!=null){
+			Optional<Files> oldFiles = filesService.findOne(files.getId());
+			if(oldFiles.isPresent()){
+				filesService.update(files, oldFiles.get());
+				cr.setMessage("修改成功");
+			}
+		}else{
+			cr.setMessage("文件不能为空");
+		}
+		return cr;
+	}
 	
 	/**
 	 * 获取首页海报图片
