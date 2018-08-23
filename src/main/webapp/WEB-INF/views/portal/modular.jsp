@@ -21,7 +21,7 @@
   
 <body>
     <section id="main-wrapper" class="theme-default">
-    <%@include file="decorator/leftbar.jsp"%> 
+    <%@include file="../decorator/leftbar.jsp"%> 
         <!--main content start-->
        
             <section id="main-content" class="animated fadeInUp">
@@ -41,9 +41,7 @@
 					<div class="row">
 						<div class="col-xs-8 col-sm-8 col-md-8">
 							<div class="input-group"> 
-								<table><tr><td>产品编号:</td><td><input type="text" name="number" id="number" class="form-control search-query number" /></td>
-								<td>&nbsp&nbsp&nbsp&nbsp</td>
-								<td>产品名称:</td><td><input type="text" name="name" id="name" class="form-control search-query name" /></td>
+								<table><tr><td>模块选择:</td><td><select class="form-control" id="selectstate"><option value="home">首页</option></select></td>
 								</tr></table> 
 								<span class="input-group-btn">
 									<button type="button" class="btn btn-info btn-square btn-sm btn-3d searchtask">
@@ -66,13 +64,14 @@
                             <div class="panel-body">
                                 <table class="table table-hover">
                                     <thead>
-                                        <tr>
-                                        	<th class="text-center">产品序号</th>
-                                            <th class="text-center">产品编号</th>
-                                            <th class="text-center">产品名</th>
-                                            <th class="text-center">单价</th>
-                                            <th class="text-center">操作</th>
-                                        </tr>
+                                       <div class="panel panel-default">
+                            
+                            <div class="panel-body">
+                                <form action="#" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
+                                </form>
+
+                            </div>
+                        </div>
                                     </thead>
                                     <tbody id="tablecontent">
                                         
@@ -95,58 +94,7 @@
                     
                
            
-        <!--隐藏框 产品新增开始  -->
-<div id="addDictDivType" style="display: none;">
-			<div class=" col-xs-12  col-sm-12  col-md-12 ">
-				<!-- PAGE CONTENT BEGINS -->
-				 <div class="panel panel-default">
-                            
-                            <div class="panel-body">
-                                <form action="#" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
-                                </form>
-
-                            </div>
-                        </div>
-				<form class="form-horizontal addDictDivTypeForm">
-				<div class="row col-xs-12  col-sm-12  col-md-12 ">
-				<div class="form-group">
-                           <label class="col-sm-3 col-md-2 control-label">产品名:</label>
-                              <div class="col-sm-3 col-md-3">
-                                  <input type="text" id="productName" class="form-control ">
-                              </div>
-                               <div >
-                            <label class="col-sm-2 col-md-2 control-label" >产品编号:</label>
-                                <div class="col-sm-3 col-md-3">
-                                  <input type="text"   id="productNumber"  class="form-control ">
-                                </div>
-                                </div>
-                    	</div>
-                    	<div class="form-group">
-                           <label class="col-sm-3 col-md-2 control-label">产品单价:</label>
-                              <div class="col-sm-3 col-md-3">
-                                  <input type="text" id="productPrice"  class="form-control ">
-                              </div>
-                               <div >
-                            <label class="col-sm-2 col-md-2 control-label" >产品备注:</label>
-                                <div class="col-sm-3 col-md-3">
-                                  <input type="text"   placeholder="可不填" id="productRemark"  class="form-control ">
-                                </div>
-                                </div>
-                    	</div>
-                 <div class="form-group">
-                 <label class="col-sm-2 col-md-2 control-label" >详情介绍:</label>
-                      <div class="col-sm-8 " > 
-                      <textarea rows="7" cols="50" class="form-control" id="details"></textarea>
-                      
-                      </div>
-                 </div>
-                 <div class="form-group hidden">
-                      <div class="col-sm-6" id="productId"> </div>
-                 </div>
-</div>
-</form>
-</div>
-</div>
+ 
 <!--隐藏框 产品新增结束  -->
 
      
@@ -188,7 +136,8 @@
 		  	}
 			 var data={
 						page:1,
-				  		size:13,	
+				  		size:13,
+				  		locationType:$('#selectstate').val(),
 				} 
 			this.init = function(){
 				
@@ -201,7 +150,7 @@
 			    var index;
 			    var html = '';
 			    $.ajax({
-				      url:"${ctx}/product/productPage",
+				      url:"${ctx}/files/getPicture",
 				      data:data,
 				      type:"GET",
 				      beforeSend:function(){
