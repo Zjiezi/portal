@@ -55,6 +55,7 @@
 									 <button type="button" id="addproduct" class="btn btn-success  btn-sm btn-3d pull-right">
 									 新增产品
 									 </button>
+									 
 								</span>
 								  
 							</div>
