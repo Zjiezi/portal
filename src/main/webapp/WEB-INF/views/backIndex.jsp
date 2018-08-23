@@ -55,7 +55,10 @@
 									 <button type="button" id="addproduct" class="btn btn-success  btn-sm btn-3d pull-right">
 									 新增产品
 									 </button>
+<<<<<<< HEAD
 									 
+=======
+>>>>>>> refs/remotes/origin/qiyong1994
 								</span>
 								  
 							</div>

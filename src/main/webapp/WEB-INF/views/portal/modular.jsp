@@ -17,6 +17,7 @@
    <link rel="stylesheet" type="text/css" href="${ctx }/static/tc/lun/style.css">
    <link rel="stylesheet" type="text/css" href="${ctx }/static/tc/css/dropzone.css"> 
   <link rel="stylesheet" type="text/css" href="${ctx }/static/tc/css/basic.css">
+<<<<<<< HEAD
   
 </head>
   
@@ -473,6 +474,7 @@
 				  	}
 		            self.loadPagination(data);
 				});
+
 			}
    	}
    			var login = new Login();
