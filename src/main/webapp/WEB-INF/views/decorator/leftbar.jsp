@@ -103,8 +103,8 @@
             <nav>
                
                 <ul class="nav nav-pills nav-stacked " id="informatic">
-                <li class=''><a href='${ctx }/apiMenusToUrl?url=backIndex' class='index'   title='首页'><i class='fa  fa-fw fa-tachometer'></i> 首页</a></li>
-                <li><a href='${ctx }/apiMenusToUrl?url=portal/modular'   title='模块图片'><i class='fa  fa-fw fa-tachometer'></i> 模块图片</a></li>
+                <li class=''><a href='${ctx }/MenusToUrl?url=backIndex' class='index'   title='首页'><i class='fa  fa-fw fa-tachometer'></i> 首页</a></li>
+                <li><a href='${ctx }/MenusToUrl?url=portal/modular'   title='模块图片'><i class='fa  fa-fw fa-tachometer'></i> 模块图片</a></li>
                 </ul>
             </nav> 
             
