@@ -36,40 +36,9 @@ public class IndexAction {
 	}
 	
 	/**
-	 * 后台登陆跳转
-	 * @param request
-	 * @param prodcut
-	 * @return
+	 *	后台根据不同菜单跳转不同的jsp
 	 */
-	@GetMapping(value = "/backLogin")
-	public String login() {
-		return Constants.LOGIN_URL;
-	}
-	
-	/**
-	 * 后台首页跳转
-	 * @param request
-	 * @param prodcut
-	 * @return
-	 */
-	@GetMapping(value = "/backIndex")
-	public String backIndex() {
-		return Constants.INDEX_BACK_URL;
-	}
-	
-	
-	/**
-	 *	前台根据不同菜单跳转不同的jsp
-	 */
-	@GetMapping(value = "/menusToUrl")
-	public String menusToJsp(HttpServletRequest request,String url) {
-		return url;
-	}
-	
-	/**
-	 *	根据不同菜单跳转不同的jsp
-	 */
-	@GetMapping(value = "/apiMenusToUrl")
+	@GetMapping(value = "/MenusToUrl")
 	public String apiMenusToJsp(HttpServletRequest request,String url) {
 		return url;
 	}
