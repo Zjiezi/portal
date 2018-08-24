@@ -10,12 +10,12 @@
 		<script src="js/html5shiv.min-3.7.3.js"></script>
 		<script src="js/respond.min1.4.2.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="static/css/style.css">
-	<link rel="stylesheet" type="text/css" href="static/css/mobile.css">
-	<script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="static/js/swiper.min.js"></script>
-	<script type="text/javascript" src="static/js/javascript.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
+	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/static/js/swiper.min.js"></script>
+	<script type="text/javascript" src="/static/js/javascript.js"></script>
 	<title>蓝白玩偶 </title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -25,28 +25,28 @@
 <div class="wrapper">
 	<div class="header">
 		<div class="wrap">
-			<div class="logo"><a href="index.html"><img src="static/picture/logo.png"></a></div>
+			<div class="logo"><a href="index.html"><img src="/static/picture/logo.png"></a></div>
 			<div class="menuBtn"><span class="line1"></span><span class="line2"></span><span class="line3"></span></div>
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li ><a href="${ctx }/menusToUrl?url=index">首页</a></li>
+				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 				<li >
-					<a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a>
+					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
 						</ul>
 					</div>
 				</li>
 				<li class="on">
-					<a href="${ctx }/menusToUrl?url=product">明星产品</a>
+					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=product">单品介绍</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
 							<li><a href="product.html">套装介绍</a></li>
 						</ul>
 					</div>
@@ -84,12 +84,12 @@
 	</div>
 	
 	<div class="container">
-		<div class="banner"><a href="javascript:;"><img src="static/picture/20180611105958725.jpg"></a></div>
+		<div class="banner"><a href="javascript:;"><img src="/static/picture/20180611105958725.jpg"></a></div>
 		<div class="columnMenu">
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li class="on"><a href="${ctx }/menusToUrl?url=product">单品介绍</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
 						<li ><a href="product.html">套装介绍</a></li>
 					</ul>
 				</div>
@@ -111,7 +111,7 @@
 					<div class="line"></div>
 				</div>
 				<div class="popupBuyNow">
-					<div class="pic"><img src="static/picture/20180615115944874.jpg"></div>
+					<div class="pic"><img src="/static/picture/20180615115944874.jpg"></div>
 					<div class="text">关注公众号，进入“爱萌伊人”商城即可购买</div>
 				</div>
 
@@ -120,7 +120,7 @@
 						<li>
 							<div class="list">
 								<a href="product-con.html">
-									<div class="pic"><img src="static/picture/20180623055705857.jpg"></div>
+									<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>
 									<h3 class="tit">水活草本保湿乳</h3>
 									<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>
 								</a>
@@ -135,7 +135,7 @@
 							
 							<div class="list">
 								<a href="product-con.html">
-									<div class="pic"><img src="static/picture/20180623060629699.jpg"></div>
+									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
 									<h3 class="tit">水活氨基酸洗面奶</h3>
 									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
 								</a>
@@ -152,7 +152,7 @@
 							
 							<div class="list">
 								<a href="product-con.html">
-									<div class="pic"><img src="static/picture/20180623060813674.jpg"></div>
+									<div class="pic"><img src="/static/picture/20180623060813674.jpg"></div>
 									<h3 class="tit">水活瓷肌嫩肤原液</h3>
 									<div class="txt">先进的萃取工艺，使海藻、芦荟、红花籽、甘草等本草精华原液保湿因子得以完整保存，与含有丰富微量元素的天山雪域冰川水有机结合，深入调理肌肤活力，舒缓干燥不适，充分深度补水，让</div>
 								</a>
@@ -167,7 +167,7 @@
 							
 							<div class="list">
 								<a href="product-con.html">
-									<div class="pic"><img src="static/picture/20180623061012468.jpg"></div>
+									<div class="pic"><img src="/static/picture/20180623061012468.jpg"></div>
 									<h3 class="tit">水活瓷肌修护精华素</h3>
 									<div class="txt">采用野生人参、黄苓、苦参、三味经典本草结合现代尖端技术提取，给肌肤爆发出自然活力，里面的抗氧化成份轻松清除自由基，修复胶原蛋白。N-乙酰氨基葡萄糖自动调节黑素细胞中的黑色素</div>
 								</a>
@@ -184,7 +184,7 @@
 							
 							<div class="list">
 								<a href="product-con.html">
-									<div class="pic"><img src="static/picture/20180623061226761.jpg"></div>
+									<div class="pic"><img src="/static/picture/20180623061226761.jpg"></div>
 									<h3 class="tit">水活瓷肌精华晚霜</h3>
 									<div class="txt">爱萌伊人经典巨作！专门为亚洲女性容易出现的黄气、暗沉、敏感、黑眼圈、红血丝，打造的养肤产品，防斑于源头，轻松破译美丽女人年轻态密码，采用了长白山人参、野生沙棘果等多种名贵</div>
 								</a>
@@ -199,7 +199,7 @@
 							
 							<div class="list">
 								<a href="product-con.html">
-									<div class="pic"><img src="static/picture/20180623061416222.jpg"></div>
+									<div class="pic"><img src="/static/picture/20180623061416222.jpg"></div>
 									<h3 class="tit">焕颜修护精华霜</h3>
 									<div class="txt">采用积雪草、沙棘果、人参、黄芩、当归等多种名贵中草药精心调制而成，独特的配方全面重启皮肤微血管网的同时，迅速渗透入细胞高度控制色素的产生，并将过度增生的色素清除，名贵的中</div>
 								</a>
@@ -223,7 +223,7 @@
 	<div class="footer">
 		<div class="linkList">
 			<ul>
-				<li><a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
 				<li><a href="#">明星产品</a></li>
 				<li><a href="#">活动管理</a></li>
 				<li><a href="#">精彩瞬间</a></li>
@@ -236,5 +236,72 @@
 	</div>
 
 </div>
+
+
+<script type="text/javascript" src="${ctx }/static/tc/js/layer/layer.js"></script>
+<script type="text/javascript" src="${ctx }/static/tc/js/vendor/jquery-3.3.1.min.js"></script>
+<script>
+jQuery(function($){
+   	var Login = function(){
+			var self = this;
+			//表单jsonArray
+			//初始化js
+			var _cache;
+			this.setCache = function(cache){
+		  		_cache=cache;
+		  	}
+		  	this.getCache = function(){
+		  		return _cache;
+		  	}
+		  	this.setIndex = function(index){
+		  		_index=index;
+		  	}
+		  	
+		  	this.getIndex = function(){
+		  		return _index;
+		  	}
+			 
+			this.init = function(){
+				
+				//注册绑定事件
+				self.loadPaginationhome();
+			}
+			//加载分页
+			  this.loadPaginationhome = function(){
+				  var data={
+						  page:1,
+					  	  size:6,
+					}
+			    var index;
+			    var html = '';
+			    $.ajax({
+				      url:"${ctx}/view/product/productPage",
+				      data:data,
+				      type:"GET",
+				      beforeSend:function(){
+					 	  index = layer.load(1, {
+						  shade: [0.1,'#fff'] //0.1透明度的白色背景
+						  });
+					  }, 
+		      		  success: function (result) {
+		      			
+		      			 $(result.data).each(function(i,o){
+		      				html+='<div class="list"><a href="#" target="_blank"><img src='+o.url+'></a></div>'
+							
+		      			}); 
+					   	layer.close(index);
+					    $("#home").html(html);
+				      },error:function(){
+							layer.msg("加载失败！", {icon: 2});
+							layer.close(index);
+					  }
+				  });
+			}
+   	}
+   			var login = new Login();
+				login.init();
+			})
+    
+    </script>
 </body>
 </html>

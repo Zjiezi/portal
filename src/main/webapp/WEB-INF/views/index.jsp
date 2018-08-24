@@ -31,7 +31,7 @@
 <div class="wrapper">
 	<div class="header">
 		<div class="wrap">
-			<div class="logo"><a href="index.html"><img src="/static/picture/logo.png"></a></div>
+			<div class="logo"><a href="${ctx }/view/menusToUrl?url=index"><img src="/static/picture/logo.png"></a></div>
 			<div class="menuBtn"><span class="line1"></span><span class="line2"></span><span class="line3"></span></div>
 			<div class="nav">
 				<div class="tit">MENU</div>

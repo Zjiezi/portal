@@ -89,7 +89,7 @@
 			<div class="wrap">
 				<div class="nav four">
 					<ul>
-						<li class="on"><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
 						<li ><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
 						<li ><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
 						<li ><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
@@ -97,7 +97,7 @@
 				</div>
 				<div class="crumbs">
 					<ul>
-						<li class="home"><a href="${ctx }/menusToUrl?url=index">首页</a></li>
+						<li class="home"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 						<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
 						<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
 					</ul>
