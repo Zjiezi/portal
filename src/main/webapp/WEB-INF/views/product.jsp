@@ -30,7 +30,7 @@
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li ><a href="index.html">首页</a></li>
+				<li ><a href="${ctx }/menusToUrl?url=index">首页</a></li>
 				<li >
 					<a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">

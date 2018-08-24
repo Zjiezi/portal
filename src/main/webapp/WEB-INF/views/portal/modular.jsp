@@ -42,7 +42,7 @@
 					<div class="row">
 						<div class="col-xs-8 col-sm-8 col-md-8">
 							<div class="input-group"> 
-								<table><tr><td>模块选择:</td><td><select class="form-control" id="selectstate"><option value="home">首页</option><option value="home2">中</option></select></td>
+								<table><tr><td>模块选择:</td><td><select class="form-control" id="selectstate"><option value="home">首页</option><option value="home2">首页中</option><option value="home3">首页活动</option></select></td>
 								</tr></table> 
 								<span class="input-group-btn">
 									<button type="button" class="btn btn-info btn-square btn-sm btn-3d searchtask" id="searchtask">
@@ -369,7 +369,7 @@
                						content:$("#content").val(),
 							  }
 							  $.ajax({
-									url:"${ctx}/files/getPictureOne",
+									url:"${ctx}/files/updatefiles",
 									data:postData,
 						            traditional: true,
 									type:"post",

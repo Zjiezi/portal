@@ -148,11 +148,11 @@
 		</div>
 		<div class="section section4">
 			<div class="columnTitle">
-				<h3 class="tit">最新活动</h3>
+				<h3 class="tit">最新咨询</h3>
 				<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
 			</div>
 			<div class="newsList">
-				<ul>
+				<ul id="home3">
 					<li><img src="static/picture/20180620035655300.jpg"></li>
 					<li>
 						<a href="#">
@@ -244,6 +244,7 @@ jQuery(function($){
 				//注册绑定事件
 				self.loadPaginationhome();
 				self.loadPaginationhome2();
+				self.loadPaginationhome3();
 			}
 			//加载分页
 			  this.loadPaginationhome = function(){
@@ -295,13 +296,50 @@ jQuery(function($){
 			      			
 			      			 $(result.data).each(function(i,o){
 			      				html+='<div class="list">'
-									+'<div class="pic"><img src='+o.url+'></div><div class="name">森林抱枕</div>'
+									+'<div class="pic"><img src='+o.url+'></div><div class="name">'+o.title+'</div>'
 									+'<div class="btn"><a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.1.656f2c77mJXn1B&id=564708959015&areaId=321000&is_b=1&cat_id=2&rn=0a9806721babd4e2d2ad127f9ed3fe22" target="_blank">了解详情</a></div>'
 									+'</div>'
 								
 			      			}); 
 						   	layer.close(index);
 						    $("#home2").html(html);
+						   	self.loadEventshome2();
+					      },error:function(){
+								layer.msg("加载失败！", {icon: 2});
+								layer.close(index);
+						  }
+					  });
+				}
+			  this.loadPaginationhome3 = function(){
+				  var data={
+					  	locationType:"home3", 
+				  }
+				    var index;
+				    var html = '';
+				    $.ajax({
+					      url:"${ctx}/files/getPicture",
+					      data:data,
+					      type:"GET",
+					      beforeSend:function(){
+						 	  index = layer.load(1, {
+							  shade: [0.1,'#fff'] //0.1透明度的白色背景
+							  });
+						  }, 
+			      		  success: function (result) {
+			      			
+			      			 $(result.data).each(function(i,o){
+			      				 html+='<li><img src='+o.url+'></li>'
+								+'<li><a href="#">'
+								+'<div class="tit">'+o.title+'</div>'
+								+'<div class="date"></div>'
+								+'<div class="text">'+o.content+'</div>'
+								+'<div class="more">REMO+</div>'
+								+'</a>'
+								+'</li>' 
+								
+			      			}); 
+						   	layer.close(index);
+						    $("#home3").html(html);
 						   	self.loadEventshome2();
 					      },error:function(){
 								layer.msg("加载失败！", {icon: 2});
