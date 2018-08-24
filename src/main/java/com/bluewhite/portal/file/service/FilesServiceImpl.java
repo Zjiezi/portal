@@ -44,7 +44,7 @@ public class FilesServiceImpl extends BaseServiceImpl<Files, Long> implements Fi
 	        }  
 	        files.setName(fileName);
 	        files.setType(type);
-	        files.setUrl("upload/img/"+fileName);
+	        files.setUrl("/upload/img/"+fileName);
 	        files.setSize(size);
 	        files.setLocationType(request.getParameter("locationType"));
 	        dao.save(files);
