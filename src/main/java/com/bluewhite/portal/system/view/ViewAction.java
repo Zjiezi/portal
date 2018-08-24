@@ -1,8 +1,5 @@
 package com.bluewhite.portal.system.view;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -101,6 +98,7 @@ public class ViewAction {
 	 * @return
 	 */
 	@GetMapping(value = "/product/getProduct")
+	@ResponseBody
 	public CommonResponse getProduct(HttpServletRequest request, Long id) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSON.format(service.findOne(id).get()).toJSON());
@@ -117,6 +115,7 @@ public class ViewAction {
 	 * @return
 	 */
 	@GetMapping(value = "/product/productPage")
+	@ResponseBody
 	public CommonResponse productPage(HttpServletRequest request, Product prodcut, PageParameter page) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSON.format(service.findPages(prodcut, page)).toJSON());
