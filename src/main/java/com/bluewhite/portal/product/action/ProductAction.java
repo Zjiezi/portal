@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bluewhite.portal.common.BeanCopyUtils;
 import com.bluewhite.portal.common.ClearCascadeJSON;
 import com.bluewhite.portal.common.entity.CommonResponse;
 import com.bluewhite.portal.common.entity.PageParameter;
