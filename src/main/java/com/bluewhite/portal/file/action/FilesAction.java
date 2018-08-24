@@ -92,7 +92,7 @@ public class FilesAction {
 	}
 	
 	/**
-	 * 获取首页海报图片
+	 * 后台获取图片列表
 	 * @param request
 	 * @param prodcut
 	 * @return
