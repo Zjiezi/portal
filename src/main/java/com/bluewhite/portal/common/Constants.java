@@ -23,12 +23,12 @@ public class Constants {
     
     public static String INDEX_URL = "index";
 
-    public static String INDEX_BACK_URL = "backIndex";
+    public static String INDEX_BACK_URL = "view/backIndex";
 
     /**
      * 不需要拦截的地址
      */
-    public static String CURRENT_URL = "api";
+    public static String CURRENT_URL = "view";
 
     /**
      * 当前请求的地址 不带参数
