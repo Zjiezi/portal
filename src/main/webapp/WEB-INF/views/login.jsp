@@ -6,7 +6,7 @@
 <html>
 <head>
 	<title>蓝白erp系统</title>
-	<link rel="stylesheet" href="static/css1/style.css">
+	<link rel="stylesheet" href="/static/css1/style.css">
 
 	<!-- For-Mobile-Apps-and-Meta-Tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -46,8 +46,8 @@
 	<div class="footer-w3l">
 		<p> 蓝白后台系统</p>
 	</div>
-	 <script src="static/js/vendor/jquery-3.3.1.min.js"></script>
-	 <script src="static/js/layer/layer.js"></script>
+	 <script src="/static/js/vendor/jquery-3.3.1.min.js"></script>
+	 <script src="/static/js/layer/layer.js"></script>
 	 <script type="text/javascript">
 	 jQuery(function($){
 			var Login = function(){
@@ -70,7 +70,7 @@
 						   	  data: $('#form').serialize(), 
 				      		  success: function (result) {
 				      			  if(result.code==0){
-					      				 location.href = result.data.url;
+					      				 location.href =result.data.url;
 				      			  }else{
 				      				layer.close(index);
 				      				layer.msg(result.message, {icon: 2}); 
