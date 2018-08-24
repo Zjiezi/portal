@@ -1,5 +1,8 @@
 package com.bluewhite.portal.system.view;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,9 +65,24 @@ public class ViewAction {
 	 *	前台根据不同菜单跳转不同的jsp
 	 */
 	@GetMapping(value = "/menusToUrl")
-	public String menusToJsp(HttpServletRequest request,String url,String paramName , String paramNum) {
-		System.out.println(url+"&"+paramName+"="+paramNum);
-		return url+"&"+paramName+"="+paramNum;
+	public String menusToJsp(HttpServletRequest request,String url) {
+		return url;
+	}
+	
+	/**
+	 *	前台根据不同菜单跳转不同的jsp
+	 */
+	@GetMapping(value = "/pre")
+	@ResponseBody
+	public CommonResponse pre(HttpServletRequest request,String url,String paramName , String paramNum) {
+		CommonResponse cr = new CommonResponse();
+		Map<Object,Object> urlMap = new HashMap<Object,Object>();
+		urlMap.put("paramName", paramName);
+		urlMap.put("paramNum", paramNum);
+		urlMap.put("url", url);
+		cr.setData(urlMap);
+		cr.setMessage("成功");
+		return cr;
 	}
 	
 	
