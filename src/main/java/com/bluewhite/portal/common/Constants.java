@@ -23,7 +23,7 @@ public class Constants {
     
     public static String INDEX_URL = "index";
 
-    public static String INDEX_BACK_URL = "view/backIndex";
+    public static String INDEX_BACK_URL = "backIndex";
 
     /**
      * 不需要拦截的地址
