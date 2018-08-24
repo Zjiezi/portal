@@ -12,10 +12,10 @@
 		<script src="js/html5shiv.min-3.7.3.js"></script>
 		<script src="js/respond.min1.4.2.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="static/css/style.css">
-	<link rel="stylesheet" type="text/css" href="static/css/mobile.css">
-	<link rel="stylesheet" href="static/tc/js/layer/mobile/need/layer.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
+	<link rel="stylesheet" href="/static/tc/js/layer/mobile/need/layer.css">
 	<script type="text/javascript" src="${ctx }/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/js/swiper.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/js/javascript.js"></script>
@@ -31,28 +31,28 @@
 <div class="wrapper">
 	<div class="header">
 		<div class="wrap">
-			<div class="logo"><a href="index.html"><img src="static/picture/logo.png"></a></div>
+			<div class="logo"><a href="index.html"><img src="/static/picture/logo.png"></a></div>
 			<div class="menuBtn"><span class="line1"></span><span class="line2"></span><span class="line3"></span></div>
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li class="on"><a href="${ctx }/menusToUrl?url=index">首页</a></li>
+				<li class="on"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 				<li>
-					<a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a>
+					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="${ctx }/menusToUrl?url=product">明星产品</a>
+					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=product">单品介绍</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
 							<li><a href="product.html">套装介绍</a></li>
 						</ul>
 					</div>
@@ -103,7 +103,7 @@
 			</div>
 			
 		</div>
-		<div class="section section2" style="background-image: url(static/images/section2.jpg);">
+		<div class="section section2" style="background-image: url(/static/images/section2.jpg);">
 			<div class="wrap">
 				<div class="columnTitle">
 					<h3 class="tit">热款推荐</h3>
@@ -123,7 +123,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="section section3" style="background-image: url(static/images/section3.jpg);">
+		<div class="section section3" style="background-image: url(/static/images/section3.jpg);">
 			<div class="wrap">
 				<div class="columnTitle white">
 					<h3 class="tit">宣传视频</h3>
@@ -136,7 +136,7 @@
 					</div>
 															<div class="video">
 						<div class="pic"><div class="icon"></div>
-						<img src="static/picture/20180627022629473.jpg"></div>
+						<img src="/static/picture/20180627022629473.jpg"></div>
 						<video controls>
 							<source src="static/lan.mp4" type="video/mp4">
 						</video>
@@ -148,11 +148,11 @@
 		</div>
 		<div class="section section4">
 			<div class="columnTitle">
-				<h3 class="tit">最新活动</h3>
+				<h3 class="tit">最新咨询</h3>
 				<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
 			</div>
 			<div class="newsList">
-				<ul>
+				<ul id="home3">
 					<li><img src="static/picture/20180620035655300.jpg"></li>
 					<li>
 						<a href="#">
@@ -203,8 +203,8 @@
 	<div class="footer">
 		<div class="linkList">
 			<ul>
-				<li><a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a></li>
-				<li><a href="${ctx }/menusToUrl?url=product">明星产品</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=product">明星产品</a></li>
 				<li><a href="#">活动管理</a></li>
 				<li><a href="#">精彩瞬间</a></li>
 				<li><a href="#">联系我们</a></li>
@@ -244,6 +244,7 @@ jQuery(function($){
 				//注册绑定事件
 				self.loadPaginationhome();
 				self.loadPaginationhome2();
+				self.loadPaginationhome3();
 			}
 			//加载分页
 			  this.loadPaginationhome = function(){
@@ -253,7 +254,7 @@ jQuery(function($){
 			    var index;
 			    var html = '';
 			    $.ajax({
-				      url:"${ctx}/files/getPicture",
+				      url:"${ctx}/view/files/getPicture",
 				      data:data,
 				      type:"GET",
 				      beforeSend:function(){
@@ -283,7 +284,7 @@ jQuery(function($){
 				    var index;
 				    var html = '';
 				    $.ajax({
-					      url:"${ctx}/files/getPicture",
+					      url:"${ctx}/view/files/getPicture",
 					      data:data,
 					      type:"GET",
 					      beforeSend:function(){
@@ -295,13 +296,50 @@ jQuery(function($){
 			      			
 			      			 $(result.data).each(function(i,o){
 			      				html+='<div class="list">'
-									+'<div class="pic"><img src='+o.url+'></div><div class="name">森林抱枕</div>'
+									+'<div class="pic"><img src='+o.url+'></div><div class="name">'+o.title+'</div>'
 									+'<div class="btn"><a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.1.656f2c77mJXn1B&id=564708959015&areaId=321000&is_b=1&cat_id=2&rn=0a9806721babd4e2d2ad127f9ed3fe22" target="_blank">了解详情</a></div>'
 									+'</div>'
 								
 			      			}); 
 						   	layer.close(index);
 						    $("#home2").html(html);
+						   	self.loadEventshome2();
+					      },error:function(){
+								layer.msg("加载失败！", {icon: 2});
+								layer.close(index);
+						  }
+					  });
+				}
+			  this.loadPaginationhome3 = function(){
+				  var data={
+					  	locationType:"home3", 
+				  }
+				    var index;
+				    var html = '';
+				    $.ajax({
+					      url:"${ctx}/view/files/getPicture",
+					      data:data,
+					      type:"GET",
+					      beforeSend:function(){
+						 	  index = layer.load(1, {
+							  shade: [0.1,'#fff'] //0.1透明度的白色背景
+							  });
+						  }, 
+			      		  success: function (result) {
+			      			
+			      			 $(result.data).each(function(i,o){
+			      				 html+='<li><img src='+o.url+'></li>'
+								+'<li><a href="#">'
+								+'<div class="tit">'+o.title+'</div>'
+								+'<div class="date"></div>'
+								+'<div class="text">'+o.content+'</div>'
+								+'<div class="more">REMO+</div>'
+								+'</a>'
+								+'</li>' 
+								
+			      			}); 
+						   	layer.close(index);
+						    $("#home3").html(html);
 						   	self.loadEventshome2();
 					      },error:function(){
 								layer.msg("加载失败！", {icon: 2});
