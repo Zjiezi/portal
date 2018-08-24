@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bluewhite.portal.common.ClearCascadeJSON;
 import com.bluewhite.portal.common.Constants;
 import com.bluewhite.portal.common.entity.CommonResponse;
+import com.bluewhite.portal.common.entity.PageParameter;
 import com.bluewhite.portal.file.entity.Files;
 import com.bluewhite.portal.file.service.FilesService;
 import com.bluewhite.portal.product.entity.Product;
@@ -65,24 +67,10 @@ public class ViewAction {
 	 *	前台根据不同菜单跳转不同的jsp
 	 */
 	@GetMapping(value = "/menusToUrl")
-	public String menusToJsp(HttpServletRequest request,String url) {
+	public String menusToJsp(HttpServletRequest request,String url,String paramName , String paramNum , Model model) {
+		model.addAttribute("paramName", paramName);
+		model.addAttribute("paramNum", paramNum);
 		return url;
-	}
-	
-	/**
-	 *	前台根据不同菜单跳转不同的jsp
-	 */
-	@GetMapping(value = "/pre")
-	@ResponseBody
-	public CommonResponse pre(HttpServletRequest request,String url,String paramName , String paramNum) {
-		CommonResponse cr = new CommonResponse();
-		Map<Object,Object> urlMap = new HashMap<Object,Object>();
-		urlMap.put("paramName", paramName);
-		urlMap.put("paramNum", paramNum);
-		urlMap.put("url", url);
-		cr.setData(urlMap);
-		cr.setMessage("成功");
-		return cr;
 	}
 	
 	
@@ -116,6 +104,22 @@ public class ViewAction {
 	public CommonResponse getProduct(HttpServletRequest request, Long id) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSON.format(service.findOne(id).get()).toJSON());
+		cr.setMessage("查找成功");
+		return cr;
+	}
+	
+	/**
+	 * 
+	 * 产品列表
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/product/productPage")
+	public CommonResponse productPage(HttpServletRequest request, Product prodcut, PageParameter page) {
+		CommonResponse cr = new CommonResponse();
+		cr.setData(clearCascadeJSON.format(service.findPages(prodcut, page)).toJSON());
 		cr.setMessage("查找成功");
 		return cr;
 	}
