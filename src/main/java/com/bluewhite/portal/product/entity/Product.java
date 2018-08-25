@@ -59,10 +59,16 @@ public class Product  extends BaseEntity<Long>{
     private String details;
 	
     /**
-     *产品类型（0=新品，1=爆款）
+     * 产品活动类型（0=新品，1=爆款）
      */
 	@Column(name = "type")
-    private String type;
+    private Integer type;
+	
+    /**
+     * 产品类型（0=毛绒玩具，1=家居用品，2=ip衍生品）
+     */
+	@Column(name = "product_type")
+    private Integer productType;
 	
 	/**
 	 * 图片关联
