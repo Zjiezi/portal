@@ -117,105 +117,13 @@
 
 				<div class="productList">
 					<ul>
-						<li>
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>
-									<h3 class="tit">水活草本保湿乳</h3>
-									<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>
-								</a>
-								<div class="bottom">
-									<div class="price">&yen;368</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div>
-							</div>
-														
-
+						<li id="home">
 							
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
-									<h3 class="tit">水活氨基酸洗面奶</h3>
-									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
-								</a>
-								<div class="bottom">
-									<div class="price">&yen;118</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div>
-							</div>
-													</li>
-												<li>
-														
-
-							
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623060813674.jpg"></div>
-									<h3 class="tit">水活瓷肌嫩肤原液</h3>
-									<div class="txt">先进的萃取工艺，使海藻、芦荟、红花籽、甘草等本草精华原液保湿因子得以完整保存，与含有丰富微量元素的天山雪域冰川水有机结合，深入调理肌肤活力，舒缓干燥不适，充分深度补水，让</div>
-								</a>
-								<div class="bottom">
-									<div class="price">&yen;268</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div>
-							</div>
-														
-
-							
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623061012468.jpg"></div>
-									<h3 class="tit">水活瓷肌修护精华素</h3>
-									<div class="txt">采用野生人参、黄苓、苦参、三味经典本草结合现代尖端技术提取，给肌肤爆发出自然活力，里面的抗氧化成份轻松清除自由基，修复胶原蛋白。N-乙酰氨基葡萄糖自动调节黑素细胞中的黑色素</div>
-								</a>
-								<div class="bottom">
-									<div class="price">&yen;238</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div>
-							</div>
-													</li>
-												<li>
-														
-
-							
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623061226761.jpg"></div>
-									<h3 class="tit">水活瓷肌精华晚霜</h3>
-									<div class="txt">爱萌伊人经典巨作！专门为亚洲女性容易出现的黄气、暗沉、敏感、黑眼圈、红血丝，打造的养肤产品，防斑于源头，轻松破译美丽女人年轻态密码，采用了长白山人参、野生沙棘果等多种名贵</div>
-								</a>
-								<div class="bottom">
-									<div class="price">&yen;460</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div>
-							</div>
-														
-
-							
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623061416222.jpg"></div>
-									<h3 class="tit">焕颜修护精华霜</h3>
-									<div class="txt">采用积雪草、沙棘果、人参、黄芩、当归等多种名贵中草药精心调制而成，独特的配方全面重启皮肤微血管网的同时，迅速渗透入细胞高度控制色素的产生，并将过度增生的色素清除，名贵的中</div>
-								</a>
-								<div class="bottom">
-									<div class="price">&yen;460</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div>
-							</div>
-													</li>
+						</li>
 												
 					</ul>
 				</div>
-				<div class="paging">
-					<ul>
-						 <li class="long"><a>上一页</a></li><li class="on"><a>1</a></li><li><a href="#">2</a></li> <li class="long"><a href="#">下一页</a></li>					</ul>
+				<div class="paging" id="pager">
 				</div>
 			</div>
 		</div>
@@ -238,8 +146,9 @@
 </div>
 
 
-<script type="text/javascript" src="${ctx }/static/tc/js/layer/layer.js"></script>
 <script type="text/javascript" src="${ctx }/static/tc/js/vendor/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="${ctx }/static/tc/js/layer/layer.js"></script>
+<script src="${ctx }/static/tc/js/laypage/laypage.js"></script> 
 <script>
 jQuery(function($){
    	var Login = function(){
@@ -260,18 +169,18 @@ jQuery(function($){
 		  	this.getIndex = function(){
 		  		return _index;
 		  	}
-			 
+		  	var data={
+					  page:1,
+				  	  size:6,
+				}
 			this.init = function(){
 				
 				//注册绑定事件
-				self.loadPaginationhome();
+				self.loadPaginationhome(data);
 			}
 			//加载分页
-			  this.loadPaginationhome = function(){
-				  var data={
-						  page:1,
-					  	  size:6,
-					}
+			  this.loadPaginationhome = function(data){
+				  
 			    var index;
 			    var html = '';
 			    $.ajax({
@@ -285,10 +194,40 @@ jQuery(function($){
 					  }, 
 		      		  success: function (result) {
 		      			
-		      			 $(result.data).each(function(i,o){
-		      				html+='<div class="list"><a href="#" target="_blank"><img src='+o.url+'></a></div>'
-							
+		      			 $(result.data.rows).each(function(i,o){
+		      				$(o.files).each(function(j,k){
+		      					if(j<=0){
+		      				html+='<div class="list"><a href="product-con.html">'
+							+'<div class="pic"><img src="'+k.url+'"></div>'
+							+'<h3 class="tit">'+o.name+'</h3>'
+							+'<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>'
+							+'</a>'
+							+'<div class="bottom">'
+							+'<div class="price">&yen;'+o.price+'</div>'
+							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum='+o.id+'">了解详情</a></div>'
+							+'<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>'
+							+'</div>'
+							+'</div>'
+		      					}
+		      				})
 		      			}); 
+		      			//显示分页
+					   	 laypage({
+					      cont: 'pager', 
+					      pages: result.data.totalPages, 
+					      curr:  result.data.pageNum || 1, 
+					      jump: function(obj, first){ 
+					    	  if(!first){ 
+					    		 
+						        	var _data = {
+						        			page:obj.curr,
+									  		size:6,
+								  	}
+						        
+						            self.loadPaginationhome(_data);
+							     }
+					      }
+					    }); 
 					   	layer.close(index);
 					    $("#home").html(html);
 				      },error:function(){
