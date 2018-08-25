@@ -33,8 +33,8 @@ public class ViewAction {
 
 	{
 		clearCascadeJSON = ClearCascadeJSON.get()
-				.addRetainTerm(Product.class, "id","number", "name", "price", "remark", "details", "type", "files")
-				.addRetainTerm(Files.class, "id", "name", "size", "url", "type");
+				.addRetainTerm(Product.class, "id","number", "name", "price", "remark", "details", "type", "files","productType")
+				.addRetainTerm(Files.class, "id", "name", "size", "url", "type","producImagetType");
 	}
 	
 	/**
