@@ -83,7 +83,7 @@ public class ViewAction {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(ClearCascadeJSON
 				.get()
-				.addRetainTerm(Files.class,"name","url","type","id","title","content")
+				.addRetainTerm(Files.class,"name","url","type","id","title","content","locationType")
 				.format(filesService.findByType(locationType)).toJSON());
 		cr.setMessage("成功");
 		return cr;

@@ -37,7 +37,7 @@ public class Files  extends BaseEntity<Long>{
 	private Long size;
 	
 	/**
-	 * 类型
+	 * 产品格式类型
 	 */
 	@Column(name = "type")
 	private String type;
@@ -53,6 +53,12 @@ public class Files  extends BaseEntity<Long>{
 	 */
 	@Column(name = "location_type")
 	private String locationType;
+	
+	/**
+	 * 产品图片类型（产品介绍图=introduce， 详情图 = details）
+	 */
+	@Column(name = "product_image_type")
+	private String producImagetType;
 	
 	/**
 	 * 产品id
