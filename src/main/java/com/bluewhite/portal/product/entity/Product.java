@@ -53,7 +53,7 @@ public class Product  extends BaseEntity<Long>{
 	private String remark;
 	
     /**
-     * 中文详情
+     * 详情
      */
 	@Column(name = "details")
     private String details;
@@ -75,6 +75,12 @@ public class Product  extends BaseEntity<Long>{
 	 */
 	@OneToMany(mappedBy = "product",cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Files> files = new HashSet<Files>();
+	
+    /**
+     * 尺寸
+     */
+	@Column(name = "size")
+    private String[] size;
 	
 	
 	/**
