@@ -39,11 +39,13 @@
 			<div class="col-xs-8 col-sm-8  col-md-8">
 				<form class="form-search" >
 					<div class="row">
-						<div class="col-xs-8 col-sm-8 col-md-8">
+						<div class="col-xs-11 col-sm-11 col-md-11">
 							<div class="input-group"> 
 								<table><tr><td>产品编号:</td><td><input type="text" name="number" id="number" class="form-control search-query number" /></td>
 								<td>&nbsp&nbsp&nbsp&nbsp</td>
 								<td>产品名称:</td><td><input type="text" name="name" id="name" class="form-control search-query name" /></td>
+								<td>&nbsp&nbsp&nbsp&nbsp</td>
+								<td>产品类型:</td><td><select class="form-control" id="selectstate"><option value="1">毛绒公仔</option><option value="2">家居用品</option><option value="3">IP衍生品</option></select></td>
 								</tr></table> 
 								<span class="input-group-btn">
 									<button type="button" class="btn btn-info btn-square btn-sm btn-3d searchtask">
@@ -188,7 +190,8 @@
 		  	}
 			 var data={
 						page:1,
-				  		size:13,	
+				  		size:13,
+				  		type:$("#selectstate").val(),
 				} 
 			this.init = function(){
 				
@@ -236,6 +239,7 @@
 									  		type:1,
 									  		name:$('#name').val(),
 								  			number:$('#number').val(),
+								  			type:$("#selectstate").val(),
 								  	}
 						        
 						            self.loadPagination(_data);
@@ -404,7 +408,7 @@
 											var data={
 													page:self.getIndex(),
 											  		size:13,	
-											  		
+											  		type:$("#selectstate").val(),
 											} 
 											$("#productId").text("");
 											self.loadPagination(data);
@@ -452,7 +456,7 @@
 											var data={
 													page:self.getIndex(),
 											  		size:13,	
-											  		
+											  		type:$("#selectstate").val(),
 											} 
 											self.loadPagination(data);
 										}else{
@@ -482,6 +486,7 @@
 				  			type:1,
 				  			name:$('#name').val(),
 				  			number:$('#number').val(),
+				  			type:$("#selectstate").val(),
 				  	}
 		            self.loadPagination(data);
 				});
@@ -515,6 +520,7 @@
 									  remark:$("#productRemark").val(),
 									  details:$("#details").val(),
 									  filesIds:arr,
+									  type:$("#selectstate").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",

@@ -137,7 +137,7 @@
 						<div class="information">
 							<h1 class="title">水活草本保湿乳 </h1>
 							<div class="text">
-								<p><div class="list" id="home3" ></div></p>
+								<div class="list" id="home3" style="border-bottom: 1px dashed #dfdfdf;"></div>
 								<p>适合肤质：适合多种肤质，特别推荐中性及偏干性缺水肌肤使用</p>
 								<p>产品功效：用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆弱、干燥、松弛等问题，细腻如丝的乳状质地，保持肌肤底层活力，提升肌肤紧致，令肌肤幼嫩透亮，如玉般晶莹细滑。</p>
 								<p>使用方法：采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆弱、干燥、松弛等问题，细腻如丝的乳状质地，保持肌肤底层活力，提升肌肤紧致，令肌肤幼嫩透亮，如玉般晶莹细滑。</p>
@@ -149,8 +149,8 @@
 						<div class="top"><span>产品描述</span></div>
 						<div class="article">
 						<p><span style="color: rgb(86, 86, 86); font-family: " microsoft="" font-size:="" text-align:="" background-color:=""></span></p>
-						<p style="white-space: normal;"><span style="font-size: 18px; color: rgb(88, 129, 50);"><img alt="" src="/static/picture/20180623055705857.jpg"></span></p>
-						<p style="white-space: normal;">&nbsp;</p><p style="white-space: normal;"><strong>[净含量]：</strong>50ml</p>
+						<p ><span style="font-size: 18px; color: rgb(88, 129, 50);"><img alt="" src="/static/picture/lADPBbCc1r61_SbNAovNBLA_1200_651.jpg"></span></p>
+						<p style="white-space: normal;"></p><p style="white-space: normal;"><img alt="" src="/static/picture/lADPBbCc1r61_SbNAovNBLA_1200_651.jpg"></p>
 						<p style="white-space: normal;">&nbsp;</p><p style="white-space: normal;"><strong>[适合肤质]：</strong>适合多种肤质，特别推荐中性及偏干性缺水肌肤使用。</p>
 						<p style="white-space: normal;">&nbsp;</p><p style="white-space: normal;"><strong>[产品功效]：</strong>采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆弱、干燥、松弛等问题，细腻如丝的乳状质地，保持肌肤底层活力，提升肌肤紧致，令肌肤幼嫩透亮，如玉般晶莹细滑。</p><p style="white-space: normal;">&nbsp;</p>
 						<p style="white-space: normal;"><strong>[使用方法]：</strong>取适量草本保湿乳，由面部中央向两侧轻轻涂抹，让其自然吸收。<br/><br/></p>
@@ -281,26 +281,10 @@ jQuery(function($){
 			      			
 			      			 $(result.data.rows).each(function(i,o){
 			      				$(o.files).each(function(j,k){
-			      				html+='<img class="ss" data-id="'+k.id+'"  data-src="'+k.url+'" style="width: 70px;margin-right: 12px;border: 1px;color: blue;" src="'+k.url+'">'
+			      				html+='<img class="ss" data-id="'+k.id+'"  data-src="'+k.url+'" style="width: 70px;margin-right: 12px;border: 1px;color: blue;border: 1px dashed #dfdfdf;"" src="'+k.url+'">'
 			      				})
 			      			}); 
-			      			//显示分页
-						   	 /* laypage({
-						      cont: 'pager', 
-						      pages: result.data.totalPages, 
-						      curr:  result.data.pageNum || 1, 
-						      jump: function(obj, first){ 
-						    	  if(!first){ 
-						    		 
-							        	var _data = {
-							        			page:obj.curr,
-										  		size:6,
-									  	}
-							        
-							            self.loadPaginationhome(_data);
-								     }
-						      }
-						    });  */
+			      			
 						   	layer.close(index);
 						    $("#home3").html(html);
 							self.lod();
@@ -348,6 +332,7 @@ jQuery(function($){
 				galleryTop.controller.control = galleryThumbs;
 				galleryThumbs.controller.control = galleryTop;
 				 $('.ss').mouseover(function(){
+					 $(this).css("border","2px solid red")
 					 $("#display").css("display","block")
 					 var html="";
 						var src= $(this).data('src');
@@ -355,6 +340,7 @@ jQuery(function($){
 						 $("#display").html(html);
 					  })
 					  $('.ss').mouseout(function(){
+						  $(this).css("border","1px dashed #dfdfdf")
 					 $("#display").css("display","none")
 					  })
 			}

@@ -89,7 +89,7 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
 						<li ><a href="product.html">套装介绍</a></li>
 					</ul>
 				</div>
@@ -97,7 +97,7 @@
 					<ul>
 						<li class="home"><a href="#">首页</a></li>
 						<li><a href="#">明星产品</a></li>
-						<li><a href="#">单品介绍</a></li>
+						<li><a href="#">毛绒公仔</a></li>
 					</ul>
 				</div>
 			</div>
@@ -111,8 +111,8 @@
 					<div class="line"></div>
 				</div>
 				<div class="popupBuyNow">
-					<div class="pic"><img src="/static/picture/20180615115944874.jpg"></div>
-					<div class="text">关注公众号，进入“爱萌伊人”商城即可购买</div>
+					<!-- <div class="pic"><img src="/static/picture/20180615115944874.jpg"></div>
+					<div class="text">关注公众号，进入“爱萌伊人”商城即可购买</div> -->
 				</div>
 
 				<div class="productList">
@@ -172,6 +172,7 @@ jQuery(function($){
 		  	var data={
 					  page:1,
 				  	  size:6,
+				  	  type:1,
 				}
 			this.init = function(){
 				
@@ -222,6 +223,7 @@ jQuery(function($){
 						        	var _data = {
 						        			page:obj.curr,
 									  		size:6,
+									  		type:1,
 								  	}
 						        
 						            self.loadPaginationhome(_data);
