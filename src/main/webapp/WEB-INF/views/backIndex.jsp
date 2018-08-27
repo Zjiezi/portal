@@ -108,9 +108,9 @@
                                 </form>
 
                             </div>
-                        </div>
+                 </div>
 				<form class="form-horizontal addDictDivTypeForm">
-				<div class="row col-xs-12  col-sm-12  col-md-12 ">
+				<div class="row col-xs-12  col-sm-12  col-md-12 " >
 				<div class="form-group">
                            <label class="col-sm-3 col-md-2 control-label">产品名:</label>
                               <div class="col-sm-3 col-md-3">
@@ -135,6 +135,16 @@
                                 </div>
                                 </div>
                     	</div>
+                    	<div class="form-group">
+                            <label class="col-sm-2 col-md-2 control-label" >产品尺寸:</label>
+                                <div class="col-sm-6 col-md-6">
+                                  <input type="text"    id="productsize"  class="form-control size">
+                                </div>
+                                  <div class="col-sm-2 col-md-1"><input type="button" class="btn btn-sm  btn-success form-control" id="save" value="添加"></input></div>
+                                </div>
+                    	</div >
+                    	<div id="tabs">
+                    	</div>
                  <div class="form-group">
                  <label class="col-sm-2 col-md-2 control-label" >详情介绍:</label>
                       <div class="col-sm-8 " > 
@@ -145,7 +155,7 @@
                  <div class="form-group hidden">
                       <div class="col-sm-6" id="productId"> </div>
                  </div>
-</div>
+
 </form>
 </div>
 </div>
@@ -293,7 +303,16 @@
 				})
 				//修改方法
 				$('.update').on('click',function(){
-					
+					$('#save').on('click',function(){
+						var trHtml=""
+						trHtml='<div class="form-group sizeto">'
+                            +'<label class="col-sm-2 col-md-2 control-label" >产品尺寸:</label>'
+                            +'<div class="col-sm-6 col-md-6">'
+                            +'<input type="text" class="form-control size">'
+                            +'</div>'
+                            +'</div>'
+                            $("#tabs").append(trHtml); 
+					})
 					var that=$(this);
 					var id=that.data('id');
 					var name=that.data('name');
@@ -318,10 +337,10 @@
 			      				$("#productName").val(o.name);
 			      				$("#productPrice").val(o.price);
 			      				$("#productRemark").val(o.remark);
+			      				$("#productsize").val(o.size);
 			      				$("#details").val(o.details);
 			      				$(o.files).each(function(j,k){
 			      				th+='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+k.name+' src='+k.url+'></div><div class="dz-success-mark" data-id="'+k.id+'"></div></div>'
-			      				
 			      				})
 			      				 $("#my-awesome-dropzone").html(th); 
 			      				$('.dz-success-mark').on('click',function(){
@@ -382,6 +401,10 @@
 							  a=a.substring(0,a.length-1);
 							  var arr=new Array();
 							  arr=a
+							  var size=new Array()
+							  $($('.size')).each(function(){
+								  size.push($(this).val())
+							  })
 							  postData={
                						  id:id,
 									  number:$("#productNumber").val(),
@@ -390,6 +413,8 @@
 									  remark:$("#productRemark").val(),
 									  details:$("#details").val(),
 									  filesIds:arr,
+									  size:size,
+									  type:$("#selectstate").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
@@ -412,6 +437,7 @@
 											} 
 											$("#productId").text("");
 											self.loadPagination(data);
+											$('.sizeto').remove();
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
@@ -429,6 +455,10 @@
 							  var arr=new Array();
 							  arr=a
 							  var id=that.data('id');
+							  var size=new Array()
+							  $($('.size')).each(function(){
+								  size.push($(this).val())
+							  })
 							  postData={
                						  id:id,
 									  number:$("#productNumber").val(),
@@ -436,7 +466,9 @@
 									  price:$("#productPrice").val(),
 									  remark:$("#productRemark").val(),
 									  details:$("#details").val(),
+									  size:size,
 									  filesIds:arr,
+									  type:$("#selectstate").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
@@ -459,6 +491,7 @@
 											  		type:$("#selectstate").val(),
 											} 
 											self.loadPagination(data);
+											$('.sizeto').remove();
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
@@ -471,7 +504,7 @@
 								});
 							  $('.addDictDivTypeForm')[0].reset(); 
 							  $('#addDictDivType').hide();
-						
+							  $('.sizeto').remove();
 							
 						  }
 					});
@@ -493,7 +526,17 @@
 				
 				
 				//新增产品
+					var trHtml="";
 				$('#addproduct').on('click',function(){
+					$('#save').on('click',function(){
+						trHtml='<div class="form-group sizeto">'
+                            +'<label class="col-sm-2 col-md-2 control-label" >产品尺寸:</label>'
+                            +'<div class="col-sm-6 col-md-6">'
+                            +'<input type="text" class="form-control size">'
+                            +'</div>'
+                            +'</div>'
+                            $("#tabs").append(trHtml); 
+					})
 					$("#my-awesome-dropzone").text("");
 					var _index
 					var index
@@ -513,6 +556,13 @@
 							  a=a.substring(0,a.length-1);
 							  var arr=new Array();
 							  arr=a
+							  var size=new Array()
+							  $($('.size')).each(function(){
+								  size.push($(this).val())
+							  })
+							  if($("#productName").val()==""){
+								  return layer.msg("产品名不能为空", {icon: 2});
+							  }
 							  postData={
 									  number:$("#productNumber").val(),
 									  name:$("#productName").val(),
@@ -520,6 +570,7 @@
 									  remark:$("#productRemark").val(),
 									  details:$("#details").val(),
 									  filesIds:arr,
+									  size:size,
 									  type:$("#selectstate").val(),
 							  }
 							  $.ajax({
@@ -541,6 +592,7 @@
 											self.loadPagination(data);
 											$(".dz-started").text("");
 											$("#productId").text("");
+											$('#tabs').text("");
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
@@ -553,13 +605,9 @@
 								});
 							},
 						  end:function(){
-							  
-							  
-							  
 							  $('.addDictDivTypeForm')[0].reset(); 
 							  $('#addDictDivType').hide();
-						
-							
+							  $('#tabs').text("");
 						  }
 					});
 				})

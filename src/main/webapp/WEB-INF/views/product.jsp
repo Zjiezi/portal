@@ -106,7 +106,7 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">单品介绍</h2>
+					<h2 class="tit">公仔介绍</h2>
 					<div class="entit">Single product introduction</div>
 					<div class="line"></div>
 				</div>
@@ -201,7 +201,7 @@ jQuery(function($){
 		      				html+='<div class="list"><a href="product-con.html">'
 							+'<div class="pic"><img src="'+k.url+'"></div>'
 							+'<h3 class="tit">'+o.name+'</h3>'
-							+'<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>'
+							+'<div class="txt">'+o.details+'</div>'
 							+'</a>'
 							+'<div class="bottom">'
 							+'<div class="price">&yen;'+o.price+'</div>'

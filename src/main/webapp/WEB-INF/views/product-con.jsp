@@ -105,8 +105,8 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">水活草本保湿乳</h2>
-					<div class="entit">Living water hrebaceous moisturizer</div>
+					<h2 class="tit" id="title"></h2>
+					<!-- <div class="entit">Living water hrebaceous moisturizer</div> -->
 					<div class="line"></div>
 				</div>
 				<div class="productDetails">
@@ -135,7 +135,7 @@
 							</script>
 						</div>
 						<div class="information">
-							<h1 class="title">水活草本保湿乳 </h1>
+							<h1 class="title"id="title2"> </h1>
 							<div class="text">
 								<div class="list" id="home3" style="border-bottom: 1px dashed #dfdfdf;"></div>
 								<p>适合肤质：适合多种肤质，特别推荐中性及偏干性缺水肌肤使用</p>
@@ -232,6 +232,8 @@ jQuery(function($){
 			      		  success: function (result) {
 			      			
 			      			 $(result.data.rows).each(function(i,o){
+			      				 $('#title').text(o.name)
+			      				$('#title2').text(o.name)
 			      				$(o.files).each(function(j,k){
 			      				html+='<div class="list '+k.id+'"><img src="'+k.url+'"></div>'
 			      				})
