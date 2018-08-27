@@ -99,6 +99,16 @@ public class Product  extends BaseEntity<Long>{
 	@Transient
 	private String filesIds[];
 
+	
+	
+	public void setSize(String[] size) {
+		String sizes = "";
+		for (int i = 0; i < size.length; i++) {
+			sizes += sizes == "" ? size[i] : ","+size[i];
+		}
+		this.size = sizes;
+	}
+	
 	public String[] getSize() {
 		String[] sizes =null;
 		if (!StringUtils.isEmpty(size)) {
@@ -106,6 +116,10 @@ public class Product  extends BaseEntity<Long>{
 		}
 		return sizes;
 	}
+
+
+
+
 	
 	
 	
