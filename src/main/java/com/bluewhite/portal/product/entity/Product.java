@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.util.StringUtils;
+
 import com.bluewhite.portal.base.BaseEntity;
 import com.bluewhite.portal.file.entity.Files;
 
@@ -80,7 +82,7 @@ public class Product  extends BaseEntity<Long>{
      * 尺寸
      */
 	@Column(name = "size")
-    private String[] size;
+    private String size;
 	
 	
 	/**
@@ -96,4 +98,15 @@ public class Product  extends BaseEntity<Long>{
 	
 	@Transient
 	private String filesIds[];
+
+	public String[] getSize() {
+		String[] sizes =null;
+		if (!StringUtils.isEmpty(size)) {
+			 sizes = size.split(",");
+		}
+		return sizes;
+	}
+	
+	
+	
 }
