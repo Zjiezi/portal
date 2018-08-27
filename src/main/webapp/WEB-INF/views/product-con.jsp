@@ -138,10 +138,10 @@
 							<h1 class="title"id="title2"> </h1>
 							<div class="text">
 								<div class="list" id="home3" style="border-bottom: 1px dashed #dfdfdf;"></div>
-								<p>适合肤质：适合多种肤质，特别推荐中性及偏干性缺水肌肤使用</p>
-								<p>产品功效：用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆弱、干燥、松弛等问题，细腻如丝的乳状质地，保持肌肤底层活力，提升肌肤紧致，令肌肤幼嫩透亮，如玉般晶莹细滑。</p>
-								<p>使用方法：采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆弱、干燥、松弛等问题，细腻如丝的乳状质地，保持肌肤底层活力，提升肌肤紧致，令肌肤幼嫩透亮，如玉般晶莹细滑。</p>
-								<p>商品售价：<span>&yen;368</span></p>
+								<p id="home4"></p>
+								<p id="home5"></p>
+								<p>清洗方法：干洗</p>
+								<p >商品售价：<span id="home6">&yen;368</span></p>
 							</div>
 						</div>
 					</div>
@@ -207,7 +207,7 @@ jQuery(function($){
 		  		return _index;
 		  	}
 		  	var data={
-		  			"${paramName}":"${paramNum}"
+		  			"${paramName}":"${paramNum}",
 				}
 			this.init = function(){
 				
@@ -232,29 +232,22 @@ jQuery(function($){
 			      		  success: function (result) {
 			      			
 			      			 $(result.data.rows).each(function(i,o){
+			      				var roleidArray = new Array();
+			      				roleidArray=o.size
+			      				str1=roleidArray.join(" ")
+			      				console.log(str1)
 			      				 $('#title').text(o.name)
 			      				$('#title2').text(o.name)
+			      				$('#home4').text("产品尺寸:"+str1)
+			      				$('#home5').text("产品说明:"+o.details)
+			      				$('#home6').text("¥"+o.price)
 			      				$(o.files).each(function(j,k){
+			      					if(k.producImagetType=="introduce"){
 			      				html+='<div class="list '+k.id+'"><img src="'+k.url+'"></div>'
+			      					}
 			      				})
 			      			}); 
-			      			//显示分页
-						   	 /* laypage({
-						      cont: 'pager', 
-						      pages: result.data.totalPages, 
-						      curr:  result.data.pageNum || 1, 
-						      jump: function(obj, first){ 
-						    	  if(!first){ 
-						    		 
-							        	var _data = {
-							        			page:obj.curr,
-										  		size:6,
-									  	}
-							        
-							            self.loadPaginationhome(_data);
-								     }
-						      }
-						    });  */
+			      			
 						   	layer.close(index);
 						    $("#home").html(html);
 						    $("#home2").html(html);
@@ -270,6 +263,7 @@ jQuery(function($){
 			  this.loadPaginationhome3 = function(data){
 				  var index;
 				    var html = '';
+				    var htmltw="";
 				    $.ajax({
 					      url:"${ctx}/view/product/productPage",
 					      data:data,
@@ -283,8 +277,11 @@ jQuery(function($){
 			      			
 			      			 $(result.data.rows).each(function(i,o){
 			      				$(o.files).each(function(j,k){
-			      				html+='<img class="ss" data-id="'+k.id+'"  data-src="'+k.url+'" style="width: 70px;margin-right: 12px;border: 1px;color: blue;border: 1px dashed #dfdfdf;"" src="'+k.url+'">'
+			      					if(k.producImagetType=="introduce"){
+			      				html+='<img class="ss" data-id="'+k.id+'"  data-src="'+k.url+'" style="width: 70px;margin-top: 6px;margin-right: 12px;border: 1px;color: blue;border: 1px dashed #dfdfdf;"" src="'+k.url+'">'
+			      				}
 			      				})
+			      				
 			      			}); 
 			      			
 						   	layer.close(index);
