@@ -11,7 +11,7 @@
 		<script src="js/respond.min1.4.2.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style2.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
 	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="/static/js/swiper.min.js"></script>
@@ -42,13 +42,23 @@
 						</ul>
 					</div>
 				</li>
-				<li class="on">
+				<li >
 					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
 							<li><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
 							<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="on">
+					<a href="ketang.html">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="jieda.html">定制案例</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
 						</ul>
 					</div>
 				</li>
@@ -90,18 +100,15 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
-						<li ><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
-						<li><input type="text" class="search" style="line-height: 60px;position:relative;top:15px; background-color: #EDF1F2;height: 15px;width: 180px; padding: 7px 15px; font-size: 0.75em;border-radius:9px;" placeholder="查询商品"><button type="submit" class="btn btn-sm btn-search" style="float: left; background-image: url('/static/images/20180830.png');">
-                    </button></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="#">首页</a></li>
-						<li><a href="#">明星产品</a></li>
-						<li><a href="#">毛绒公仔</a></li>
+						<li><a href="#">定制合作</a></li>
+						<li><a href="#">合作客户</a></li>
 					</ul>
 				</div>
 			</div>
@@ -121,10 +128,73 @@
 
 				<div class="productList">
 					<ul>
-						<li id="home">
+						<li>
+							<div class="list">
+								<a href="product-con.html">
+									<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>
+									<h3 class="tit">水活草本保湿乳</h3>
+									<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>
+								</a>
+								 <div class="bottom">
+									<div class="btn"><a href="product-con.html">了解详情</a></div>
+									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
+								</div> 
+							</div>
+														
+
 							
-						</li>
-												
+							<div class="list">
+								<a href="product-con.html">
+									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
+									<h3 class="tit">水活氨基酸洗面奶</h3>
+									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
+								</a>
+								<!-- <div class="bottom">
+									<div class="price">&yen;118</div>
+									<div class="btn"><a href="product-con.html">了解详情</a></div>
+									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
+								</div> -->
+							</div>
+							<div class="list">
+								<a href="product-con.html">
+									<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>
+									<h3 class="tit">水活草本保湿乳</h3>
+									<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>
+								</a>
+								<!-- <div class="bottom">
+									<div class="price">&yen;368</div>
+									<div class="btn"><a href="product-con.html">了解详情</a></div>
+									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
+								</div> -->
+							</div>
+														
+
+							
+							<div class="list">
+								<a href="product-con.html">
+									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
+									<h3 class="tit">水活氨基酸洗面奶</h3>
+									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
+								</a>
+								<!-- <div class="bottom">
+									<div class="price">&yen;118</div>
+									<div class="btn"><a href="product-con.html">了解详情</a></div>
+									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
+								</div> -->
+							</div>
+							<div class="list">
+								<a href="product-con.html">
+									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
+									<h3 class="tit">水活氨基酸洗面奶</h3>
+									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
+								</a>
+								<!-- <div class="bottom">
+									<div class="price">&yen;118</div>
+									<div class="btn"><a href="product-con.html">了解详情</a></div>
+									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
+								</div> -->
+							</div>
+													</li>					
 					</ul>
 				</div>
 				<div class="paging" id="pager">
@@ -199,7 +269,7 @@ jQuery(function($){
 					  }, 
 		      		  success: function (result) {
 		      			
-		      			 $(result.data.rows).each(function(i,o){
+		      			 /* $(result.data.rows).each(function(i,o){
 		      				 var p;
 		      				for (var i = 0; i < o.files.length; i++) {
 								if(o.files[i].producImagetType=="introduce"){
@@ -220,7 +290,7 @@ jQuery(function($){
 							+'</div>'
 							+'</div>'
 		      				
-		      			}); 
+		      			});  */
 		      			//显示分页
 					   	 laypage({
 					      cont: 'pager', 

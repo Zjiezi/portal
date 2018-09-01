@@ -31,7 +31,7 @@
 <div class="wrapper">
 	<div class="header">
 		<div class="wrap">
-			<div class="logo"><a href="index.html"><img src="/static/picture/logo.png"></a></div>
+			<div class="logo"><a href="${ctx }/view/menusToUrl?url=index"><img src="/static/picture/logo.png"></a></div>
 			<div class="menuBtn"><span class="line1"></span><span class="line2"></span><span class="line3"></span></div>
 			<div class="nav">
 				<div class="tit">MENU</div>
@@ -54,6 +54,16 @@
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
 							<li><a href="product.html">套装介绍</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="ketang.html">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="jieda.html">定制案例</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
 						</ul>
 					</div>
 				</li>

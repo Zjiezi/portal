@@ -951,13 +951,14 @@ video{
 }
 .container .aboutPage .productList li:after{content:"";height:0;display:block;clear:both}
 .container .aboutPage .productList li .list{
-	width: 50%;
-	padding-right: 30px;
+	width: 25%;
+	 padding-right: 10px;
 	box-sizing: border-box;
 	float: left;
 }
 .container .aboutPage .productList li .list:nth-child(even){
-	padding-left: 30px;
+	 padding-left: 10px; 
+	 padding-right: 10px;
 	padding-right: 0;
 }
 .container .aboutPage .productList li .pic{
@@ -997,7 +998,7 @@ video{
 	-o-transition: 0.4s;
 }
 .container .aboutPage .productList li .txt{
-	width: 390px;
+	/* width: 390px; */
 	height: 40px;
 	line-height: 20px;
 	font-size: 14px;

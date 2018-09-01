@@ -10,12 +10,12 @@
 		<script src="js/html5shiv.min-3.7.3.js"></script>
 		<script src="js/respond.min1.4.2.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="static/css/style.css">
-	<link rel="stylesheet" type="text/css" href="static/css/mobile.css">
-	<script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="static/js/swiper.min.js"></script>
-	<script type="text/javascript" src="static/js/javascript.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
+	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/static/js/swiper.min.js"></script>
+	<script type="text/javascript" src="/static/js/javascript.js"></script>
 	<title>蓝白玩偶 </title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -25,28 +25,28 @@
 <div class="wrapper">
 	<div class="header">
 		<div class="wrap">
-			<div class="logo"><a href="index.html"><img src="static/picture/logo.png"></a></div>
+			<div class="logo"><a href="index.html"><img src="/static/picture/logo.png"></a></div>
 			<div class="menuBtn"><span class="line1"></span><span class="line2"></span><span class="line3"></span></div>
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li ><a href="${ctx }/menusToUrl?url=index">首页</a></li>
+				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 				<li class="on">
-					<a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a>
+					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="${ctx }/menusToUrl?url=product">明星产品</a>
+					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=product">单品介绍</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
 							<li><a href="product.html">套装介绍</a></li>
 						</ul>
 					</div>
@@ -84,22 +84,22 @@
 	</div>
 	
 	<div class="container">
-				<div class="banner"><a href="javascript:;"><img src="static/picture/20180611105958725.jpg"></a></div>
+				<div class="banner"><a href="javascript:;"><img src="/static/picture/20180611105958725.jpg"></a></div>
 		<div class="columnMenu">
 			<div class="wrap">
 				<div class="nav four">
 					<ul>
-						<li class="on"><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-						<li ><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
-						<li class="home"><a href="${ctx }/menusToUrl?url=index">首页</a></li>
-						<li><a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a></li>
-						<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
+						<li class="home"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
 					</ul>
 				</div>
 			</div>
@@ -114,7 +114,7 @@
 								<div class="about">
 					<div class="bigPic">
 						<div class="bg"></div>
-						<div class="pic"><img src="static/picture/20180710094745770.png"></div>
+						<div class="pic"><img src="/static/picture/20180710094745770.png"></div>
 					</div>
 					<div class="leftArticle">
 						<div class="tltle"><div class="entit">Shenzhen Aimei Iraqi Human Skin Health Management Co., Ltd.</div><h1 class="tit">深圳市爱萌伊人肌肤健康管理有限公司</h1><div class="line"></div></div><div class="article"><p>健康之美，源于天然。肌肤之美，源于爱萌伊人。</p><p>&nbsp;</p><p>春生、夏长、秋收、冬藏……顺应自然四时规律，爱萌伊人传承千年中医中药文化，以“平衡之道”荟萃古今智慧，养内调外，平衡肌肤与身心。以本草汉方为特色，为广大女性量身打造“健康、美丽、快乐”的肌肤管理理念。</p><p>&nbsp;</p><p>根据《黄帝内经》记载：“女七男八”。即女性的生命周期数是7，每7年体现一次大变化。专家组研发团队，运用肌肤的代谢功能和代偿原理，结合创新的第六代生物科技，采用纯天然的人参、甘草、黄芪等本草萃取精华原液，研制出高效的水活瓷肌养肤产品，能够抗氧化，代谢老化角质，有效祛除黄气、暗沉、细纹，修护敏感，预防长斑，令肌肤沁享年轻态。</p><p>&nbsp;</p><p>我们孜孜不倦探寻本草养肤之道，致力于将“爱萌伊人”打造成世界钦佩的民族品牌，缔造肌肤根源之美，开启东方美肤新风尚，让世界领略东方之美！</p></div>					</div>
@@ -127,7 +127,7 @@
 		<div class="linkList">
 			<ul>
 				<li><a href="#">走进蓝白</a></li>
-				<li><a href="${ctx }/menusToUrl?url=product">明星产品</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=product">明星产品</a></li>
 				<li><a href="#">活动管理</a></li>
 				<li><a href="#">精彩瞬间</a></li>
 				<li><a href="#">联系我们</a></li>
