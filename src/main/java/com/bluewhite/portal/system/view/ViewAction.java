@@ -13,6 +13,8 @@ import com.bluewhite.portal.common.ClearCascadeJSON;
 import com.bluewhite.portal.common.Constants;
 import com.bluewhite.portal.common.entity.CommonResponse;
 import com.bluewhite.portal.common.entity.PageParameter;
+import com.bluewhite.portal.customer.entity.Customer;
+import com.bluewhite.portal.customer.service.CustomerService;
 import com.bluewhite.portal.file.entity.Files;
 import com.bluewhite.portal.file.service.FilesService;
 import com.bluewhite.portal.product.entity.Product;
@@ -34,6 +36,19 @@ public class ViewAction {
 	{
 		clearCascadeJSON = ClearCascadeJSON.get()
 				.addRetainTerm(Product.class, "id","number", "name", "price", "remark", "details", "type", "files","productType","size")
+				.addRetainTerm(Files.class, "id", "name", "size", "url", "type","producImagetType");
+	}
+	
+	
+	@Autowired
+	private CustomerService customerService;
+	
+	
+	private ClearCascadeJSON clearCascadeJSONOne;
+
+	{
+		clearCascadeJSON = ClearCascadeJSON.get()
+				.addRetainTerm(Customer.class, "id","time", "name", "files")
 				.addRetainTerm(Files.class, "id", "name", "size", "url", "type","producImagetType");
 	}
 	
@@ -119,6 +134,40 @@ public class ViewAction {
 	public CommonResponse productPage(HttpServletRequest request, Product prodcut, PageParameter page) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSON.format(service.findPages(prodcut, page)).toJSON());
+		cr.setMessage("查找成功");
+		return cr;
+	}
+	
+	
+	
+	/**
+	 * 
+	 * 客户列表
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/customer/customerPage")
+	public CommonResponse customerPage(HttpServletRequest request, Customer customer, PageParameter page) {
+		CommonResponse cr = new CommonResponse();
+		cr.setData(clearCascadeJSONOne.format(customerService.findPages(customer)).toJSON());
+		cr.setMessage("查找成功");
+		return cr;
+	}
+	
+	/**
+	 * 
+	 * 客户详情
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@GetMapping(value = "/customer/getCustomer")
+	public CommonResponse getCustomer(HttpServletRequest request, Long id) {
+		CommonResponse cr = new CommonResponse();
+		cr.setData(clearCascadeJSONOne.format(customerService.findOne(id).get()).toJSON());
 		cr.setMessage("查找成功");
 		return cr;
 	}
