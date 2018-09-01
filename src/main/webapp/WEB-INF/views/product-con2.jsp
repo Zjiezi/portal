@@ -90,8 +90,8 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
 						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
 					</ul>
 				</div>

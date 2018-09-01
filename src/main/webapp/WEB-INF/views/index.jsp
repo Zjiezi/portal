@@ -58,6 +58,16 @@
 					</div>
 				</li>
 				<li>
+					<a href="ketang.html">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="jieda.html">定制案例</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
 					<a href="ketang.html">最新活动</a>
 					<div class="sub">
 						<ul>

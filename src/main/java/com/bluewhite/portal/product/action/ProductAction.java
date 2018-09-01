@@ -31,7 +31,7 @@ public class ProductAction {
 
 	{
 		clearCascadeJSON = ClearCascadeJSON.get()
-				.addRetainTerm(Product.class, "id","number", "name", "price", "remark", "details", "type", "files","productType","size")
+				.addRetainTerm(Product.class, "id","number", "name", "price", "remark", "details", "type", "files","productType","size","filler","fabric")
 				.addRetainTerm(Files.class, "id", "name", "size", "url", "type","producImagetType");
 	}
 

@@ -84,6 +84,17 @@ public class Product  extends BaseEntity<Long>{
 	@Column(name = "size")
     private String size;
 	
+	/**
+     * 填充物
+     */
+	@Column(name = "filler")
+    private String filler;
+	
+	/**
+     * 面料
+     */
+	@Column(name = "fabric")
+    private String fabric;
 	
 	/**
 	 * 查询字段

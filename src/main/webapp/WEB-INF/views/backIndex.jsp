@@ -138,6 +138,18 @@
                                 </div>
                     	</div>
                     	<div class="form-group">
+                           <label class="col-sm-3 col-md-2 control-label">填充物:</label>
+                              <div class="col-sm-3 col-md-3">
+                                  <input type="text" id="filler"  class="form-control ">
+                              </div>
+                               <div >
+                            <label class="col-sm-2 col-md-2 control-label" >面料:</label>
+                                <div class="col-sm-3 col-md-3">
+                                  <input type="text"  id="fabric"  class="form-control ">
+                                </div>
+                                </div>
+                    	</div>
+                    	<div class="form-group">
                             <label class="col-sm-2 col-md-2 control-label" >产品尺寸:</label>
                                 <div class="col-sm-6 col-md-6">
                                   <input type="text"    id="productsize"  class="form-control size">
@@ -323,7 +335,8 @@
 			      		  success: function (result) {
 			      			
 			      			 $(result.data.rows).each(function(i,o){
-			      				
+			      				$("#filler").val(o.filler);
+								$("#fabric").val(o.fabric);
 			      				$("#productNumber").val(o.number);
 			      				$("#productName").val(o.name);
 			      				$("#productPrice").val(o.price);
@@ -381,7 +394,7 @@
 					_index = layer.open({
 						  type: 1,
 						  skin: 'layui-layer-rim', //加上边框
-						  area: ['60%', '80%'], 
+						  area: ['60%', '90%'], 
 						  btnAlign: 'c',//宽高
 						  maxmin: true,
 						  title:name,
@@ -395,6 +408,7 @@
 							  var size=new Array()
 							  $($('.size')).each(function(){
 								  size.push($(this).val())
+								  
 							  })
 							  postData={
                						  id:id,
@@ -406,6 +420,8 @@
 									  filesIds:arr,
 									  size:size,
 									  type:$("#selectstatee").val(),
+									  filler:$("#filler").val(),
+									  fabric:$("#fabric").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
@@ -427,6 +443,14 @@
 											  		type:$("#selectstatee").val(),
 											} 
 											$("#productId").text("");
+											var data = {
+								        			page:self.getIndex(),
+											  		size:13,
+											  		type:1,
+											  		name:$('#name').val(),
+										  			number:$('#number').val(),
+										  			type:$("#selectstatee").val(),
+										  	}
 											self.loadPagination(data);
 											$('.sizeto').remove();
 										}else{
@@ -446,10 +470,6 @@
 							  var arr=new Array();
 							  arr=a
 							  var id=that.data('id');
-							  var size=new Array()
-							  $($('.size')).each(function(){
-								  size.push($(this).val())
-							  })
 							  
 							  postData={
                						  id:id,
@@ -458,9 +478,10 @@
 									  price:$("#productPrice").val(),
 									  remark:$("#productRemark").val(),
 									  details:$("#details").val(),
-									  size:size,
 									  filesIds:arr,
 									  type:$("#selectstatee").val(),
+									  filler:$("#filler").val(),
+									  fabric:$("#fabric").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
@@ -475,13 +496,16 @@
 									
 									success:function(result){
 										if(0==result.code){
-											layer.msg("修改成功", {icon: 1});
+											
 											$("#productId").text("");
-											var data={
-													page:self.getIndex(),
-											  		size:13,	
-											  		type:$("#selectstatee").val(),
-											} 
+											var data = {
+								        			page:self.getIndex(),
+											  		size:13,
+											  		type:1,
+											  		name:$('#name').val(),
+										  			number:$('#number').val(),
+										  			type:$("#selectstatee").val(),
+										  	} 
 											self.loadPagination(data);
 											$('.sizeto').remove();
 										}else{
@@ -538,7 +562,7 @@
 					_index = layer.open({
 						  type: 1,
 						  skin: 'layui-layer-rim', //加上边框
-						  area: ['60%', '80%'], 
+						  area: ['60%', '90%'], 
 						  btnAlign: 'c',//宽高
 						  maxmin: true,
 						  title:"新增产品",
@@ -565,6 +589,8 @@
 									  filesIds:arr,
 									  size:size,
 									  type:$("#selectstatee").val(),
+									  filler:$("#filler").val(),
+									  fabric:$("#fabric").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
@@ -582,6 +608,14 @@
 											layer.msg("添加成功！", {icon: 1});
 											$('#addDictDivType').hide();
 											$(".addDictDivTypeForm")[0].reset();
+											var data = {
+								        			page:self.getIndex(),
+											  		size:13,
+											  		type:1,
+											  		name:$('#name').val(),
+										  			number:$('#number').val(),
+										  			type:$("#selectstatee").val(),
+										  	}
 											self.loadPagination(data);
 											$(".dz-started").text("");
 											$("#productId").text("");

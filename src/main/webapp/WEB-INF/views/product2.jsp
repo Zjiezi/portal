@@ -90,18 +90,16 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
-						<li ><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
 						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
-						<li><input type="text" class="search" style="line-height: 60px;position:relative;top:15px; background-color: #EDF1F2;height: 15px;width: 180px; padding: 7px 15px; font-size: 0.75em;border-radius:9px;" placeholder="查询商品"><button type="submit" class="btn btn-sm btn-search" style="float: left; background-image: url('/static/images/20180830.png');">
-                    </button></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="#">首页</a></li>
 						<li><a href="#">明星产品</a></li>
-						<li><a href="#">毛绒公仔</a></li>
+						<li><a href="#">家居用品</a></li>
 					</ul>
 				</div>
 			</div>
@@ -110,8 +108,8 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">公仔介绍</h2>
-					<div class="entit">Doll product introduction</div>
+					<h2 class="tit">家居用品</h2>
+					<div class="entit">Home Furnishing product introduction</div>
 					<div class="line"></div>
 				</div>
 				<div class="popupBuyNow">
@@ -176,7 +174,7 @@ jQuery(function($){
 		  	var data={
 					  page:1,
 				  	  size:6,
-				  	  type:1,
+				  	  type:2,
 				}
 			this.init = function(){
 				
@@ -215,7 +213,7 @@ jQuery(function($){
 							+'</a>'
 							+'<div class="bottom">'
 							+'<div class="price">&yen;'+o.price+'</div>'
-							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum='+o.id+'" target="_blank">了解详情</a></div>'
+							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=product-con2&paramName=id&paramNum='+o.id+'" target="_blank">了解详情</a></div>'
 							+'<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>'
 							+'</div>'
 							+'</div>'
