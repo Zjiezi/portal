@@ -1,11 +1,10 @@
 package com.bluewhite.portal.customer.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.bluewhite.portal.base.BaseCRUDService;
 import com.bluewhite.portal.common.entity.PageParameter;
+import com.bluewhite.portal.common.entity.PageResult;
 import com.bluewhite.portal.customer.entity.Customer;
 
 @Service
@@ -17,6 +16,6 @@ public interface CustomerService extends BaseCRUDService<Customer, Long>{
 	 * @param page
 	 * @return
 	 */
-	public List<Customer> findPages(Customer customer);
+	public PageResult<Customer> findPages(Customer customer , PageParameter page);
 
 }

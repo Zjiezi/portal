@@ -7,12 +7,16 @@ import java.util.List;
 import javax.persistence.criteria.Predicate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.bluewhite.portal.base.BaseServiceImpl;
+import com.bluewhite.portal.common.entity.PageParameter;
+import com.bluewhite.portal.common.entity.PageResult;
 import com.bluewhite.portal.customer.dao.CustomerDao;
 import com.bluewhite.portal.customer.entity.Customer;
+import com.bluewhite.portal.product.entity.Product;
 
 @Service
 public class CustomerServiceImpl  extends BaseServiceImpl<Customer, Long> implements CustomerService{
@@ -21,9 +25,9 @@ public class CustomerServiceImpl  extends BaseServiceImpl<Customer, Long> implem
 	private CustomerDao dao;
 
 	@Override
-	public List<Customer> findPages(Customer param) {
-		List<Customer> result = dao.findAll((root,query,cb) -> {
-        	List<Predicate> predicate = new ArrayList<>();
+	public PageResult<Customer> findPages(Customer param , PageParameter page) {
+		Page<Customer> pages = dao.findAll((root,query,cb) -> {
+			List<Predicate> predicate = new ArrayList<>();
         	//按id过滤
         	if (param.getId() != null) {
 				predicate.add(cb.equal(root.get("id").as(Long.class),param.getId()));
@@ -43,7 +47,8 @@ public class CustomerServiceImpl  extends BaseServiceImpl<Customer, Long> implem
 			Predicate[] pre = new Predicate[predicate.size()];
 			query.where(predicate.toArray(pre));
         	return null;
-        });
+        },page);
+		PageResult<Customer> result = new PageResult<>(pages,page);
         return result;
 	}
 
