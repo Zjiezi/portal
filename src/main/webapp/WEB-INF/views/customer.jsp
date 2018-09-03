@@ -245,8 +245,7 @@ jQuery(function($){
 		  	}
 		  	var data={
 					  page:1,
-				  	  size:6,
-				  	  type:1,
+				  	  size:13,
 				}
 			this.init = function(){
 				
@@ -259,7 +258,7 @@ jQuery(function($){
 			    var index;
 			    var html = '';
 			    $.ajax({
-				      url:"${ctx}/view/product/productPage",
+				      url:"${ctx}/view/customer/customerPage",
 				      data:data,
 				      type:"GET",
 				      beforeSend:function(){
@@ -269,7 +268,7 @@ jQuery(function($){
 					  }, 
 		      		  success: function (result) {
 		      			
-		      			 /* $(result.data.rows).each(function(i,o){
+		      			  $(result.data).each(function(i,o){
 		      				 var p;
 		      				for (var i = 0; i < o.files.length; i++) {
 								if(o.files[i].producImagetType=="introduce"){
@@ -278,19 +277,18 @@ jQuery(function($){
 	      						}
 							
 							}
-		      				html+='<div class="list"><a href="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum='+o.id+'" target="_blank">'
-							+'<div class="pic"><img src="'+p.url+'"></div>'
-							+'<h3 class="tit">'+o.name+'</h3>'
-							+'<div class="txt">'+o.details+'</div>'
+		      				html+='<div class="list"><a href="product-con.html">'
+							+'<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>'
+							+'<h3 class="tit">水活草本保湿乳</h3>'
+							+'<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>'
 							+'</a>'
 							+'<div class="bottom">'
-							+'<div class="price">&yen;'+o.price+'</div>'
-							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum='+o.id+'" target="_blank">了解详情</a></div>'
+							+'<div class="btn"><a href="product-con.html">了解详情</a></div>'
 							+'<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>'
 							+'</div>'
 							+'</div>'
 		      				
-		      			});  */
+		      			}); 
 		      			//显示分页
 					   	 laypage({
 					      cont: 'pager', 
