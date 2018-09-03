@@ -70,7 +70,7 @@ public class CustomerAction {
 
 	/**
 	 * 
-	 * 添加产品
+	 * 添加客户
 	 * 
 	 * @param request
 	 * @param prodcut
@@ -79,13 +79,6 @@ public class CustomerAction {
 	@PostMapping(value = "/customer/addCustomer")
 	public CommonResponse addCustomer(HttpServletRequest request, Customer customer) {
 		CommonResponse cr = new CommonResponse();
-		if(customer.getFilesId()!=null){
-			Optional<Files> files = filesService.findOne(customer.getFilesId());
-			if(files.isPresent()){
-				customer.setFiles(files.get());
-			}
-		}
-		
 		if (customer.getId() != null) {
 			Optional<Customer> oldCustomer = service.findOne(customer.getId());
 			if (oldCustomer.isPresent()) {
@@ -94,6 +87,20 @@ public class CustomerAction {
 		}else{
 			service.save(customer);
 		}
+		
+		if(customer.getFilesIds()!=null){
+			if (customer.getFilesIds().length > 0) {
+				for (int i = 0; i < customer.getFilesIds().length; i++) {
+					Long id = Long.parseLong(customer.getFilesIds()[i]);
+					Optional<Files> files = filesService.findOne(id);
+					if(files.isPresent()){
+						files.get().setCustomerId(customer.getId());
+						filesService.save(files.get());
+					}
+				}
+			}
+		}
+		
 		cr.setMessage("添加成功");
 		return cr;
 	}

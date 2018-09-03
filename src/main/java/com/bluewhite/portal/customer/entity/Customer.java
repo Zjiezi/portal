@@ -45,9 +45,8 @@ public class Customer  extends BaseEntity<Long>{
 	/**
 	 * 图片关联
 	 */
-    @OneToOne 
-    @JoinColumn(name="files_id",referencedColumnName="id")
-	private Files files;
+	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<Files> files = new HashSet<Files>();
 	
 	/**
 	 * 时间
@@ -55,11 +54,8 @@ public class Customer  extends BaseEntity<Long>{
 	@Column(name = "time")
 	private Date time;
 	
-	/**
-	 * 客户logoid
-	 */
 	@Transient
-	private Long filesId;
+	private String filesIds[];
 	
 	/**
 	 * 查询字段
