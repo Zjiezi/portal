@@ -34,13 +34,18 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Customer  extends BaseEntity<Long>{
-
+	
 	/**
 	 * 客户名称
 	 */
 	@Column(name = "name")
 	private String name;
 	
+	/**
+	 * 客户详情
+	 */
+	@Column(name = "details")
+	private String details;
 
 	/**
 	 * 图片关联

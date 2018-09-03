@@ -105,6 +105,7 @@
                 <ul class="nav nav-pills nav-stacked " id="informatic">
                 <li class=''><a href='${ctx }/MenusToUrl?url=backIndex' class='index'   title='首页'><i class='fa  fa-fw fa-tachometer'></i> 首页</a></li>
                 <li><a href='${ctx }/MenusToUrl?url=portal/modular'   title='模块图片'><i class='fa  fa-fw fa-tachometer'></i> 模块图片</a></li>
+                <li><a href='${ctx }/MenusToUrl?url=portal/information' title='客户信息'><i class='fa  fa-fw fa-tachometer'></i> 客户信息</a></li>
                 </ul>
             </nav> 
             
