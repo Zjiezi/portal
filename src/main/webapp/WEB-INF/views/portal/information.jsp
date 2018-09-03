@@ -194,7 +194,7 @@
 					  }, 
 		      		  success: function (result) {
 		      			
-		      			 $(result.data).each(function(i,o){
+		      			 $(result.data.rows).each(function(i,o){
 		      				html +='<tr>'
 		      				+'<td class="text-center id">'+o.id+'</td>'
 		      				+'<td class="text-center edit name">'+o.name+'</td>'
@@ -289,7 +289,7 @@
 						  }, 
 			      		  success: function (result) {
 			      			
-			      			 $(result.data).each(function(i,o){
+			      			 $(result.data.rows).each(function(i,o){
 			      				$("#productName").val(o.name);
 			      				$("#details").val(o.details);
 			      				$(o.files).each(function(j,k){

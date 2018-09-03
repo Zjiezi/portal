@@ -128,7 +128,7 @@
 
 				<div class="productList">
 					<ul>
-						<li>
+						<li id="home">
 							<div class="list">
 								<a href="product-con.html">
 									<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>
@@ -245,7 +245,7 @@ jQuery(function($){
 		  	}
 		  	var data={
 					  page:1,
-				  	  size:13,
+				  	  size:16, 
 				}
 			this.init = function(){
 				
@@ -267,8 +267,7 @@ jQuery(function($){
 						  });
 					  }, 
 		      		  success: function (result) {
-		      			
-		      			  $(result.data).each(function(i,o){
+		      			   /* $(result.data.rows).each(function(i,o){
 		      				 var p;
 		      				for (var i = 0; i < o.files.length; i++) {
 								if(o.files[i].producImagetType=="introduce"){
@@ -288,9 +287,9 @@ jQuery(function($){
 							+'</div>'
 							+'</div>'
 		      				
-		      			}); 
+		      			}); */ 
 		      			//显示分页
-					   	 laypage({
+					   	/*  laypage({
 					      cont: 'pager', 
 					      pages: result.data.totalPages, 
 					      curr:  result.data.pageNum || 1, 
@@ -306,7 +305,7 @@ jQuery(function($){
 						            self.loadPaginationhome(_data);
 							     }
 					      }
-					    }); 
+					    });  */
 					   	layer.close(index);
 					    $("#home").html(html);
 				      },error:function(){
