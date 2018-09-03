@@ -151,7 +151,7 @@ public class ViewAction {
 	@GetMapping(value = "/customer/customerPage")
 	public CommonResponse customerPage(HttpServletRequest request, Customer customer, PageParameter page) {
 		CommonResponse cr = new CommonResponse();
-		cr.setData(clearCascadeJSONOne.format(customerService.findPages(customer)).toJSON());
+		cr.setData(clearCascadeJSONOne.format(customerService.findPages(customer,page)).toJSON());
 		cr.setMessage("查找成功");
 		return cr;
 	}
