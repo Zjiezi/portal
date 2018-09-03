@@ -47,7 +47,7 @@ public class ViewAction {
 	private ClearCascadeJSON clearCascadeJSONOne;
 
 	{
-		clearCascadeJSON = ClearCascadeJSON.get()
+		clearCascadeJSONOne = ClearCascadeJSON.get()
 				.addRetainTerm(Customer.class, "id","time", "name", "files")
 				.addRetainTerm(Files.class, "id", "name", "size", "url", "type","producImagetType");
 	}
@@ -149,6 +149,7 @@ public class ViewAction {
 	 * @return
 	 */
 	@GetMapping(value = "/customer/customerPage")
+	@ResponseBody
 	public CommonResponse customerPage(HttpServletRequest request, Customer customer, PageParameter page) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSONOne.format(customerService.findPages(customer,page)).toJSON());
@@ -165,6 +166,7 @@ public class ViewAction {
 	 * @return
 	 */
 	@GetMapping(value = "/customer/getCustomer")
+	@ResponseBody
 	public CommonResponse getCustomer(HttpServletRequest request, Long id) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSONOne.format(customerService.findOne(id).get()).toJSON());
