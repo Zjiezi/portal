@@ -31,7 +31,7 @@ public class CustomerAction {
 
 	{
 		clearCascadeJSON = ClearCascadeJSON.get()
-				.addRetainTerm(Customer.class, "id","time", "name", "files")
+				.addRetainTerm(Customer.class, "id","time", "name", "files","details")
 				.addRetainTerm(Files.class, "id", "name", "size", "url", "type","producImagetType");
 	}
 	
