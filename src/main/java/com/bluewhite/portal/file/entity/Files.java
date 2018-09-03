@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.bluewhite.portal.base.BaseEntity;
+import com.bluewhite.portal.customer.entity.Customer;
 import com.bluewhite.portal.product.entity.Product;
 
 import lombok.Getter;
@@ -67,6 +68,12 @@ public class Files  extends BaseEntity<Long>{
 	private Long productId;
 	
 	/**
+	 * 客户id
+	 */
+	@Column(name = "customer_id")
+	private Long customerId;
+	
+	/**
 	 * 标题
 	 */
 	@Column(name = "title")
@@ -81,5 +88,9 @@ public class Files  extends BaseEntity<Long>{
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id", referencedColumnName = "id", insertable = false, updatable = false)
 	private Product product;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "customer_id", referencedColumnName = "id", insertable = false, updatable = false)
+	private Customer customer;
 
 }
