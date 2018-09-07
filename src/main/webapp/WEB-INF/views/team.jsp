@@ -53,6 +53,16 @@
 					</div>
 				</li>
 				<li class="on">
+					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+							<li><a href="product.html">IP形象资源</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="on">
 					<a href="ketang.html">定制合作</a>
 					<div class="sub">
 						<ul>
@@ -61,16 +71,6 @@
 						</ul>
 					</div>
 				</li>
-				<li>
-					<a href="ketang.html">最新活动</a>
-					<div class="sub">
-						<ul>
-							<li><a href="ketang.html">活动详情</a></li>
-							<li><a href="jieda.html">问题解答</a></li>
-						</ul>
-					</div>
-				</li>
-				
 					<li>
 						<a href="shipin.html">精彩瞬间</a>
 						<div class="sub">
@@ -99,15 +99,16 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
-						<li  class="on"><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=product3">IP形象资源</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="#">首页</a></li>
 						<li><a href="#">定制合作</a></li>
-						<li><a href="#">定制流程</a></li>
+						<li><a href="#">设计团队</a></li>
 					</ul>
 				</div>
 			</div>
@@ -116,34 +117,16 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">团体定制流程</h2>
+					<h2 class="tit">设计团队</h2>
+					<div class="entit">Design team</div>
 					<div class="line"></div>
 				</div>
 				<div class="productList">
 					<img alt="" src="/static/picture/20180909.jpg">
 				</div>
 			</div>
-			<div class="wrap">
-				<div class="columnTitle">
-					<h2 class="tit">开发定制流程
-					</h2>
-					<div class="line"></div>
-				</div>
-				<div class="productList">
-					<img alt="" src="/static/picture/20180909.jpg">
-				</div>
-			</div>
-			<div class="wrap">
-				<div class="columnTitle">
-					<h2 class="tit">加盟代理流程
-					</h2>
-					<div class="line"></div>
-				</div>
-				<div class="productList">
-					<img alt="" src="/static/picture/20180909.jpg">
-				</div>
-			</div>
-			<div class="wrap">
+			
+			<!-- <div class="wrap">
 				<div class="columnTitle">
 					<h2 class="tit">外贸代工流程
 					</h2>
@@ -152,7 +135,7 @@
 				<div class="productList">
 					<img alt="" src="/static/picture/20180909.jpg">
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="footer">

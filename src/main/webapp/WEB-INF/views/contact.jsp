@@ -36,7 +36,7 @@
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li class="on"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
+				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 				<li>
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
@@ -85,7 +85,7 @@
 							</ul>
 						</div>
 					</li>
-					<li>
+					<li class="on">
 						<a href="contact.html">联系我们</a>
 						<div class="sub">
 							<ul>
@@ -98,115 +98,145 @@
 		</div>
 	</div>
 	
-	<div class="main">
-		<div class="banner">
-			<div class="swiper-container">
-				<div class="swiperList" id="home">
-					<!-- <div class="list"><a href="#" target="_blank"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div> -->
+	<div class="container">
+		<div class="banner"><a href="javascript:;"><img src="/static/picture/20180611105958725.jpg"></a></div>
+		<div class="columnMenu">
+			<div class="wrap">
+				<div class="nav two">
+					<ul>
+						<li class="on"><a href="contact.html">联系我们</a></li>
+					</ul>
 				</div>
-				<div class="swiper-pagination"></div>
+				<div class="crumbs">
+					<ul>
+						<li class="home"><a href="/">首页</a></li>
+						<li><a href="#">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="aboutPage">
+						<div class="wrap">
+				<div class="columnTitle">
+					<h2 class="tit">扬州蓝白</h2>
+					<div class="entit">Contact</div>
+					<div class="line"></div>
+				</div>
+				<div class="contact">
+					<div class="address">
+						<div class="list"><div class="icon"><img src="/static/picture/call-ico1.png"/></div><div class="text">联系电话<br/>0755-82563097、18928449007</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico2.png"/></div><div class="text">邮箱<br/>aimengyiren@126.com</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico3.png"/></div><div class="text">深圳市福田区福田街道深南大道辅路2003号华嵘世纪大厦2005单元</div></div>					</div>
+					<div class="map">
+						<script type="text/javascript" src="/static/js/c2f5b6ae64604623a29de2301e2a996b.js"></script>
+						<div id="allmap"></div>
+						<script type="text/javascript">
+							// 百度地图API功能
+							var map = new BMap.Map("allmap");    // 创建Map实例
+							map.centerAndZoom(new BMap.Point(114.072542,22.544629), 20);  // 初始化地图,设置中心点坐标和地图级别
+							//添加地图类型控件
+							map.addControl(new BMap.MapTypeControl({
+								mapTypes:[
+									BMAP_NORMAL_MAP,
+									BMAP_HYBRID_MAP
+								]}));
+							map.setCurrentCity("扬州");          // 设置地图显示的城市 此项是必须设置的
+							// map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+							//添加缩放控件
+							var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+							var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+							/*缩放控件type有四种类型:
+							BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+							map.addControl(top_left_control);
+							map.addControl(top_left_navigation);
+
+							//添加标注信息
+							var point = new BMap.Point(119.410834,32.456961);
+							var marker = new BMap.Marker(point);  // 创建标注
+							map.addOverlay(marker);              // 将标注添加到地图中
+							map.centerAndZoom(point, 20);
+							var opts = {
+								width : 200,     // 信息窗口宽度
+								height: 50,     // 信息窗口高度
+								title : "扬州市蓝白工艺品有限公司" , // 信息窗口标题
+								enableMessage:true,//设置允许信息窗发送短息
+							}
+							var infoWindow = new BMap.InfoWindow("地址：扬州市邗江区西湖镇小官桥东路56号", opts);  // 创建信息窗口对象
+							//map.openInfoWindow(infoWindow,point); //加载页面开启信息窗口
+							marker.addEventListener("click", function(){
+								map.openInfoWindow(infoWindow,point); //开启信息窗口
+							});
+						</script>
+					</div>
+					<!-- <div class="message">
+						<div class="columnTitle">
+							<div class="tit">在线留言</div>
+							<div class="entit">期待您的宝贵的意见和建议，欢迎及时向我们反馈，以便我们更好地为您服务。</div>
+							<div class="line"></div>
+						</div>
+						<div class="messageBox">
+							<div class="inputBox">
+								<div class="box">
+									<div class="tit">您的姓名：</div>
+									<div class="inpu"><input type="text" name="" id="name"></div>
+								</div>
+							</div>
+							<div class="inputBox">
+								<div class="box">
+									<div class="tit">联系电话：</div>
+									<div class="inpu"><input type="text" name="" id="shouji"></div>
+								</div>
+							</div>
+							<div class="inputBox">
+								<div class="box">
+									<div class="tit">联系邮箱：</div>
+									<div class="inpu"><input type="text" name="" id="email"></div>
+								</div>
+							</div>
+							<div class="textareaBox">
+								<div class="box">
+									<textarea id="content"></textarea>
+								</div>
+							</div>
+							<div class="btn"><input type="button" id="but" name="" value="提交留言"></div>
+						</div>
+						<script type="text/javascript">
+						$(function () {
+							$("#but").click(function () {
+								var name = $("#name").val();
+								var shouji = $("#shouji").val();
+								var email = $("#email").val();
+								var content = $("#content").val();
+								$(document).ajaxStart(function (){
+							    	$("#but").attr("value", "提交中...");
+							 	 });
+							  	$(document).ajaxStop(function (){
+							    	$("#but").attr("value", "提交留言");
+							  	});	
+								$.ajax({
+									url:"http://www.aimengyiren.com/index.php?m=guestbook&c=index&a=ajaxsave",
+									data:{name:name, shouji:shouji, email:email, content:content},
+									type:"POST",
+									dataType:"json",
+									success: function (res) {
+										if (res.info == 1) {
+											alert(res.info);
+											window.location.reload();	
+										} else {
+											alert(res.info);
+										}	
+										return false;
+										
+									}	
+								})
+
+							})
+						})
+						</script>
+					</div> -->
+				</div>
 			</div>
 			
-		</div>
-		<div class="section section2" style="background-image: url(/static/images/section2.jpg);">
-			<div class="wrap">
-				<div class="columnTitle">
-					<h3 class="tit">热款推荐</h3>
-					<div class="txt"><span></span>不做最好，只做更好<span></span></div>
-				</div>
-				<div class="newProduct">
-					<div class="swiper-container" >
-						<div class="swiperList" id="home2">
-								
-													</div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
 					</div>
-					<script>
-						
-					</script>
-				</div>
-			</div>
-		</div>
-		<div class="section section3" style="background-image: url(/static/images/section3.jpg);">
-			<div class="wrap">
-				<div class="columnTitle white">
-					<h3 class="tit">宣传视频</h3>
-					<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
-				</div>
-				<div class="promotional">
-					<div class="title">
-						<div class="entit">COMPANY PROFILE</div>
-						<div class="tit">蓝白简介</div>
-					</div>
-															<div class="video">
-						<div class="pic"><div class="icon"></div>
-						<img src="/static/picture/20180627022629473.jpg"></div>
-						<video controls>
-							<source src="/static/lan.mp4" type="video/mp4">
-						</video>
-					</div>
-										<div class="instructions">
-						<div class="title"><div class="entit">走进来，享受一下快乐童年</div><div class="tit">快了童年，首选蓝白</div><div class="line"></div></div><div class="text">扬州蓝白工艺品有限公司是一家以自主研发各类中高档毛绒玩具.泰迪熊.家居产品为主的生产,贸易型企业. 公司目前自主品牌:蓝白玩偶. CAPTAIN MORGAN. 自公司成立以来.所开发生产的产品得到全国销售商一致好评.我们的目标是设计开发出新颖且优质的产品,用我们的真诚和热心服务好我们的顾客.做好“服务员”.</div>					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section section4">
-			<div class="columnTitle">
-				<h3 class="tit">最新咨询</h3>
-				<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
-			</div>
-			<div class="newsList">
-				<ul id="home3">
-					<li><img src="static/picture/20180620035655300.jpg"></li>
-					<li>
-						<a href="#">
-							<div class="tit">爱萌伊人荣获“本草护肤行业优选品牌”称号</div>
-							<div class="date"></div>
-							<div class="text">热烈祝贺健康管理有限公司荣获“本草护肤行业优选品牌”称号。 
-</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-						<li><img src="static/picture/20180622100226281.jpg"></li>
-					<li>
-						<a href="#">
-							<div class="tit">体验平台建设完成</div>
-							<div class="date"></div>
-							<div class="text">根据市场需求，公司的体验平台已扩建，欢迎广大女性朋友来公司体验纯植物的本草黄金面膜。</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-																									
-					
-					<li>
-						<a href="#">
-							<div class="tit">肌肤健康管理知识讲解与分享</div>
-							<div class="date"></div>
-							<div class="text">分享了皮肤结构、斑的形成以及解决问题肌肤的办法</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-					<li><img src="static/picture/20180627031205314.jpg"></li>
-																									
-					
-					<li>
-						<a href="#">
-							<div class="tit">爱萌伊人肌肤健康管理有限公司2017年年会</div>
-							<div class="date"></div>
-							<div class="text">冬去春来，辞旧迎新，2018年1月6日晚上六点，“引领2018，携手并进共赢未来”——2017年度爱萌伊人肌肤管理有限公司在大中华国际交易中心举行，我们荣幸的邀请了近100位全国各地的主管会员</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-					<li><img src="static/picture/20180620101726805.jpg"></li>
-															
-				</ul>
-			</div>
-		</div>
 	</div>
 		
 	<div class="footer">

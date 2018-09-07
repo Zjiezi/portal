@@ -237,10 +237,15 @@ jQuery(function($){
 			      			 $(result.data.rows).each(function(i,o){
 			      				var roleidArray = new Array();
 			      				roleidArray=o.size
-			      				str1=roleidArray.join(" ")
+			      				var str1;
+			      				if(roleidArray!=null){
+			      				 str1=roleidArray.join(" ") 
+			      				}else{
+			      					str1=""
+			      				}
 			      				 $('#title').text(o.name)
 			      				$('#title2').text(o.name)
-			      				$('#home4').text("产品尺寸:"+str1)
+			      				 $('#home4').text("产品尺寸:"+str1) 
 			      				$('#home5').text("产品说明:"+o.details)
 			      				$('#home6').text("¥"+o.price)
 			      				$('#home7').text('填充物: '+o.filler+" "+"面料: "+o.fabric)

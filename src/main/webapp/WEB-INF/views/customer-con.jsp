@@ -42,13 +42,22 @@
 						</ul>
 					</div>
 				</li>
-				<li class="on">
+				<li>
 					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
 							<li><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
 							<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="on">
+					<a href="ketang.html">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
 						</ul>
 					</div>
 				</li>
@@ -90,44 +99,43 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li ><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="#">首页</a></li>
-						<li><a href="#">明星产品</a></li>
-						<li><a href="#">产品详情</a></li>
+						<li><a href="#">合作客户</a></li>
+						<li><a href="#">客户实拍</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="aboutPage">
 			<div class="wrap">
-				<div class="columnTitle">
+				<!-- <div class="columnTitle">
 					<h2 class="tit" id="title"></h2>
-					<!-- <div class="entit">Living water hrebaceous moisturizer</div> -->
+					<div class="entit">Living water hrebaceous moisturizer</div>
 					<div class="line"></div>
-				</div>
+				</div> -->
 				<div class="productDetails">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="albumBox">
 							<div class="swiper-container gallery-top">
 							<div id="display" style="display: none;"></div>
 							
 								<div class="swiperList" id="home">
-									<!-- <div class="list" id="5"><img src="/static/picture/20180623055705857.jpg"></div>
+									<div class="list" id="5"><img src="/static/picture/20180623055705857.jpg"></div>
 									<div class="list "><img src="/static/picture/20180623055705857.jpg"></div>
-									<div class="list"><img src="/static/picture/20180623055705857.jpg"></div> -->
+									<div class="list"><img src="/static/picture/20180623055705857.jpg"></div>
 								</div>
 							</div>
 							<div class="swiper-container gallery-thumbs">
 								<div class="swiperList" id="home2">
-									<!-- <div class="list"><img src="/static/picture/20180623055705857.jpg"></div>
 									<div class="list"><img src="/static/picture/20180623055705857.jpg"></div>
-									<div class="list"><img src="/static/picture/20180623055705857.jpg"></div> -->
+									<div class="list"><img src="/static/picture/20180623055705857.jpg"></div>
+									<div class="list"><img src="/static/picture/20180623055705857.jpg"></div>
 								</div>
 							</div>
 							<div class="swiper-button-next"></div>
@@ -136,19 +144,9 @@
 								
 							</script>
 						</div>
-						<div class="information">
-							<h1 class="title"id="title2"> </h1>
-							<div class="text">
-								<div class="list" id="home3" style="border-bottom: 1px dashed #dfdfdf;"></div>
-								<p id="home4"></p>
-								<p id="home5"></p>
-								<p id="home7"></p>
-								<p >商品售价：<span id="home6"></span></p>
-							</div>
-						</div>
-					</div>
+					</div> -->
 					<div class="details">
-						<div class="top"><span>产品描述</span></div>
+						<div class="top"><span>客户自拍</span></div>
 						<div class="article" id="home8">
 						<!--  <p><span style="color: rgb(86, 86, 86); font-family: " microsoft="" font-size:="" text-align:="" background-color:=""></span></p> 
 						<p ><span style="font-size: 18px; color: rgb(88, 129, 50);"><img alt="" src="/static/picture/lADPBbCc1r61_SbNAovNBLA_1200_651.jpg"></span></p>
@@ -215,12 +213,12 @@ jQuery(function($){
 				
 				//注册绑定事件
 				self.evens();
-				self.loadPaginationhome(data);
-				self.loadPaginationhome3(data);
+				/* self.loadPaginationhome(data);
+				self.loadPaginationhome3(data); */
 				self.loadPaginationhome4(data);
 			}
 			//加载分页
-			  this.loadPaginationhome = function(data){
+			 /*  this.loadPaginationhome = function(data){
 				  var index;
 				    var html = '';
 				    $.ajax({
@@ -235,20 +233,6 @@ jQuery(function($){
 			      		  success: function (result) {
 			      			
 			      			 $(result.data.rows).each(function(i,o){
-			      				var roleidArray = new Array();
-			      				roleidArray=o.size
-			      				var str1;
-			      				if(roleidArray!=null){
-			      				 str1=roleidArray.join(" ") 
-			      				}else{
-			      					str1=""
-			      				}
-			      				 $('#title').text(o.name)
-			      				$('#title2').text(o.name)
-			      				$('#home4').text("产品尺寸:"+str1)
-			      				$('#home5').text("产品说明:"+o.details)
-			      				$('#home6').text("¥"+o.price)
-			      				$('#home7').text('填充物: '+o.filler+" "+"面料: "+o.fabric)
 			      				$(o.files).each(function(j,k){
 			      					if(k.producImagetType=="introduce"){
 			      				html+='<div class="list '+k.id+'"><img src="'+k.url+'"></div>'
@@ -302,13 +286,13 @@ jQuery(function($){
 					  });
 				  
 				 
-			}
+			} */
 			  this.loadPaginationhome4 = function(data){
 				  var index;
 				    var html = '';
 				    var htmltw="";
 				    $.ajax({
-					      url:"${ctx}/view/product/productPage",
+					      url:"${ctx}/view/customer/getCustomer",
 					      data:data,
 					      type:"GET",
 					      beforeSend:function(){
@@ -318,7 +302,7 @@ jQuery(function($){
 						  }, 
 			      		  success: function (result) {
 			      			
-			      			 $(result.data.rows).each(function(i,o){
+			      			 $(result.data).each(function(i,o){
 			      				$(o.files).each(function(j,k){
 			      					if(k.producImagetType=="details"){
 			      				html+='<p style="white-space: normal;"></p><p style="white-space: normal;"><img alt="" src="'+k.url+'"></p>'
@@ -338,7 +322,7 @@ jQuery(function($){
 				  
 				 
 			}
-			this.lod=function(){
+		/* 	this.lod=function(){
 				var galleryTop = new Swiper('.gallery-top', {
 					wrapperClass : 'swiperList',
 					slideClass : 'list',
@@ -385,7 +369,7 @@ jQuery(function($){
 						  $(this).css("border","1px dashed #dfdfdf")
 					 $("#display").css("display","none")
 					  })
-			}
+			} */
 			  this.evens=function(){
 			  }
    	}

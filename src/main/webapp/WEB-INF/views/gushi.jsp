@@ -35,10 +35,10 @@
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 						</ul>
 					</div>
 				</li>
@@ -89,17 +89,17 @@
 			<div class="wrap">
 				<div class="nav four">
 					<ul>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
-						<li ><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
-						<li ><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
-						<li ><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 						<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
 					</ul>
 				</div>
 			</div>
@@ -107,8 +107,8 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">品牌故事</h2>
-					<div class="entit">Brand story</div>
+					<h2 class="tit">公司简介</h2>
+					<div class="entit">Company profile</div>
 					<div class="line"></div>
 				</div>
 								<div class="about">

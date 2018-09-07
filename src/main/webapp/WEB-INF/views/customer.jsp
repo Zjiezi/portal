@@ -57,7 +57,6 @@
 					<div class="sub">
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
-							<li><a href="jieda.html">定制案例</a></li>
 							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
 						</ul>
 					</div>
@@ -117,8 +116,8 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">公仔介绍</h2>
-					<div class="entit">Doll product introduction</div>
+					<h2 class="tit">客户介绍</h2>
+					<div class="entit">Cooperative customers</div>
 					<div class="line"></div>
 				</div>
 				<div class="popupBuyNow">
@@ -129,72 +128,7 @@
 				<div class="productList">
 					<ul>
 						<li id="home">
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>
-									<h3 class="tit">水活草本保湿乳</h3>
-									<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>
-								</a>
-								 <div class="bottom">
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div> 
-							</div>
-														
-
-							
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
-									<h3 class="tit">水活氨基酸洗面奶</h3>
-									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
-								</a>
-								<!-- <div class="bottom">
-									<div class="price">&yen;118</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div> -->
-							</div>
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>
-									<h3 class="tit">水活草本保湿乳</h3>
-									<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>
-								</a>
-								<!-- <div class="bottom">
-									<div class="price">&yen;368</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div> -->
-							</div>
-														
-
-							
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
-									<h3 class="tit">水活氨基酸洗面奶</h3>
-									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
-								</a>
-								<!-- <div class="bottom">
-									<div class="price">&yen;118</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div> -->
-							</div>
-							<div class="list">
-								<a href="product-con.html">
-									<div class="pic"><img src="/static/picture/20180623060629699.jpg"></div>
-									<h3 class="tit">水活氨基酸洗面奶</h3>
-									<div class="txt">专为更新净化肌肤研发，采用琥珀、黄苓、苦参、桂花、甘草本草精华，相融相生，调和肌底细胞生长平衡，其中大量的透明质酸达到微米级洁净力，深入清除毛孔油脂污垢，氨基酸肽复合物，</div>
-								</a>
-								<!-- <div class="bottom">
-									<div class="price">&yen;118</div>
-									<div class="btn"><a href="product-con.html">了解详情</a></div>
-									<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>
-								</div> -->
-							</div>
-													</li>					
+						</li>					
 					</ul>
 				</div>
 				<div class="paging" id="pager">
@@ -267,7 +201,7 @@ jQuery(function($){
 						  });
 					  }, 
 		      		  success: function (result) {
-		      			   /* $(result.data.rows).each(function(i,o){
+		      			    $(result.data.rows).each(function(i,o){
 		      				 var p;
 		      				for (var i = 0; i < o.files.length; i++) {
 								if(o.files[i].producImagetType=="introduce"){
@@ -277,19 +211,18 @@ jQuery(function($){
 							
 							}
 		      				html+='<div class="list"><a href="product-con.html">'
-							+'<div class="pic"><img src="/static/picture/20180623055705857.jpg"></div>'
-							+'<h3 class="tit">水活草本保湿乳</h3>'
-							+'<div class="txt">采用非洲、南美洲和中国西北三地的霍霍巴籽、沙棘果、人参、龙胆根等名贵本草植物精华研制而成。日间滋养，夜间修护，对抗肌肤脆</div>'
+							+'<div class="pic"><img src="'+p.url+'"></div>'
+							+'<h3 class="tit">'+o.name+'</h3>'
+							+'<div class="txt">'+o.details+'</div>'
 							+'</a>'
 							+'<div class="bottom">'
-							+'<div class="btn"><a href="product-con.html">了解详情</a></div>'
-							+'<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>'
+							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=customer-con&paramName=id&paramNum='+o.id+'" target="_blank">客户实拍</a></div>'
 							+'</div>'
 							+'</div>'
 		      				
-		      			}); */ 
+		      			});  
 		      			//显示分页
-					   	/*  laypage({
+					   	  laypage({
 					      cont: 'pager', 
 					      pages: result.data.totalPages, 
 					      curr:  result.data.pageNum || 1, 
@@ -305,7 +238,7 @@ jQuery(function($){
 						            self.loadPaginationhome(_data);
 							     }
 					      }
-					    });  */
+					    });  
 					   	layer.close(index);
 					    $("#home").html(html);
 				      },error:function(){

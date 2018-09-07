@@ -45,7 +45,7 @@
 								<td>&nbsp&nbsp&nbsp&nbsp</td>
 								<td>产品名称:</td><td><input type="text" name="name" id="name" class="form-control search-query name" /></td>
 								<td>&nbsp&nbsp&nbsp&nbsp</td>
-								<td>产品类型:</td><td><select class="form-control" id="selectstatee"><option value="1">毛绒公仔</option><option value="2">家居用品</option><option value="3">IP衍生品</option></select></td>
+								<td>产品类型:</td><td><select class="form-control" id="selectstatee"><option value="1">毛绒公仔</option><option value="2">家居用品</option><option value="3">IP衍生品</option><option value="4">原创形象</option><option value="5">IP形象资源</option></select></td>
 								</tr></table> 
 								<span class="input-group-btn">
 									<button type="button" class="btn btn-info btn-square btn-sm btn-3d searchtask">

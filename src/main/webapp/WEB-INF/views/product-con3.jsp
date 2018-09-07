@@ -237,7 +237,12 @@ jQuery(function($){
 			      			 $(result.data.rows).each(function(i,o){
 			      				var roleidArray = new Array();
 			      				roleidArray=o.size
-			      				str1=roleidArray.join(" ")
+			      				var str1;
+			      				if(roleidArray!=null){
+			      				 str1=roleidArray.join(" ") 
+			      				}else{
+			      					str1=""
+			      				}
 			      				 $('#title').text(o.name)
 			      				$('#title2').text(o.name)
 			      				$('#home4').text("产品尺寸:"+str1)
