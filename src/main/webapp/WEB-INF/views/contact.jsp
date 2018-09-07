@@ -124,7 +124,7 @@
 				</div>
 				<div class="contact">
 					<div class="address">
-						<div class="list"><div class="icon"><img src="/static/picture/call-ico1.png"/></div><div class="text">联系电话<br/>0755-82563097、18928449007</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico2.png"/></div><div class="text">邮箱<br/>aimengyiren@126.com</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico3.png"/></div><div class="text">深圳市福田区福田街道深南大道辅路2003号华嵘世纪大厦2005单元</div></div>					</div>
+						<div class="list"><div class="icon"><img src="/static/picture/call-ico1.png"/></div><div class="text">联系电话<br/>0755-82563097、18928449007</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico2.png"/></div><div class="text">邮箱<br/>aimengyiren@126.com</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico3.png"/></div><div class="text">扬州市邗江区西湖镇小官桥东路56号</div></div>					</div>
 					<div class="map">
 						<script type="text/javascript" src="/static/js/c2f5b6ae64604623a29de2301e2a996b.js"></script>
 						<div id="allmap"></div>
@@ -167,7 +167,7 @@
 							});
 						</script>
 					</div>
-					<!-- <div class="message">
+					 <div class="message">
 						<div class="columnTitle">
 							<div class="tit">在线留言</div>
 							<div class="entit">期待您的宝贵的意见和建议，欢迎及时向我们反馈，以便我们更好地为您服务。</div>
@@ -202,10 +202,10 @@
 						<script type="text/javascript">
 						$(function () {
 							$("#but").click(function () {
-								var name = $("#name").val();
-								var shouji = $("#shouji").val();
+								var username = $("#name").val();
+								var phone = $("#shouji").val();
 								var email = $("#email").val();
-								var content = $("#content").val();
+								var message = $("#content").val();
 								$(document).ajaxStart(function (){
 							    	$("#but").attr("value", "提交中...");
 							 	 });
@@ -213,17 +213,17 @@
 							    	$("#but").attr("value", "提交留言");
 							  	});	
 								$.ajax({
-									url:"http://www.aimengyiren.com/index.php?m=guestbook&c=index&a=ajaxsave",
-									data:{name:name, shouji:shouji, email:email, content:content},
+									url:"${ctx}/view/message/addMessage",
+									data:{username:username, phone:phone, email:email, message:message},
 									type:"POST",
 									dataType:"json",
-									success: function (res) {
-										if (res.info == 1) {
-											alert(res.info);
+									success: function (result) {
+										 if (result.code == 0) {
+											alert(result.message);
 											window.location.reload();	
 										} else {
-											alert(res.info);
-										}	
+											alert("请稍后留言");
+										}	 
 										return false;
 										
 									}	
@@ -232,7 +232,7 @@
 							})
 						})
 						</script>
-					</div> -->
+					</div> 
 				</div>
 			</div>
 			
