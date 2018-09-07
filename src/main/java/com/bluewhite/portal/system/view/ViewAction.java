@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -19,6 +20,8 @@ import com.bluewhite.portal.file.entity.Files;
 import com.bluewhite.portal.file.service.FilesService;
 import com.bluewhite.portal.product.entity.Product;
 import com.bluewhite.portal.product.service.ProductService;
+import com.bluewhite.portal.system.user.entity.UserMessage;
+import com.bluewhite.portal.system.user.service.UserMessageService;
 
 @Controller
 @RequestMapping("/view")
@@ -29,6 +32,9 @@ public class ViewAction {
 	
 	@Autowired
 	private ProductService service;
+	
+	@Autowired
+	private UserMessageService userMessageService;
 	
 	
 	private ClearCascadeJSON clearCascadeJSON;
@@ -171,6 +177,23 @@ public class ViewAction {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSONOne.format(customerService.findOne(id).get()).toJSON());
 		cr.setMessage("查找成功");
+		return cr;
+	}
+	
+	/**
+	 * 
+	 * 用户留言
+	 * 
+	 * @param request
+	 * @param prodcut
+	 * @return
+	 */
+	@PostMapping(value = "/message/addMessage")
+	@ResponseBody
+	public CommonResponse addMessage(HttpServletRequest request, UserMessage userMessage) {
+		CommonResponse cr = new CommonResponse();
+		cr.setData(userMessageService.save(userMessage));
+		cr.setMessage("留言成功");
 		return cr;
 	}
 
