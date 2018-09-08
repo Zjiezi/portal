@@ -33,7 +33,7 @@ public class UserMessageServiceImpl extends BaseServiceImpl<UserMessage, Long> i
         	
         	//按名称
         	if(!StringUtils.isEmpty(param.getUsername())){
-        		predicate.add(cb.like(root.get("name").as(String.class), "%"+param.getUsername()+"%"));
+        		predicate.add(cb.like(root.get("username").as(String.class), "%"+param.getUsername()+"%"));
         	}
     		//按时间过滤
     		if (!StringUtils.isEmpty(param.getOrderTimeBegin()) &&  !StringUtils.isEmpty(param.getOrderTimeEnd()) ) {

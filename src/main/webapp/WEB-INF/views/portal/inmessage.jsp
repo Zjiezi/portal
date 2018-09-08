@@ -49,13 +49,7 @@
 										查&nbsp找
 									</button>
 								</span>
-								<td>&nbsp&nbsp&nbsp&nbsp</td>
-								<span class="input-group-btn">
-									 <button type="button" id="addproduct" class="btn btn-success  btn-sm btn-3d pull-right">
-									 新增客户
-									 </button>
-								</span>
-								  
+									  
 							</div>
 						</div>
 					</div>
@@ -198,80 +192,10 @@
 					var data = {
 				  			page:1,
 				  			size:13,
-				  			name:$('#name').val(),
+				  			username:$('#name').val(),
 				  	}
 		            self.loadPagination(data);
 				});
-				//新增产品
-				$('#addproduct').on('click',function(){
-					$("#my-awesome-dropzone").text("");
-					var _index
-					var index
-					var postData
-					var dicDiv=$('#addDictDivType');
-					_index = layer.open({
-						  type: 1,
-						  skin: 'layui-layer-rim', //加上边框
-						  area: ['60%', '90%'], 
-						  btnAlign: 'c',//宽高
-						  maxmin: true,
-						  title:"新增产品",
-						  content: dicDiv,
-						  btn: ['确定', '取消'],
-						  yes:function(index, layero){
-							  var a=$("#productId").text();
-							  a=a.substring(0,a.length-1);
-							  var arr=new Array();
-							  arr=a
-							  if($("#productName").val()==""){
-								  return layer.msg("产品名不能为空", {icon: 2});
-							  }
-							  postData={
-									  name:$("#productName").val(),
-									  details:$("#details").val(),
-									  filesIds:arr,
-							  }
-							  $.ajax({
-									url:"${ctx}/customer/addCustomer",
-									data:postData,
-						            traditional: true,
-									type:"post",
-									beforeSend:function(){
-										index = layer.load(1, {
-											  shade: [0.1,'#fff'] //0.1透明度的白色背景
-											});
-									},
-									
-									success:function(result){
-										if(0==result.code){
-											layer.msg("添加成功！", {icon: 1});
-											$('#addDictDivType').hide();
-											$(".addDictDivTypeForm")[0].reset();
-											var data = {
-								        			page:self.getIndex(),
-											  		size:13,
-											  		name:$('#name').val(),
-										  	}
-											self.loadPagination(data);
-											$(".dz-started").text("");
-											$("#productId").text("");
-										}else{
-											layer.msg("添加失败", {icon: 2});
-										}
-										
-										layer.close(index);
-									},error:function(){
-										layer.msg(result.message, {icon: 2});
-										layer.close(index);
-									}
-								});
-							},
-						  end:function(){
-							  $('.addDictDivTypeForm')[0].reset(); 
-							  $('#addDictDivType').hide();
-						  }
-					});
-				})
 			}
    	}
    			var login = new Login();

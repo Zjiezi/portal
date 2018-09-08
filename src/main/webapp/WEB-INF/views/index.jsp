@@ -78,15 +78,15 @@
 					</div>
 				</li>
 					<li>
-						<a href="shipin.html">精彩瞬间</a>
+						<a href="${ctx }/view/menusToUrl?url=activity">蓝白动态</a>
 						<div class="sub">
 							<ul>
-								<li><a href="shipin.html">宣传视频</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=activity">新闻动态</a></li>
 							</ul>
 						</div>
 					</li>
 					<li>
-						<a href="contact.html">联系我们</a>
+						<a href="${ctx }/view/menusToUrl?url=contact">联系我们</a>
 						<div class="sub">
 							<ul>
 								<li><a href="${ctx }/view/menusToUrl?url=contact">联系我们</a></li>
