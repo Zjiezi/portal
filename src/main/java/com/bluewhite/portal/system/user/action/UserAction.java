@@ -11,6 +11,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import com.bluewhite.portal.common.ClearCascadeJSON;
@@ -20,16 +21,16 @@ import com.bluewhite.portal.common.entity.PageParameter;
 import com.bluewhite.portal.system.user.entity.UserMessage;
 import com.bluewhite.portal.system.user.service.UserMessageService;
 
-@Controller
+@RestController
 public class UserAction {
 	
 	@Autowired
 	private UserMessageService userMessageService;
 	
 	private ClearCascadeJSON clearCascadeJSON;
-
 	{
-		clearCascadeJSON = ClearCascadeJSON.get()
+		clearCascadeJSON = ClearCascadeJSON
+				.get()
 				.addRetainTerm(UserMessage.class, "id","username", "message", "email","phone","createdAt");
 	}
 	
@@ -42,7 +43,6 @@ public class UserAction {
 	 * @return
 	 */
 	@GetMapping(value = "/message/messagePage")
-	@ResponseBody
 	public CommonResponse messagePage(HttpServletRequest request, UserMessage userMessage, PageParameter page) {
 		CommonResponse cr = new CommonResponse();
 		cr.setData(clearCascadeJSON.format(userMessageService.findPages(userMessage,page)).toJSON());
