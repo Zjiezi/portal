@@ -103,7 +103,7 @@
 				<!-- PAGE CONTENT BEGINS -->
 				 <div class="panel panel-default">
                             <div><table><tr>
-								<td>图片类型:</td><td><select class="form-control" id="selecttype"><option value="introduce">产品</option><option value="details">产品描述</option></select></td>
+								<td>图片类型:</td><td><select class="form-control" id="selecttype"><option value="introduce">产品</option><option value="details">产品描述</option><option value="bursting">爆款图片</option></select></td>
 								</tr></table></div>
                             <div class="panel-body">
                                 <form action="#" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
@@ -149,6 +149,12 @@
                                 </div>
                                 </div>
                     	</div>
+                    	<div class="form-group">
+                            <label class="col-sm-2 col-md-2 control-label" >爆款类型:</label>
+                                <div class="col-sm-6 col-md-6">
+                                  <select class="form-control" id="burselect"><option value="0">非爆款</option><option value="1">爆款</option></select>
+                                </div>
+                                </div>
                     	<div class="form-group">
                             <label class="col-sm-2 col-md-2 control-label" >产品尺寸:</label>
                                 <div class="col-sm-6 col-md-6">
@@ -343,6 +349,10 @@
 			      				$("#productRemark").val(o.remark);
 			      				$("#productsize").val(o.size);
 			      				$("#details").val(o.details);
+			      				$('#burselect').each(function(j,k){
+			      					var id=o.productType;
+			      					$(k).val(id);
+			      				})
 			      				$(o.files).each(function(j,k){
 			      				th+='<div class="dz-preview dz-processing dz-image-preview dz-success"><div class="dz-details"><img data-dz-thumbnail alt='+k.name+' src='+k.url+'></div><div class="dz-success-mark" data-id="'+k.id+'"></div></div>'
 			      				})
@@ -422,6 +432,7 @@
 									  type:$("#selectstatee").val(),
 									  filler:$("#filler").val(),
 									  fabric:$("#fabric").val(),
+									  productType:$("#burselect").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
@@ -482,6 +493,7 @@
 									  type:$("#selectstatee").val(),
 									  filler:$("#filler").val(),
 									  fabric:$("#fabric").val(),
+									  productType:$("#burselect").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",
@@ -591,6 +603,7 @@
 									  type:$("#selectstatee").val(),
 									  filler:$("#filler").val(),
 									  fabric:$("#fabric").val(),
+									  productType:$("#burselect").val(),
 							  }
 							  $.ajax({
 									url:"${ctx}/product/addProduct",

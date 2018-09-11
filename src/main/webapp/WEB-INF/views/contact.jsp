@@ -36,15 +36,15 @@
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 				<li>
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 						</ul>
 					</div>
 				</li>
@@ -52,24 +52,25 @@
 					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
-							<li><a href="product.html">套装介绍</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
 				<li>
-					<a href="${ctx }/view/menusToUrl?url=product">原创开发</a>
+					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
-							<li><a href="product.html">设计团队</a></li>
-							<li><a href="product.html">IP形象资源</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="ketang.html">定制合作</a>
+					<a href="${ctx }/view/menusToUrl?url=customer">定制合作</a>
 					<div class="sub">
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
@@ -78,15 +79,15 @@
 					</div>
 				</li>
 					<li>
-						<a href="shipin.html">精彩瞬间</a>
+						<a href="${ctx }/view/menusToUrl?url=activity">蓝白动态</a>
 						<div class="sub">
 							<ul>
-								<li><a href="shipin.html">宣传视频</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=activity">新闻动态</a></li>
 							</ul>
 						</div>
 					</li>
-					<li class="on">
-						<a href="contact.html">联系我们</a>
+					<li  class="on">
+						<a href="${ctx }/view/menusToUrl?url=contact">联系我们</a>
 						<div class="sub">
 							<ul>
 								<li><a href="${ctx }/view/menusToUrl?url=contact">联系我们</a></li>

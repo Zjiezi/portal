@@ -31,14 +31,14 @@
 				<div class="tit">MENU</div>
 				<ul>
 				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
-				<li >
+				<li>
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 						</ul>
 					</div>
 				</li>
@@ -53,29 +53,38 @@
 					</div>
 				</li>
 				<li>
-					<a href="ketang.html">最新活动</a>
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
-							<li><a href="ketang.html">活动详情</a></li>
-							<li><a href="jieda.html">问题解答</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 						</ul>
 					</div>
 				</li>
-				
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=customer">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
+						</ul>
+					</div>
+				</li>
 					<li>
-						<a href="shipin.html">精彩瞬间</a>
+						<a href="${ctx }/view/menusToUrl?url=activity">蓝白动态</a>
 						<div class="sub">
 							<ul>
-								<li><a href="shipin.html">宣传视频</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=activity">新闻动态</a></li>
 							</ul>
 						</div>
 					</li>
 					<li>
-						<a href="contact.html">联系我们</a>
+						<a href="${ctx }/view/menusToUrl?url=contact">联系我们</a>
 						<div class="sub">
 							<ul>
-								<li><a href="contact.html">联系我们</a></li>
-								<li><a href="partner.html">城市合伙人</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=contact">联系我们</a></li>
 							</ul>
 						</div>
 					</li>

@@ -41,10 +41,10 @@
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 						</ul>
 					</div>
 				</li>
@@ -52,24 +52,25 @@
 					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=product">单品介绍</a></li>
-							<li><a href="product.html">套装介绍</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
 				<li>
-					<a href="${ctx }/view/menusToUrl?url=product">原创开发</a>
+					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
-							<li><a href="product.html">设计团队</a></li>
-							<li><a href="product.html">IP形象资源</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="ketang.html">定制合作</a>
+					<a href="${ctx }/view/menusToUrl?url=customer">定制合作</a>
 					<div class="sub">
 						<ul>
 							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
@@ -162,47 +163,7 @@
 			</div>
 			<div class="newsList">
 				<ul id="home3">
-					<li><img src="static/picture/20180620035655300.jpg"></li>
-					<li>
-						<a href="#">
-							<div class="tit">爱萌伊人荣获“本草护肤行业优选品牌”称号</div>
-							<div class="date"></div>
-							<div class="text">热烈祝贺健康管理有限公司荣获“本草护肤行业优选品牌”称号。 
-</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-						<li><img src="static/picture/20180622100226281.jpg"></li>
-					<li>
-						<a href="#">
-							<div class="tit">体验平台建设完成</div>
-							<div class="date"></div>
-							<div class="text">根据市场需求，公司的体验平台已扩建，欢迎广大女性朋友来公司体验纯植物的本草黄金面膜。</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-																									
 					
-					<li>
-						<a href="#">
-							<div class="tit">肌肤健康管理知识讲解与分享</div>
-							<div class="date"></div>
-							<div class="text">分享了皮肤结构、斑的形成以及解决问题肌肤的办法</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-					<li><img src="static/picture/20180627031205314.jpg"></li>
-																									
-					
-					<li>
-						<a href="#">
-							<div class="tit">爱萌伊人肌肤健康管理有限公司2017年年会</div>
-							<div class="date"></div>
-							<div class="text">冬去春来，辞旧迎新，2018年1月6日晚上六点，“引领2018，携手并进共赢未来”——2017年度爱萌伊人肌肤管理有限公司在大中华国际交易中心举行，我们荣幸的邀请了近100位全国各地的主管会员</div>
-							<div class="more">REMO+</div>
-						</a>
-					</li>
-					<li><img src="static/picture/20180620101726805.jpg"></li>
 															
 				</ul>
 			</div>
@@ -288,12 +249,12 @@ jQuery(function($){
 			}
 			  this.loadPaginationhome2 = function(){
 				  var data={
-					  	locationType:"home2", 
+						  productType:"1", 
 				  }
 				    var index;
 				    var html = '';
 				    $.ajax({
-					      url:"${ctx}/view/files/getPicture",
+					      url:"${ctx}/view/product/productPage",
 					      data:data,
 					      type:"GET",
 					      beforeSend:function(){
@@ -303,13 +264,37 @@ jQuery(function($){
 						  }, 
 			      		  success: function (result) {
 			      			
-			      			 $(result.data).each(function(i,o){
+			      			$(result.data.rows).each(function(i,o){
+			      				 var p;
+			      				for (var i = 0; i < o.files.length; i++) {
+									if(o.files[i].producImagetType=="bursting"){
+			      						p=o.files[i];
+			      						break;
+		      						}
+								
+								}
+			      			var t; 
+			      			if(o.type==1){
+			      				t="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum="+o.id+""
+			      			}
+			      			if(o.type==2){
+			      				t="${ctx }/view/menusToUrl?url=product-con2&paramName=id&paramNum="+o.id+""
+			      			}
+			      			if(o.type==3){
+			      				t="${ctx }/view/menusToUrl?url=product-con3&paramName=id&paramNum="+o.id+""
+			      			}
+			      			if(o.type==4){
+			      				t="${ctx }/view/menusToUrl?url=original-con&paramName=id&paramNum="+o.id+""
+			      			}
+			      			if(o.type==5){
+			      				t="${ctx }/view/menusToUrl?url=resources-con&paramName=id&paramNum="+o.id+""
+			      			}
 			      				html+='<div class="list">'
-									+'<div class="pic"><img src='+o.url+'></div><div class="name">'+o.title+'</div>'
-									+'<div class="btn"><a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.1.656f2c77mJXn1B&id=564708959015&areaId=321000&is_b=1&cat_id=2&rn=0a9806721babd4e2d2ad127f9ed3fe22" target="_blank">了解详情</a></div>'
+									+'<div class="pic"><img src='+p.url+'></div><div class="name">'+o.name+'</div>'
+									+'<div class="btn"><a href='+t+' target="_blank">了解详情</a></div>'
 									+'</div>'
 								
-			      			}); 
+			      			});
 						   	layer.close(index);
 						    $("#home2").html(html);
 						   	self.loadEventshome2();

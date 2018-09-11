@@ -13,6 +13,36 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
+	<style type="text/css">
+    #box{
+        width: 188px;
+        margin: 30px auto;
+        font-family: 'Microsoft YaHei';
+        font-size: 14px;
+    }
+    input{
+        width: 133px;
+        border: 1px solid #e2e2e2;
+        height: 30px;
+        float: left;
+        background-image: url(images/search.jpg);
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position:5px center;
+        padding:0 0 0 5px;
+    }
+    #search{
+        width: 48px;
+        height: 32px;
+        float: right;
+        background: black;
+        color: white;
+        text-align: center;
+        line-height: 32px;
+        cursor: pointer;
+    }
+ 
+</style>
 	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="/static/js/swiper.min.js"></script>
 	<script type="text/javascript" src="/static/js/javascript.js"></script>
@@ -31,14 +61,14 @@
 				<div class="tit">MENU</div>
 				<ul>
 				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
-				<li >
+				<li>
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 						</ul>
 					</div>
 				</li>
@@ -53,29 +83,38 @@
 					</div>
 				</li>
 				<li>
-					<a href="ketang.html">最新活动</a>
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
-							<li><a href="ketang.html">活动详情</a></li>
-							<li><a href="jieda.html">问题解答</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 						</ul>
 					</div>
 				</li>
-				
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=customer">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
+						</ul>
+					</div>
+				</li>
 					<li>
-						<a href="shipin.html">精彩瞬间</a>
+						<a href="${ctx }/view/menusToUrl?url=activity">蓝白动态</a>
 						<div class="sub">
 							<ul>
-								<li><a href="shipin.html">宣传视频</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=activity">新闻动态</a></li>
 							</ul>
 						</div>
 					</li>
 					<li>
-						<a href="contact.html">联系我们</a>
+						<a href="${ctx }/view/menusToUrl?url=contact">联系我们</a>
 						<div class="sub">
 							<ul>
-								<li><a href="contact.html">联系我们</a></li>
-								<li><a href="partner.html">城市合伙人</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=contact">联系我们</a></li>
 							</ul>
 						</div>
 					</li>
@@ -93,6 +132,10 @@
 						<li ><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
 						<li class="on"><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
 						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
+						<li style="position:relative;top:-14px;"><div id="box">
+        <input type="text" id="name" name="search" placeholder="请输入关键字">
+        <div id="search">搜索</div> 
+    </div></li>
 					</ul>
 				</div>
 				<div class="crumbs">
@@ -113,8 +156,8 @@
 					<div class="line"></div>
 				</div>
 				<div class="popupBuyNow">
-					<!-- <div class="pic"><img src="/static/picture/20180615115944874.jpg"></div>
-					<div class="text">关注公众号，进入“爱萌伊人”商城即可购买</div> -->
+					 <div class="pic"><img src="/static/picture/20180615115944874.jpg"></div>
+					<div class="text">关注公众号，进入“爱萌伊人”商城即可购买</div> 
 				</div>
 
 				<div class="productList">
@@ -177,7 +220,7 @@ jQuery(function($){
 				  	  type:2,
 				}
 			this.init = function(){
-				
+		  		self.events();
 				//注册绑定事件
 				self.loadPaginationhome(data);
 			}
@@ -214,7 +257,7 @@ jQuery(function($){
 							+'<div class="bottom">'
 							+'<div class="price">&yen;'+o.price+'</div>'
 							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=product-con2&paramName=id&paramNum='+o.id+'" target="_blank">了解详情</a></div>'
-							+'<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>'
+							+'<div class="btn popuptw"><a href="javascript:void(0);">立即购买</a></div>'
 							+'</div>'
 							+'</div>'
 		      				
@@ -230,7 +273,8 @@ jQuery(function($){
 						        	var _data = {
 						        			page:obj.curr,
 									  		size:6,
-									  		type:1,
+									  		type:2,
+									  		name:$('#name').val(),
 								  	}
 						        
 						            self.loadPaginationhome(_data);
@@ -239,12 +283,34 @@ jQuery(function($){
 					    }); 
 					   	layer.close(index);
 					    $("#home").html(html);
+					  //产品列表、弹出购买二维码
+					    $(function(){
+					    	$(".productList li .btn.popuptw").click(function(){
+					    		$(".popupBuyNow").fadeIn(200);
+					    		$(".mainFilter").fadeIn(200);
+					    	});
+					    	$(".mainFilter").click(function(){
+					    		$(".popupBuyNow").fadeOut(200);
+					    		$(".mainFilter").fadeOut(200);
+					    	});
+					    });
 				      },error:function(){
 							layer.msg("加载失败！", {icon: 2});
 							layer.close(index);
 					  }
 				  });
 			}
+			  this.events = function(){
+				  $('#search').on('click',function(){
+						var data = {
+									page:1,
+							  	  size:6,
+							  	  type:2,
+					  			name:$('#name').val(),
+					  	}
+			            self.loadPaginationhome(data);
+					});
+			  }
    	}
    			var login = new Login();
 				login.init();
