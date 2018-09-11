@@ -42,7 +42,7 @@
 						</ul>
 					</div>
 				</li>
-				<li class="on">
+				<li>
 					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
@@ -53,7 +53,7 @@
 					</div>
 				</li>
 				<li>
-				<li>
+				<li class="on">
 					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
@@ -99,16 +99,16 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li ><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
 						<li class="home"><a href="#">首页</a></li>
-						<li><a href="#">明星产品</a></li>
-						<li><a href="#">产品详情</a></li>
+						<li><a href="#">原创开发</a></li>
+						<li><a href="#">原创形象</a></li>
 					</ul>
 				</div>
 			</div>

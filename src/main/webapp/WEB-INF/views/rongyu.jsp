@@ -10,12 +10,12 @@
 		<script src="js/html5shiv.min-3.7.3.js"></script>
 		<script src="js/respond.min1.4.2.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="static/css/style.css">
-	<link rel="stylesheet" type="text/css" href="static/css/mobile.css">
-	<script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="static/js/swiper.min.js"></script>
-	<script type="text/javascript" src="static/js/javascript.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
+	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/static/js/swiper.min.js"></script>
+	<script type="text/javascript" src="/static/js/javascript.js"></script>
 	<title>蓝白玩偶 </title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -25,56 +25,66 @@
 <div class="wrapper">
 	<div class="header">
 		<div class="wrap">
-			<div class="logo"><a href="index.html"><img src="static/picture/logo.png"></a></div>
+			<div class="logo"><a href="index.html"><img src="/static/picture/logo.png"></a></div>
 			<div class="menuBtn"><span class="line1"></span><span class="line2"></span><span class="line3"></span></div>
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li ><a href="index.html">首页</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 				<li class="on">
-					<a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a>
+					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="${ctx }/menusToUrl?url=product">明星产品</a>
+					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/menusToUrl?url=product">单品介绍</a></li>
-							<li><a href="product.html">套装介绍</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="ketang.html">最新活动</a>
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
-							<li><a href="ketang.html">活动详情</a></li>
-							<li><a href="jieda.html">问题解答</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 						</ul>
 					</div>
 				</li>
-				
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=customer">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
+						</ul>
+					</div>
+				</li>
 					<li>
-						<a href="shipin.html">精彩瞬间</a>
+						<a href="${ctx }/view/menusToUrl?url=activity">蓝白动态</a>
 						<div class="sub">
 							<ul>
-								<li><a href="shipin.html">宣传视频</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=activity">新闻动态</a></li>
 							</ul>
 						</div>
 					</li>
 					<li>
-						<a href="contact.html">联系我们</a>
+						<a href="${ctx }/view/menusToUrl?url=contact">联系我们</a>
 						<div class="sub">
 							<ul>
-								<li><a href="contact.html">联系我们</a></li>
-								<li><a href="partner.html">城市合伙人</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=contact">联系我们</a></li>
 							</ul>
 						</div>
 					</li>
@@ -84,22 +94,22 @@
 	</div>
 	
 	<div class="container">
-				<div class="banner"><a href="javascript:;"><img src="static/picture/20180611105958725.jpg"></a></div>
+				<div class="banner"><a href="javascript:;"><img src="/static/picture/20180611105958725.jpg"></a></div>
 		<div class="columnMenu">
 			<div class="wrap">
 				<div class="nav four">
 					<ul>
-						<li><a href="${ctx }/menusToUrl?url=gushi">品牌故事</a></li>
-						<li><a href="${ctx }/menusToUrl?url=wenhua">品牌文化</a></li>
-						<li class="on"><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
-						<li><a href="${ctx }/menusToUrl?url=news">最新资讯</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li  class="on"><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
-						<li class="home"><a href="${ctx }/menusToUrl?url=index">首页</a></li>
-						<li><a href="${ctx }/menusToUrl?url=gushi">走进蓝白</a></li>
-						<li><a href="${ctx }/menusToUrl?url=rongyu">资质荣誉</a></li>
+						<li class="home"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
 					</ul>
 				</div>
 			</div>
@@ -116,11 +126,11 @@
 						<div class="leftFilter"></div>
 						<div class="rightFilter"></div>
 						<div class="swiperList">
-								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180612014454924.jpg"></a></div>
-								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180612014432424.jpg"></a></div>
-								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180611025149462.jpg"></a></div>
-								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180611025125382.jpg"></a></div>
-								<div class="list"><a href="JavaScript:void(0)"><img src="static/picture/20180608062608956.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="/static/picture/20180612014454924.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="/static/picture/20180612014432424.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="/static/picture/20180611025149462.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="/static/picture/20180611025125382.jpg"></a></div>
+								<div class="list"><a href="JavaScript:void(0)"><img src="/static/picture/20180608062608956.jpg"></a></div>
 														
 						</div>
 						<div class="swiper-button-prev"></div>
@@ -172,7 +182,7 @@
 		<div class="linkList">
 			<ul>
 				<li><a href="#">走进蓝白</a></li>
-				<li><a href="${ctx }/menusToUrl?url=product">明星产品</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=product">明星产品</a></li>
 				<li><a href="#">活动管理</a></li>
 				<li><a href="#">精彩瞬间</a></li>
 				<li><a href="#">联系我们</a></li>

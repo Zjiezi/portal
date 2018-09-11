@@ -72,7 +72,7 @@
 						</ul>
 					</div>
 				</li>
-				<li class="on">
+				<li >
 					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
@@ -83,7 +83,7 @@
 					</div>
 				</li>
 				<li>
-				<li>
+				<li class="on">
 					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
@@ -129,9 +129,9 @@
 			<div class="wrap">
 				<div class="nav two">
 					<ul>
-						<li ><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
-						<li class="on"><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 						<li style="position:relative;top:-14px;"><div id="box">
         <input type="text" id="name" name="search" placeholder="请输入关键字">
         <div id="search">搜索</div> 
@@ -142,7 +142,7 @@
 					<ul>
 						<li class="home"><a href="#">首页</a></li>
 						<li><a href="#">明星产品</a></li>
-						<li><a href="#">家居用品</a></li>
+						<li><a href="#">毛绒公仔</a></li>
 					</ul>
 				</div>
 			</div>
@@ -151,8 +151,8 @@
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-					<h2 class="tit">家居用品</h2>
-					<div class="entit">Home Furnishing product introduction</div>
+					<h2 class="tit">原创形象</h2>
+					<div class="entit">Original image</div>
 					<div class="line"></div>
 				</div>
 				<div class="popupBuyNow">
@@ -217,7 +217,7 @@ jQuery(function($){
 		  	var data={
 					  page:1,
 				  	  size:6,
-				  	  type:2,
+				  	  type:4,
 				}
 			this.init = function(){
 		  		self.events();
@@ -256,8 +256,8 @@ jQuery(function($){
 							+'</a>'
 							+'<div class="bottom">'
 							+'<div class="price">&yen;'+o.price+'</div>'
-							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=product-con2&paramName=id&paramNum='+o.id+'" target="_blank">了解详情</a></div>'
-							+'<div class="btn popuptw"><a href="javascript:void(0);">立即购买</a></div>'
+							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=original-con&paramName=id&paramNum='+o.id+'" target="_blank">了解详情</a></div>'
+							+'<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>'
 							+'</div>'
 							+'</div>'
 		      				
@@ -273,7 +273,7 @@ jQuery(function($){
 						        	var _data = {
 						        			page:obj.curr,
 									  		size:6,
-									  		type:2,
+									  		type:4,
 									  		name:$('#name').val(),
 								  	}
 						        
@@ -285,7 +285,7 @@ jQuery(function($){
 					    $("#home").html(html);
 					  //产品列表、弹出购买二维码
 					    $(function(){
-					    	$(".productList li .btn.popuptw").click(function(){
+					    	$(".productList li .btn.popup").click(function(){
 					    		$(".popupBuyNow").fadeIn(200);
 					    		$(".mainFilter").fadeIn(200);
 					    	});
@@ -303,9 +303,9 @@ jQuery(function($){
 			  this.events = function(){
 				  $('#search').on('click',function(){
 						var data = {
-									page:1,
+								page:1,
 							  	  size:6,
-							  	  type:2,
+							  	  type:4,
 					  			name:$('#name').val(),
 					  	}
 			            self.loadPaginationhome(data);

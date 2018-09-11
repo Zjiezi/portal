@@ -13,6 +13,36 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
+	 <!-- <link rel="stylesheet" href="/static/tc/plugins/bootstrap/css/bootstrap.min.css"> -->
+	 <style type="text/css">
+    #box{
+        width: 188px;
+        margin: 30px auto;
+        font-family: 'Microsoft YaHei';
+        font-size: 14px;
+    }
+    input{
+        width: 133px;
+        border: 1px solid #e2e2e2;
+        height: 30px;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position:5px center;
+        padding:0 0 0 5px;
+    }
+    #search{
+        width: 48px;
+        height: 32px;
+        float: right;
+        background: black;
+        color: white;
+        text-align: center;
+        line-height: 32px;
+        cursor: pointer;
+    }
+ 
+</style>
 	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="/static/js/swiper.min.js"></script>
 	<script type="text/javascript" src="/static/js/javascript.js"></script>
@@ -31,14 +61,14 @@
 				<div class="tit">MENU</div>
 				<ul>
 				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
-				<li >
+				<li>
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=gushi">品牌故事</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=wenhua">品牌文化</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=rongyu">资质荣誉</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=news">最新资讯</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
 						</ul>
 					</div>
 				</li>
@@ -53,29 +83,38 @@
 					</div>
 				</li>
 				<li>
-					<a href="ketang.html">最新活动</a>
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
-							<li><a href="ketang.html">活动详情</a></li>
-							<li><a href="jieda.html">问题解答</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 						</ul>
 					</div>
 				</li>
-				
+				<li>
+					<a href="${ctx }/view/menusToUrl?url=customer">定制合作</a>
+					<div class="sub">
+						<ul>
+							<li><a href="${ctx }/view/menusToUrl?url=customer">合作客户</a></li>
+							<li><a href="${ctx }/view/menusToUrl?url=customized">定制流程</a></li>
+						</ul>
+					</div>
+				</li>
 					<li>
-						<a href="shipin.html">精彩瞬间</a>
+						<a href="${ctx }/view/menusToUrl?url=activity">蓝白动态</a>
 						<div class="sub">
 							<ul>
-								<li><a href="shipin.html">宣传视频</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=activity">新闻动态</a></li>
 							</ul>
 						</div>
 					</li>
 					<li>
-						<a href="contact.html">联系我们</a>
+						<a href="${ctx }/view/menusToUrl?url=contact">联系我们</a>
 						<div class="sub">
 							<ul>
-								<li><a href="contact.html">联系我们</a></li>
-								<li><a href="partner.html">城市合伙人</a></li>
+								<li><a href="${ctx }/view/menusToUrl?url=contact">联系我们</a></li>
 							</ul>
 						</div>
 					</li>
@@ -93,8 +132,13 @@
 						<li class="on"><a href="${ctx }/view/menusToUrl?url=product">毛绒公仔</a></li>
 						<li ><a href="${ctx }/view/menusToUrl?url=product2">家居用品</a></li>
 						<li><a href="${ctx }/view/menusToUrl?url=product3">IP衍生品</a></li>
-						<li><input type="text" class="search" style="line-height: 60px;position:relative;top:15px; background-color: #EDF1F2;height: 15px;width: 180px; padding: 7px 15px; font-size: 0.75em;border-radius:9px;" placeholder="查询商品"><button type="submit" class="btn btn-sm btn-search" style="float: left; background-image: url('/static/images/20180830.png');">
-                    </button></li>
+						<!-- <li><div class="input-group"><input type="text"  style="line-height: 60px;position:relative;top:15px; background-color: #EDF1F2;height: 15px;width: 180px; padding: 7px 15px; font-size: 0.75em;border-radius:9px;" placeholder="查询商品"><button type="submit" class="btn btn-sm" style="float:left;position:relative;"><i><img alt="" src="/static/images/20180830.png"></i>
+                    </button></div></li>  --> 
+                    <li style="position:relative;top:-14px;"><div id="box">
+        <input type="text" id="name" name="search" placeholder="请输入关键字">
+        <div id="search">搜索</div> 
+    </div></li>
+                    
 					</ul>
 				</div>
 				<div class="crumbs">
@@ -115,8 +159,8 @@
 					<div class="line"></div>
 				</div>
 				<div class="popupBuyNow">
-					<!-- <div class="pic"><img src="/static/picture/20180615115944874.jpg"></div>
-					<div class="text">关注公众号，进入“爱萌伊人”商城即可购买</div> -->
+					 <div class="pic"><img src="/static/picture/20180615115944874.jpg"></div>
+					<div class="text">关注公众号，进入“爱萌伊人”商城即可购买</div> 
 				</div>
 
 				<div class="productList">
@@ -179,7 +223,7 @@ jQuery(function($){
 				  	  type:1,
 				}
 			this.init = function(){
-				
+		  		self.events();
 				//注册绑定事件
 				self.loadPaginationhome(data);
 			}
@@ -233,6 +277,7 @@ jQuery(function($){
 						        			page:obj.curr,
 									  		size:6,
 									  		type:1,
+									  		name:$('#name').val(),
 								  	}
 						        
 						            self.loadPaginationhome(_data);
@@ -241,12 +286,34 @@ jQuery(function($){
 					    }); 
 					   	layer.close(index);
 					    $("#home").html(html);
+					  //产品列表、弹出购买二维码
+					    $(function(){
+					    	$(".productList li .btn.popup").click(function(){
+					    		$(".popupBuyNow").fadeIn(200);
+					    		$(".mainFilter").fadeIn(200);
+					    	});
+					    	$(".mainFilter").click(function(){
+					    		$(".popupBuyNow").fadeOut(200);
+					    		$(".mainFilter").fadeOut(200);
+					    	});
+					    });
 				      },error:function(){
 							layer.msg("加载失败！", {icon: 2});
 							layer.close(index);
 					  }
 				  });
 			}
+			  this.events = function(){
+				  $('#search').on('click',function(){
+						var data = {
+									page:1,
+							  	  size:6,
+							  	  type:1,
+					  			name:$('#name').val(),
+					  	}
+			            self.loadPaginationhome(data);
+					});
+			  }
    	}
    			var login = new Login();
 				login.init();

@@ -36,7 +36,7 @@
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li class="on"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
 				<li>
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
@@ -86,7 +86,7 @@
 							</ul>
 						</div>
 					</li>
-					<li>
+					<li  class="on">
 						<a href="${ctx }/view/menusToUrl?url=contact">联系我们</a>
 						<div class="sub">
 							<ul>
@@ -99,75 +99,145 @@
 		</div>
 	</div>
 	
-	<div class="main">
-		<div class="banner">
-			<div class="swiper-container">
-				<div class="swiperList" id="home">
-					<!-- <div class="list"><a href="#" target="_blank"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div>
-					<div class="list"><a href="#"><img src="static/picture/20180720.jpg"></a></div> -->
+	<div class="container">
+		<div class="banner"><a href="javascript:;"><img src="/static/picture/20180611105958725.jpg"></a></div>
+		<div class="columnMenu">
+			<div class="wrap">
+				<div class="nav two">
+					<ul>
+						<li class="on"><a href="contact.html">联系我们</a></li>
+					</ul>
 				</div>
-				<div class="swiper-pagination"></div>
+				<div class="crumbs">
+					<ul>
+						<li class="home"><a href="/">首页</a></li>
+						<li><a href="#">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="aboutPage">
+						<div class="wrap">
+				<div class="columnTitle">
+					<h2 class="tit">扬州蓝白</h2>
+					<div class="entit">Contact</div>
+					<div class="line"></div>
+				</div>
+				<div class="contact">
+					<div class="address">
+						<div class="list"><div class="icon"><img src="/static/picture/call-ico1.png"/></div><div class="text">联系电话<br/>0755-82563097、18928449007</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico2.png"/></div><div class="text">邮箱<br/>aimengyiren@126.com</div></div><div class="list"><div class="icon"><img src="/static/picture/call-ico3.png"/></div><div class="text">扬州市邗江区西湖镇小官桥东路56号</div></div>					</div>
+					<div class="map">
+						<script type="text/javascript" src="/static/js/c2f5b6ae64604623a29de2301e2a996b.js"></script>
+						<div id="allmap"></div>
+						<script type="text/javascript">
+							// 百度地图API功能
+							var map = new BMap.Map("allmap");    // 创建Map实例
+							map.centerAndZoom(new BMap.Point(114.072542,22.544629), 20);  // 初始化地图,设置中心点坐标和地图级别
+							//添加地图类型控件
+							map.addControl(new BMap.MapTypeControl({
+								mapTypes:[
+									BMAP_NORMAL_MAP,
+									BMAP_HYBRID_MAP
+								]}));
+							map.setCurrentCity("扬州");          // 设置地图显示的城市 此项是必须设置的
+							// map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+							//添加缩放控件
+							var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+							var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+							/*缩放控件type有四种类型:
+							BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+							map.addControl(top_left_control);
+							map.addControl(top_left_navigation);
+
+							//添加标注信息
+							var point = new BMap.Point(119.410834,32.456961);
+							var marker = new BMap.Marker(point);  // 创建标注
+							map.addOverlay(marker);              // 将标注添加到地图中
+							map.centerAndZoom(point, 20);
+							var opts = {
+								width : 200,     // 信息窗口宽度
+								height: 50,     // 信息窗口高度
+								title : "扬州市蓝白工艺品有限公司" , // 信息窗口标题
+								enableMessage:true,//设置允许信息窗发送短息
+							}
+							var infoWindow = new BMap.InfoWindow("地址：扬州市邗江区西湖镇小官桥东路56号", opts);  // 创建信息窗口对象
+							//map.openInfoWindow(infoWindow,point); //加载页面开启信息窗口
+							marker.addEventListener("click", function(){
+								map.openInfoWindow(infoWindow,point); //开启信息窗口
+							});
+						</script>
+					</div>
+					 <div class="message">
+						<div class="columnTitle">
+							<div class="tit">在线留言</div>
+							<div class="entit">期待您的宝贵的意见和建议，欢迎及时向我们反馈，以便我们更好地为您服务。</div>
+							<div class="line"></div>
+						</div>
+						<div class="messageBox">
+							<div class="inputBox">
+								<div class="box">
+									<div class="tit">您的姓名：</div>
+									<div class="inpu"><input type="text" name="" id="name"></div>
+								</div>
+							</div>
+							<div class="inputBox">
+								<div class="box">
+									<div class="tit">联系电话：</div>
+									<div class="inpu"><input type="text" name="" id="shouji"></div>
+								</div>
+							</div>
+							<div class="inputBox">
+								<div class="box">
+									<div class="tit">联系邮箱：</div>
+									<div class="inpu"><input type="text" name="" id="email"></div>
+								</div>
+							</div>
+							<div class="textareaBox">
+								<div class="box">
+									<textarea id="content"></textarea>
+								</div>
+							</div>
+							<div class="btn"><input type="button" id="but" name="" value="提交留言"></div>
+						</div>
+						<script type="text/javascript">
+						$(function () {
+							$("#but").click(function () {
+								var username = $("#name").val();
+								var phone = $("#shouji").val();
+								var email = $("#email").val();
+								var message = $("#content").val();
+								$(document).ajaxStart(function (){
+							    	$("#but").attr("value", "提交中...");
+							 	 });
+							  	$(document).ajaxStop(function (){
+							    	$("#but").attr("value", "提交留言");
+							  	});	
+								$.ajax({
+									url:"${ctx}/view/message/addMessage",
+									data:{username:username, phone:phone, email:email, message:message},
+									type:"POST",
+									dataType:"json",
+									success: function (result) {
+										 if (result.code == 0) {
+											alert(result.message);
+											window.location.reload();	
+										} else {
+											alert("请稍后留言");
+										}	 
+										return false;
+										
+									}	
+								})
+
+							})
+						})
+						</script>
+					</div> 
+				</div>
 			</div>
 			
-		</div>
-		<div class="section section2" style="background-image: url(/static/images/section2.jpg);">
-			<div class="wrap">
-				<div class="columnTitle">
-					<h3 class="tit">热款推荐</h3>
-					<div class="txt"><span></span>不做最好，只做更好<span></span></div>
-				</div>
-				<div class="newProduct">
-					<div class="swiper-container" >
-						<div class="swiperList" id="home2">
-								
-													</div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
 					</div>
-					<script>
-						
-					</script>
-				</div>
-			</div>
-		</div>
-		<div class="section section3" style="background-image: url(/static/images/section3.jpg);">
-			<div class="wrap">
-				<div class="columnTitle white">
-					<h3 class="tit">宣传视频</h3>
-					<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
-				</div>
-				<div class="promotional">
-					<div class="title">
-						<div class="entit">COMPANY PROFILE</div>
-						<div class="tit">蓝白简介</div>
-					</div>
-															<div class="video">
-						<div class="pic"><div class="icon"></div>
-						<img src="/static/picture/20180627022629473.jpg"></div>
-						<video controls>
-							<source src="/static/lan.mp4" type="video/mp4">
-						</video>
-					</div>
-										<div class="instructions">
-						<div class="title"><div class="entit">走进来，享受一下快乐童年</div><div class="tit">快了童年，首选蓝白</div><div class="line"></div></div><div class="text">扬州蓝白工艺品有限公司是一家以自主研发各类中高档毛绒玩具.泰迪熊.家居产品为主的生产,贸易型企业. 公司目前自主品牌:蓝白玩偶. CAPTAIN MORGAN. 自公司成立以来.所开发生产的产品得到全国销售商一致好评.我们的目标是设计开发出新颖且优质的产品,用我们的真诚和热心服务好我们的顾客.做好“服务员”.</div>					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section section4">
-			<div class="columnTitle">
-				<h3 class="tit">最新咨询</h3>
-				<div class="txt"><span></span>游戏是儿童最正当的行为,玩具是儿童的天使<span></span></div>
-			</div>
-			<div class="newsList">
-				<ul id="home3">
-					
-															
-				</ul>
-			</div>
-		</div>
 	</div>
 		
 	<div class="footer">
@@ -249,12 +319,12 @@ jQuery(function($){
 			}
 			  this.loadPaginationhome2 = function(){
 				  var data={
-						  productType:"1", 
+					  	locationType:"home2", 
 				  }
 				    var index;
 				    var html = '';
 				    $.ajax({
-					      url:"${ctx}/view/product/productPage",
+					      url:"${ctx}/view/files/getPicture",
 					      data:data,
 					      type:"GET",
 					      beforeSend:function(){
@@ -264,37 +334,13 @@ jQuery(function($){
 						  }, 
 			      		  success: function (result) {
 			      			
-			      			$(result.data.rows).each(function(i,o){
-			      				 var p;
-			      				for (var i = 0; i < o.files.length; i++) {
-									if(o.files[i].producImagetType=="bursting"){
-			      						p=o.files[i];
-			      						break;
-		      						}
-								
-								}
-			      			var t; 
-			      			if(o.type==1){
-			      				t="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum="+o.id+""
-			      			}
-			      			if(o.type==2){
-			      				t="${ctx }/view/menusToUrl?url=product-con2&paramName=id&paramNum="+o.id+""
-			      			}
-			      			if(o.type==3){
-			      				t="${ctx }/view/menusToUrl?url=product-con3&paramName=id&paramNum="+o.id+""
-			      			}
-			      			if(o.type==4){
-			      				t="${ctx }/view/menusToUrl?url=original-con&paramName=id&paramNum="+o.id+""
-			      			}
-			      			if(o.type==5){
-			      				t="${ctx }/view/menusToUrl?url=resources-con&paramName=id&paramNum="+o.id+""
-			      			}
+			      			 $(result.data).each(function(i,o){
 			      				html+='<div class="list">'
-									+'<div class="pic"><img src='+p.url+'></div><div class="name">'+o.name+'</div>'
-									+'<div class="btn"><a href='+t+' target="_blank">了解详情</a></div>'
+									+'<div class="pic"><img src='+o.url+'></div><div class="name">'+o.title+'</div>'
+									+'<div class="btn"><a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.1.656f2c77mJXn1B&id=564708959015&areaId=321000&is_b=1&cat_id=2&rn=0a9806721babd4e2d2ad127f9ed3fe22" target="_blank">了解详情</a></div>'
 									+'</div>'
 								
-			      			});
+			      			}); 
 						   	layer.close(index);
 						    $("#home2").html(html);
 						   	self.loadEventshome2();

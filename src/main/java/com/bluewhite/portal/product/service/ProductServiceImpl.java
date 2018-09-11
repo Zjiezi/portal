@@ -45,7 +45,10 @@ public class ProductServiceImpl extends BaseServiceImpl<Product, Long> implement
 	        	if(!StringUtils.isEmpty(param.getType())){
 	        		predicate.add(cb.equal(root.get("type").as(Integer.class), param.getType()));
 	        	}
-	        	
+	        	//按类型
+	        	if(!StringUtils.isEmpty(param.getProductType())){
+	        		predicate.add(cb.equal(root.get("productType").as(Integer.class), param.getProductType()));
+	        	}
         		//按时间过滤
         		if (!StringUtils.isEmpty(param.getOrderTimeBegin()) &&  !StringUtils.isEmpty(param.getOrderTimeEnd()) ) {
         			predicate.add(cb.between(root.get("createdAt").as(Date.class),

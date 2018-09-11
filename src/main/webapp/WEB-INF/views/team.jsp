@@ -11,7 +11,7 @@
 		<script src="js/respond.min1.4.2.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style2.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/mobile.css">
 	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="/static/js/swiper.min.js"></script>
@@ -30,8 +30,8 @@
 			<div class="nav">
 				<div class="tit">MENU</div>
 				<ul>
-				<li><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
-				<li class="on">
+				<li ><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
+				<li>
 					<a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a>
 					<div class="sub">
 						<ul>
@@ -42,7 +42,7 @@
 						</ul>
 					</div>
 				</li>
-				<li>
+				<li >
 					<a href="${ctx }/view/menusToUrl?url=product">明星产品</a>
 					<div class="sub">
 						<ul>
@@ -53,7 +53,7 @@
 					</div>
 				</li>
 				<li>
-				<li>
+				<li class="on">
 					<a href="${ctx }/view/menusToUrl?url=original">原创开发</a>
 					<div class="sub">
 						<ul>
@@ -94,106 +94,55 @@
 	</div>
 	
 	<div class="container">
-				<div class="banner"><a href="javascript:;"><img src="/static/picture/20180611105958725.jpg"></a></div>
+		<div class="banner"><a href="javascript:;"><img src="/static/picture/20180611105958725.jpg"></a></div>
 		<div class="columnMenu">
 			<div class="wrap">
-				<div class="nav four">
+				<div class="nav two">
 					<ul>
-							<li><a href="${ctx }/view/menusToUrl?url=gushi">公司简介</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=wenhua">生产流程</a></li>
-							<li><a href="${ctx }/view/menusToUrl?url=rongyu">荣誉证书</a></li>
-							<li class="on"><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
+						<li ><a href="${ctx }/view/menusToUrl?url=original">原创形象</a></li>
+						<li class="on"><a href="${ctx }/view/menusToUrl?url=team">设计团队</a></li>
+						<li><a href="${ctx }/view/menusToUrl?url=resources">IP形象资源</a></li>
 					</ul>
 				</div>
 				<div class="crumbs">
 					<ul>
-						<li class="home"><a href="${ctx }/view/menusToUrl?url=index">首页</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
-						<li><a href="${ctx }/view/menusToUrl?url=news">工厂环境</a></li>
+						<li class="home"><a href="#">首页</a></li>
+						<li><a href="#">定制合作</a></li>
+						<li><a href="#">设计团队</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
+		
 		<div class="aboutPage">
 			<div class="wrap">
 				<div class="columnTitle">
-										<h2 class="tit">工厂环境</h2>
-					<div class="entit">Factory environment</div>
-										<div class="line"></div>
+					<h2 class="tit">设计团队</h2>
+					<div class="entit">Design team</div>
+					<div class="line"></div>
 				</div>
-				<div class="newsList">
-					<ul>
-						
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/20180620035655300.jpg"></div>
-								<div class="tit">爱萌伊人荣获“本草护肤行业优选品牌”称号</div>
-								<div class="date">2018-06-08</div>
-							</a>
-						</li>
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/20180622100226281.jpg"></div>
-								<div class="tit">体验平台建设完成</div>
-								<div class="date">2018-06-08</div>
-							</a>
-						</li>
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/20180622111634341.jpg"></div>
-								<div class="tit">2018年股东大会</div>
-								<div class="date">2018-06-08</div>
-							</a>
-						</li>
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/20180620101726805.jpg"></div>
-								<div class="tit">爱萌伊人肌肤健康管理有限公司2017年年会</div>
-								<div class="date">2018-06-08</div>
-							</a>
-						</li>
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/20180627031205314.jpg"></div>
-								<div class="tit">肌肤健康管理知识讲解与分享</div>
-								<div class="date">2018-06-08</div>
-							</a>
-						</li>
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/1529656664546245.jpg"></div>
-								<div class="tit">深圳市爱萌伊人肌肤健康管理有限公司响应式品牌官网成功上线</div>
-								<div class="date">2018-06-22</div>
-							</a>
-						</li>
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/20180608063030351.jpg"></div>
-								<div class="tit">爱萌伊人肌肤健康管理知识讲解与分享爱萌伊人肌肤健康管理知识讲解与分享</div>
-								<div class="date">2018-06-08</div>
-							</a>
-						</li>
-												<li>
-							<a href="news-con.html">
-								<div class="pic"><img src="/static/picture/20180608063030351.jpg"></div>
-								<div class="tit">爱萌伊人肌肤健康管理知识讲解与分享爱萌伊人肌肤健康管理知识讲解与分享</div>
-								<div class="date">2018-06-08</div>
-							</a>
-						</li>
-											</ul>
-				</div>
-				<div class="paging">
-					<ul>
-											</ul>
+				<div class="productList">
+					<img alt="" src="/static/picture/20180909.jpg">
 				</div>
 			</div>
+			
+			<!-- <div class="wrap">
+				<div class="columnTitle">
+					<h2 class="tit">外贸代工流程
+					</h2>
+					<div class="line"></div>
+				</div>
+				<div class="productList">
+					<img alt="" src="/static/picture/20180909.jpg">
+				</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="footer">
 		<div class="linkList">
 			<ul>
-				<li><a href="#">走进蓝白</a></li>
-				<li><a href="${ctx }/view/menusToUrl?url=product">明星产品</a></li>
+				<li><a href="${ctx }/view/menusToUrl?url=gushi">走进蓝白</a></li>
+				<li><a href="#">明星产品</a></li>
 				<li><a href="#">活动管理</a></li>
 				<li><a href="#">精彩瞬间</a></li>
 				<li><a href="#">联系我们</a></li>
@@ -205,5 +154,93 @@
 	</div>
 
 </div>
+
+
+<script type="text/javascript" src="${ctx }/static/tc/js/vendor/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="${ctx }/static/tc/js/layer/layer.js"></script>
+<script src="${ctx }/static/tc/js/laypage/laypage.js"></script> 
+<script>
+jQuery(function($){
+   	var Login = function(){
+			var self = this;
+			//表单jsonArray
+			//初始化js
+			var _cache;
+			this.setCache = function(cache){
+		  		_cache=cache;
+		  	}
+		  	this.getCache = function(){
+		  		return _cache;
+		  	}
+		  	this.setIndex = function(index){
+		  		_index=index;
+		  	}
+		  	
+		  	this.getIndex = function(){
+		  		return _index;
+		  	}
+		  	var data={
+					  page:1,
+				  	  size:6,
+				  	  type:1,
+				}
+			this.init = function(){
+				
+				//注册绑定事件
+				self.loadPaginationhome(data);
+			}
+			//加载分页
+			  this.loadPaginationhome = function(data){
+				  
+			    var index;
+			    var html = '';
+			    $.ajax({
+				      url:"${ctx}/view/product/productPage",
+				      data:data,
+				      type:"GET",
+				      beforeSend:function(){
+					 	  index = layer.load(1, {
+						  shade: [0.1,'#fff'] //0.1透明度的白色背景
+						  });
+					  }, 
+		      		  success: function (result) {
+		      			
+		      			 /* $(result.data.rows).each(function(i,o){
+		      				 var p;
+		      				for (var i = 0; i < o.files.length; i++) {
+								if(o.files[i].producImagetType=="introduce"){
+		      						p=o.files[i];
+		      						break;
+	      						}
+							
+							}
+		      				html+='<div class="list"><a href="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum='+o.id+'" target="_blank">'
+							+'<div class="pic"><img src="'+p.url+'"></div>'
+							+'<h3 class="tit">'+o.name+'</h3>'
+							+'<div class="txt">'+o.details+'</div>'
+							+'</a>'
+							+'<div class="bottom">'
+							+'<div class="price">&yen;'+o.price+'</div>'
+							+'<div class="btn"><a href="${ctx }/view/menusToUrl?url=product-con&paramName=id&paramNum='+o.id+'" target="_blank">了解详情</a></div>'
+							+'<div class="btn popup"><a href="javascript:void(0);">立即购买</a></div>'
+							+'</div>'
+							+'</div>'
+		      				
+		      			});  */
+					  
+					   	layer.close(index);
+					    $("#home").html(html);
+				      },error:function(){
+							layer.msg("加载失败！", {icon: 2});
+							layer.close(index);
+					  }
+				  });
+			}
+   	}
+   			var login = new Login();
+				login.init();
+			})
+    
+    </script>
 </body>
 </html>

@@ -41,9 +41,8 @@
 					<div class="row">
 						<div class="col-xs-11 col-sm-11 col-md-11">
 							<div class="input-group"> 
-								<table><tr><td>产品编号:</td><td><input type="text" name="number" id="number" class="form-control search-query number" /></td>
-								<td>&nbsp&nbsp&nbsp&nbsp</td>
-								<td>产品名称:</td><td><input type="text" name="name" id="name" class="form-control search-query name" /></td>
+								<table><tr>
+								<td>客户名称:</td><td><input type="text" name="name" id="name" class="form-control search-query name" /></td>
 								</tr></table> 
 								<span class="input-group-btn">
 									<button type="button" class="btn btn-info btn-square btn-sm btn-3d searchtask">
@@ -67,8 +66,8 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                        	<th class="text-center">产品序号</th>
-                                            <th class="text-center">产品名</th>
+                                        	<th class="text-center">客户序号</th>
+                                            <th class="text-center">客户名</th>
                                             <th class="text-center">操作</th>
                                         </tr>
                                     </thead>
@@ -99,7 +98,7 @@
 				<!-- PAGE CONTENT BEGINS -->
 				 <div class="panel panel-default">
                             <div><table><tr>
-								<td>图片类型:</td><td><select class="form-control" id="selecttype"><option value="introduce">产品</option><option value="details">产品描述</option></select></td>
+								<td>图片类型:</td><td><select class="form-control" id="selecttype"><option value="introduce">logo</option><option value="details">客户实拍</option></select></td>
 								</tr></table></div>
                             <div class="panel-body">
                                 <form action="#" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
@@ -195,7 +194,7 @@
 					  }, 
 		      		  success: function (result) {
 		      			
-		      			 $(result.data).each(function(i,o){
+		      			 $(result.data.rows).each(function(i,o){
 		      				html +='<tr>'
 		      				+'<td class="text-center id">'+o.id+'</td>'
 		      				+'<td class="text-center edit name">'+o.name+'</td>'
@@ -244,7 +243,7 @@
 					var index;
 					 index = layer.confirm('确定删除吗', {btn: ['确定', '取消']},function(){
 					$.ajax({
-						url:"${ctx}/product/deleteProduct",
+						url:"${ctx}/customer/deleteCustomer",
 						data:postData,
 						type:"GET",
 						beforeSend:function(){
@@ -290,7 +289,7 @@
 						  }, 
 			      		  success: function (result) {
 			      			
-			      			 $(result.data).each(function(i,o){
+			      			 $(result.data.rows).each(function(i,o){
 			      				$("#productName").val(o.name);
 			      				$("#details").val(o.details);
 			      				$(o.files).each(function(j,k){
@@ -359,7 +358,7 @@
                						  id:id,
 									  name:$("#productName").val(),
 									  details:$("#details").val(),
-									  files:arr,
+									  filesIds:arr,
 							  }
 							  $.ajax({
 									url:"${ctx}/customer/addCustomer",
@@ -387,7 +386,6 @@
 											  		name:$('#name').val(),
 										  	}
 											self.loadPagination(data);
-											$('.sizeto').remove();
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
@@ -410,7 +408,7 @@
 									  id:id,
 									  name:$("#productName").val(),
 									  details:$("#details").val(),
-									  files:arr,
+									  filesIds:arr,
 							  }
 							  $.ajax({
 									url:"${ctx}/customer/addCustomer",
@@ -432,11 +430,8 @@
 											  		size:13,
 											  		type:1,
 											  		name:$('#name').val(),
-										  			number:$('#number').val(),
-										  			type:$("#selectstatee").val(),
 										  	} 
 											self.loadPagination(data);
-											$('.sizeto').remove();
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
@@ -449,8 +444,6 @@
 								});
 							  $('.addDictDivTypeForm')[0].reset(); 
 							  $('#addDictDivType').hide();
-							  $('.sizeto').remove();
-							
 						  }
 					});
 				});
@@ -461,26 +454,10 @@
 					var data = {
 				  			page:1,
 				  			size:13,
-				  			type:1,
 				  			name:$('#name').val(),
-				  			number:$('#number').val(),
-				  			type:$("#selectstatee").val(),
 				  	}
 		            self.loadPagination(data);
 				});
-				
-				//新增尺寸
-				$('#save').on('click',function(){
-					var trHtml=""
-					trHtml='<div class="form-group sizeto">'
-                        +'<label class="col-sm-2 col-md-2 control-label" >产品尺寸:</label>'
-                        +'<div class="col-sm-6 col-md-6">'
-                        +'<input type="text" class="form-control size">'
-                        +'</div>'
-                        +'</div>'
-                        $("#tabs").append(trHtml); 
-				})
-				
 				//新增产品
 				$('#addproduct').on('click',function(){
 					$("#my-awesome-dropzone").text("");
@@ -508,7 +485,7 @@
 							  postData={
 									  name:$("#productName").val(),
 									  details:$("#details").val(),
-									  files:arr,
+									  filesIds:arr,
 							  }
 							  $.ajax({
 									url:"${ctx}/customer/addCustomer",
@@ -534,7 +511,6 @@
 											self.loadPagination(data);
 											$(".dz-started").text("");
 											$("#productId").text("");
-											 $('.sizeto').remove();
 										}else{
 											layer.msg("添加失败", {icon: 2});
 										}
@@ -549,7 +525,6 @@
 						  end:function(){
 							  $('.addDictDivTypeForm')[0].reset(); 
 							  $('#addDictDivType').hide();
-							  $('.sizeto').remove();
 						  }
 					});
 				})
